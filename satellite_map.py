@@ -2,6 +2,7 @@ import os
 import sys
 import glob
 import math
+import re
 import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
 import contextily as cx
@@ -92,13 +93,14 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
                 lat = float(w.attrib['lat'])
                 lon = float(w.attrib['lon'])
                 name_el = w.find('{*}name')
-                w_name = name_el.text if name_el is not None else ''
-                if w_name:
+                w_name = name_el.text.strip() if name_el is not None and name_el.text else ''
+                # Filter out noisy waypoint logs
+                if w_name and not re.match(r'^(ACTIVE LOG|AGUNG DOWN|jangyudi|\d+$)', w_name, re.I) and len(w_name) <= 30:
                     wx, wy = latlon_to_mercator(lat, lon)
-                    ax.scatter(wx, wy, color='#ff1744', edgecolor='#ffffff', s=40, zorder=6, marker='s')
+                    ax.scatter(wx, wy, color='#ff1744', edgecolor='#ffffff', s=45, zorder=6, marker='s')
                     ax.annotate(w_name, (wx, wy), textcoords="offset points", xytext=(4, 4),
-                                fontsize=6.5, color='#ffffff', weight='bold',
-                                bbox=dict(boxstyle="round,pad=0.15", fc="#000000", ec="#ffea00", alpha=0.75),
+                                fontsize=7, color='#ffffff', weight='bold',
+                                bbox=dict(boxstyle="round,pad=0.2", fc="#000000", ec="#ffea00", alpha=0.85),
                                 zorder=7)
         except Exception:
             pass
