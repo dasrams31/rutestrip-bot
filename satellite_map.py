@@ -83,6 +83,26 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
         ax.scatter(m_xs[0], m_ys[0], color='#ffffff', edgecolor='#000000', s=50, zorder=5, marker='o')
         ax.scatter(m_xs[-1], m_ys[-1], color='#ffea00', edgecolor='#000000', s=90, zorder=5, marker='^')
 
+    # Parse and plot Waypoints (Pos & Spot) from GPX files if available
+    for f in sorted(gpx_files):
+        try:
+            tree = ET.parse(f)
+            root = tree.getroot()
+            for w in root.findall('.//{*}wpt'):
+                lat = float(w.attrib['lat'])
+                lon = float(w.attrib['lon'])
+                name_el = w.find('{*}name')
+                w_name = name_el.text if name_el is not None else ''
+                if w_name:
+                    wx, wy = latlon_to_mercator(lat, lon)
+                    ax.scatter(wx, wy, color='#ff1744', edgecolor='#ffffff', s=40, zorder=6, marker='s')
+                    ax.annotate(w_name, (wx, wy), textcoords="offset points", xytext=(4, 4),
+                                fontsize=6.5, color='#ffffff', weight='bold',
+                                bbox=dict(boxstyle="round,pad=0.15", fc="#000000", ec="#ffea00", alpha=0.75),
+                                zorder=7)
+        except Exception:
+            pass
+
     # Calculate Mercator Bounding Box
     min_x, max_x = min(all_x), max(all_x)
     min_y, max_y = min(all_y), max(all_y)
