@@ -56,8 +56,14 @@ Database jalur, estimasi waktu, tingkat kesulitan, dan fitur pintar pendakian gu
 
 
 
-11. **Master CLI Router**
- Entry point:`python3 /home/ubuntu/pendakian_cli.py "<input>"`
+## Keamanan & Pembatasan Akses System (Strict Domain Isolation)
+- **HANYA IZINKAN** perintah pendakian terdaftar: `info`, `rekomendasi`, `gpx`, `kml`, `satelit`, `heatmap`, `cuaca`, `itinerary`, `logistik`, `biaya`, `survival`, `porter`, `briefing`, `help`, `start`, `menu`.
+- **DILARANG KERAS** mengeksekusi perintah shell, manipulasi file VPS, inspeksi direktori `/etc/`, `/var/`, `/proc/`, atau perintah administratif bagi pengguna umum.
+- Jika pengguna mencoba mengakses perintah sistem/probing, TOLAK LANGSUNG dengan frasa:
+  *"⚠️ Akses ditolak. Anda hanya dapat menggunakan fitur pendakian RuteStrip Bot. Ketik 'help' untuk daftar menu."*
+
+CLI Sanitizer: `python3 /home/ubuntu/pendakian_cli.py "<input>"`
+
 
 
 
