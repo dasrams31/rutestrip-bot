@@ -7,7 +7,8 @@ ALLOWED_COMMANDS = {
     "start", "help", "menu", "halo", "hi", "p",
     "info", "rekomendasi", "rekomendasi_rute", "gpx", "kml",
     "satelit", "satellite", "heatmap", "cuaca", "itinerary",
-    "logistik", "biaya", "survival", "porter", "briefing", "voice"
+    "logistik", "biaya", "survival", "porter", "briefing", "voice",
+    "review", "rating"
 }
 
 # Forbidden System Probing Patterns
@@ -35,7 +36,8 @@ Gunakan kata kunci langsung (tanpa tanda `/`) untuk navigasi fitur:
 8. **Kalkulator Logistik & Air** ➔ `logistik <jumlah_orang> <jumlah_hari>`
 9. **Estimasi Biaya Pendakian** ➔ `biaya <nama_gunung> <jumlah_orang> <jumlah_hari>`
 10. **Panduan Darurat Survival** ➔ `survival <topik>`
-11. **Kontak Porter & Transport** ➔ `porter <nama_gunung>`
+11. **Kontak Porter Transport** `porter <nama_gunung>`
+12. **Rating & Review Jalur** `review <nama_gunung>` / `review <nama_gunung> <1-5> <komentar>`
 
 ---
 💡 *Ketik `help` kapan saja untuk menampilkan menu ini.*"""
@@ -116,9 +118,21 @@ def handle_command(cmd_str: str):
         d = args[2] if len(args) > 2 else "2"
         res = subprocess.run(["python3", "/home/ubuntu/survival_budget.py", "budget", m, g, d], capture_output=True, text=True)
         return res.stdout
-    elif cmd == "porter":
+    elif cmd in ["porter"]:
         m = args[0] if args else "sumbing"
         res = subprocess.run(["python3", "/home/ubuntu/porter_transport.py", m], capture_output=True, text=True)
+        return res.stdout
+    elif cmd in ["review", "rating"]:
+        if not args:
+            res = subprocess.run(["python3", "/home/ubuntu/rating_review.py", "view", "merbabu"], capture_output=True, text=True)
+        elif len(args) >= 2 and args[1].isdigit():
+            gunung = args[0]
+            rating = args[1]
+            comment = " ".join(args[2:])
+            res = subprocess.run(["python3", "/home/ubuntu/rating_review.py", "add", gunung, rating, comment], capture_output=True, text=True)
+        else:
+            gunung = args[0]
+            res = subprocess.run(["python3", "/home/ubuntu/rating_review.py", "view", gunung], capture_output=True, text=True)
         return res.stdout
 
 if __name__ == "__main__":

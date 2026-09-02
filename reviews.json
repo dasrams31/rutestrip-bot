@@ -1,0 +1,60 @@
+{
+  "merbabu": [
+    {
+      "user": "PendakiSantai",
+      "rating": 5,
+      "comment": "Jalur Selo pemandangannya luar biasa, Savana 1 & 2 terbaik!",
+      "date": "2026-02-15"
+    },
+    {
+      "user": "RimbaRanger",
+      "rating": 4,
+      "comment": "Jalur Suwanting cukup terjal dan menantang, fisik harus prima.",
+      "date": "2026-02-28"
+    },
+    {
+      "user": "PendakiAnon",
+      "rating": 5,
+      "comment": "jalurnya luar biasa indah",
+      "date": "2026-09-02"
+    }
+  ],
+  "sumbing": [
+    {
+      "user": "TektokerJawa",
+      "rating": 5,
+      "comment": "Jalur Kaliangkrik tertata rapi, pemandangan puncak sejati keren.",
+      "date": "2026-01-20"
+    },
+    {
+      "user": "JejakGunung",
+      "rating": 4,
+      "comment": "Garung lumayan panjang, disarankan camp di Pos 3.",
+      "date": "2026-02-10"
+    }
+  ],
+  "sindoro": [
+    {
+      "user": "AvidHiker",
+      "rating": 4,
+      "comment": "Jalur Kledung trek berbatu, disarankan bawa trekking pole.",
+      "date": "2026-01-11"
+    }
+  ],
+  "prau": [
+    {
+      "user": "PemulaHike",
+      "rating": 5,
+      "comment": "Sangat ramah pemula! Sunrise di Bukit Teletubbies sangat memukau.",
+      "date": "2026-03-01"
+    }
+  ],
+  "lawu": [
+    {
+      "user": "SoloHiker",
+      "rating": 5,
+      "comment": "Jalur Candi Cetho mistis dan indah, Warung Mbok Yem legenda!",
+      "date": "2026-02-05"
+    }
+  ]
+}
