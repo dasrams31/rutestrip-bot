@@ -33,6 +33,46 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
     tracks = []
     seen_names = set()
     
+    # Real Pos Data Knowledge Base for Sumbing Routes
+    SUMBING_POS_MAP = {
+        'garung': [
+            ('Basecamp Garung', -7.3439),
+            ('Pos 1 Malim', -7.3551),
+            ('Pos 2 Genik', -7.3638),
+            ('Pos 3 Pestan', -7.3725),
+            ('Pasar Watu', -7.3789),
+            ('Puncak Rajawali', -7.3793)
+        ],
+        'bowongso': [
+            ('Basecamp Bowongso', -7.3763),
+            ('Pos 1 Bogani', -7.3800),
+            ('Pos 2 Gajahan', -7.3817),
+            ('Pos 3 Sapuran', -7.3822),
+            ('Puncak Bowongso', -7.3834)
+        ],
+        'gajah mungkur': [
+            ('Basecamp Gajah Mungkur', -7.3897),
+            ('Pos 1', -7.3856),
+            ('Pos 2', -7.3838),
+            ('Pos 3 Plawangan', -7.3832),
+            ('Puncak Buntu', -7.3837)
+        ],
+        'batursari': [
+            ('Basecamp Batursari', -7.3421),
+            ('Pos 1', -7.3550),
+            ('Pos 2', -7.3680),
+            ('Pos 3', -7.3780),
+            ('Puncak Batursari', -7.3832)
+        ],
+        'butuh kaliangkrik': [
+            ('Basecamp Nepal Van Java', -7.4175),
+            ('Pos 1 Payung', -7.4080),
+            ('Pos 2 Kethekan', -7.3988),
+            ('Pos 3 Camp Area', -7.3895),
+            ('Puncak Sejati', -7.3844)
+        ]
+    }
+    
     for f in sorted(gpx_files):
         try:
             tree = ET.parse(f)
@@ -99,40 +139,34 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
                 has_wpts = True
                 break
                 
-        # If no explicit waypoints, generate smart Pos landmarks along the ascending track
+        # If no explicit waypoints, check real Pos knowledge base for exact coordinates
         if not has_wpts and t_lats:
-            max_e_idx = 0
-            max_e = -9999
-            for i, ele in enumerate(t_eles):
-                if ele > max_e:
-                    max_e = ele
-                    max_e_idx = i
+            fn_low = os.path.basename(filepath).lower()
+            matched_key = None
+            for key in SUMBING_POS_MAP:
+                if key in fn_low:
+                    matched_key = key
+                    break
             
-            asc_lats = t_lats[:max_e_idx+1] if max_e_idx > 5 else t_lats
-            asc_lons = t_lons[:max_e_idx+1] if max_e_idx > 5 else t_lons
-            n_pts = len(asc_lats)
-            
-            landmarks = [
-                ("BC", asc_lats[0], asc_lons[0]),
-                ("Pos 1", asc_lats[int(n_pts * 0.25)], asc_lons[int(n_pts * 0.25)]),
-                ("Pos 2", asc_lats[int(n_pts * 0.50)], asc_lons[int(n_pts * 0.50)]),
-                ("Pos 3", asc_lats[int(n_pts * 0.75)], asc_lons[int(n_pts * 0.75)]),
-                ("Puncak", asc_lats[-1], asc_lons[-1])
-            ]
-            
-            for lm_name, lm_lat, lm_lon in landmarks:
-                wx, wy = latlon_to_mercator(lm_lat, lm_lon)
-                marker_style = '^' if lm_name == 'Puncak' else ('o' if lm_name == 'BC' else 's')
-                marker_color = '#ffea00' if lm_name == 'Puncak' else ('#ffffff' if lm_name == 'BC' else color)
-                ax.scatter(wx, wy, color=marker_color, edgecolor='#000000', s=45 if lm_name != 'Puncak' else 80, zorder=6, marker=marker_style)
-                ax.annotate(f"{lm_name}", (wx, wy), textcoords="offset points", xytext=(4, 4),
-                            fontsize=6.5, color='#ffffff', weight='bold',
-                            bbox=dict(boxstyle="round,pad=0.15", fc="#000000", ec=color, alpha=0.8),
-                            zorder=7)
-        else:
-            # Basecamp & Peak markers fallback
-            ax.scatter(m_xs[0], m_ys[0], color='#ffffff', edgecolor='#000000', s=50, zorder=5, marker='o')
-            ax.scatter(m_xs[-1], m_ys[-1], color='#ffea00', edgecolor='#000000', s=90, zorder=5, marker='^')
+            if matched_key:
+                pts = list(zip(t_lats, t_lons))
+                for lm_name, t_lat in SUMBING_POS_MAP[matched_key]:
+                    # Snap to closest latitude on actual GPX track
+                    best_pt = min(pts, key=lambda p: abs(p[0] - t_lat))
+                    wx, wy = latlon_to_mercator(best_pt[0], best_pt[1])
+                    is_peak = 'Puncak' in lm_name or 'Rajawali' in lm_name or 'Buntu' in lm_name or 'Sejati' in lm_name
+                    is_bc = 'Basecamp' in lm_name
+                    marker_style = '^' if is_peak else ('o' if is_bc else 's')
+                    marker_color = '#ffea00' if is_peak else ('#ffffff' if is_bc else color)
+                    ax.scatter(wx, wy, color=marker_color, edgecolor='#000000', s=45 if not is_peak else 80, zorder=6, marker=marker_style)
+                    ax.annotate(f"{lm_name}", (wx, wy), textcoords="offset points", xytext=(4, 4),
+                                fontsize=6.5, color='#ffffff', weight='bold',
+                                bbox=dict(boxstyle="round,pad=0.15", fc="#000000", ec=color, alpha=0.8),
+                                zorder=7)
+            else:
+                # Fallback markers
+                ax.scatter(m_xs[0], m_ys[0], color='#ffffff', edgecolor='#000000', s=50, zorder=5, marker='o')
+                ax.scatter(m_xs[-1], m_ys[-1], color='#ffea00', edgecolor='#000000', s=90, zorder=5, marker='^')
 
     # Parse and plot explicit Waypoints (Pos & Spot) from GPX files if available
     for f in sorted(gpx_files):
