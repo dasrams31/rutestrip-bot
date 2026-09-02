@@ -151,6 +151,15 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
             puncak_lat, puncak_lon = t_lats[max_e_idx], t_lons[max_e_idx]
             bc_lat, bc_lon = t_lats[0], t_lons[0]
             
+            # Determine specific peak name based on route file
+            fn_low = os.path.basename(filepath).lower()
+            peak_title = "Puncak"
+            if "garung" in fn_low: peak_title = "Puncak Rajawali"
+            elif "bowongso" in fn_low: peak_title = "Puncak Bowongso"
+            elif "gajah" in fn_low: peak_title = "Puncak Buntu"
+            elif "batursari" in fn_low: peak_title = "Puncak Batursari"
+            elif "butuh" in fn_low or "kaliangkrik" in fn_low or "adipura" in fn_low: peak_title = "Puncak Sejati"
+            
             # Basecamp marker
             bc_x, bc_y = latlon_to_mercator(bc_lat, bc_lon)
             ax.scatter(bc_x, bc_y, color='#ffffff', edgecolor='#000000', s=50, zorder=5, marker='o')
@@ -158,7 +167,7 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
             # Puncak marker & annotation
             p_x, p_y = latlon_to_mercator(puncak_lat, puncak_lon)
             ax.scatter(p_x, p_y, color='#ffea00', edgecolor='#000000', s=90, zorder=6, marker='^')
-            ax.annotate("Puncak", (p_x, p_y), textcoords="offset points", xytext=(4, 4),
+            ax.annotate(peak_title, (p_x, p_y), textcoords="offset points", xytext=(4, 4),
                         fontsize=7, color='#ffffff', weight='bold',
                         bbox=dict(boxstyle="round,pad=0.2", fc="#000000", ec="#ffea00", alpha=0.85),
                         zorder=7)
