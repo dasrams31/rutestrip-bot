@@ -4,38 +4,42 @@ Bot Asisten Pintar & Rekomendasi Pendakian Gunung berbasis AI, SBERT (Sentence-T
 
 ---
 
-## 🌟 Fitur Utama
+## 🌟 Fitur Utama & Keamanan
 
-1. **Rekomendasi Rute AI (SBERT + Cosine Similarity):**
+1. **Akses Publik Tanpa Verifikasi (`dm_policy: open`):**
+   - Pengguna umum di Telegram dapat langsung menggunakan bot tanpa perlu kode verifikasi/pairing.
+   - Terintegrasi dengan **Strict Input Sanitizer Sandbox** untuk memastikan pengguna umum hanya dapat mengakses fitur pendakian dan **terisolasi 100% dari sistem VPS**.
+
+2. **Rekomendasi Rute AI (SBERT + Cosine Similarity):**
    - Menggunakan model `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` (384 dimensi).
    - Ekstraksi fitur GPX (Jarak 3D, Elevation Gain, Grade %, Durasi Rumus Naismith) + Deskripsi Manual.
    - Peringkatan kecocokan natural language query dengan JSON Caching instant (< 0.05s).
 
-2. **Visualisasi Peta Satelit & Topografi (Contour & Esri World Imagery):**
-   - Peta Citra Satelit Resolusi Tinggi (`Esri.WorldImagery` via Contextily).
+3. **Visualisasi Peta Satelit & Topografi (Contour & Esri World Imagery):**
+   - Peta Citra Satelit Resolusi Tinggi (`Esri.WorldImagery` via Contextily & Web Mercator).
    - Peta Kontur Elevasi Topografi Matplotlib (Garis Kontur mdpl + Interpolasi Cubic DEM).
-   - Trail Heatmap kepadatan rute pendakian Pulau Jawa.
+   - Trail Heatmap kepadatan rute pendakian Pulau Jawa per gunung / kawasan.
 
-3. **Audio Voice & Text Briefing (Indonesian Ranger Tone):**
-   - Sintesis suara pemandu ranger lokal Indonesia (`id-ID-ArdiNeural` via Edge-TTS).
+4. **Audio Voice & Text Briefing (Indonesian Ranger Accent):**
+   - Sintesis suara pemandu ranger lokal Indonesia (`id-ID-ArdiNeural` via Edge-TTS & Opus).
    - Format ganda: Teks Markdown + Bubble Voice Note Telegram (`[[audio_as_voice]]`).
 
-4. **Monitoring Cuaca Realtime (Open-Meteo API & Cronjob):**
+5. **Monitoring Cuaca Realtime (Open-Meteo API & Cronjob):**
    - Update cuaca berkala tiap 3 jam (Suhu, Angin, Peringatan Hujan/Badai).
    - Peringatan dini otomatis untuk cuaca ekstrem.
 
-5. **Itinerary & Kalkulator Pendakian:**
+6. **Itinerary & Kalkulator Pendakian:**
    - **Naismith Itinerary Generator:** Estimasi jam per pos (2D1N vs Tek-tok).
    - **Kalkulator Logistik & Air:** Estimasi konsumsi air (3L/orang/hari), tenda, gas kaleng, P3K.
    - **Kalkulator Biaya Pendakian:** Estimasi total budget simaksi, ojek, parkir, & konsumsi.
 
-6. **Export Peta Offline (.gpx & .kml):**
+7. **Export Peta Offline (.gpx & .kml):**
    - Download file track `.gpx` & `.kml` langsung untuk OsmAnd, Maps.me, Locus Map, atau Garmin.
 
-7. **Kontak Porter & Basecamp Directory:**
+8. **Kontak Porter & Basecamp Directory:**
    - Database telepon basecamp, ojek lokal, & estimasi tarif porter terverifikasi.
 
-8. **First Aid & Survival Guide Offline:**
+9. **First Aid & Survival Guide Offline:**
    - Panduan darurat penanganan Hipotermia, AMS, Tersesat (STOP Rule), & Gigitan Ular.
 
 ---
@@ -74,6 +78,9 @@ cd rutestrip-bot
 uv venv pendakian_env
 uv pip install --python pendakian_env -r requirements.txt
 
+# Set Telegram Public DM Access
+hermes config set telegram.dm_policy open
+
 # Jalankan CLI Router
 python3 pendakian_cli.py help
 ```
@@ -93,9 +100,11 @@ rutestrip-bot/
 ├── gpx_heatmap.py           # Topographic Contour Map & Heatmap Generator
 ├── satellite_map.py         # Esri World Imagery Satellite Map Generator
 ├── briefing_audio.py        # Voice Note Synthesis (Edge-TTS id-ID-ArdiNeural)
-├── pendakian_cli.py         # Master CLI Command Router
+├── pendakian_cli.py         # Master CLI Command Router & Strict Input Sanitizer
+├── auto_readme_commit.py    # Automated Randomized Commit Script
 ├── cek_cuaca_gunung.py      # Automated Weather Cronjob Script
 ├── requirements.txt         # Package Dependencies
+├── SETUP_VPS_HERMES_BOT.md  # Panduan Instalasi VPS & Configuration
 ├── skills/
 │   └── pendakian-jawa/
 │       └── SKILL.md         # Skill Spec & Backend Routing Protocol
@@ -107,8 +116,3 @@ rutestrip-bot/
 ## 📄 Lisensi
 
 MIT License © 2026 RuteStrip Pendakian Bot Team.
-
-
-<!-- AUTO_SYNC_START -->
-> 🔄 *Last Automated Status Check: 2026-09-02 14:43:50 WIB*
-<!-- AUTO_SYNC_END -->
