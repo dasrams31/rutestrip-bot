@@ -154,11 +154,22 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
             # Determine specific peak name based on route file
             fn_low = os.path.basename(filepath).lower()
             peak_title = "Puncak"
-            if "garung" in fn_low: peak_title = "Puncak Rajawali"
-            elif "bowongso" in fn_low: peak_title = "Puncak Bowongso"
-            elif "gajah" in fn_low: peak_title = "Puncak Buntu"
-            elif "batursari" in fn_low: peak_title = "Puncak Batursari"
-            elif "butuh" in fn_low or "kaliangkrik" in fn_low or "adipura" in fn_low: peak_title = "Puncak Sejati"
+            offset = (5, 5)
+            if "garung" in fn_low: 
+                peak_title = "Puncak Rajawali"
+                offset = (6, 12)
+            elif "bowongso" in fn_low: 
+                peak_title = "Puncak Bowongso"
+                offset = (-85, -14)
+            elif "gajah" in fn_low: 
+                peak_title = "Puncak Buntu"
+                offset = (-75, 10)
+            elif "batursari" in fn_low: 
+                peak_title = "Puncak Batursari"
+                offset = (8, -12)
+            elif "butuh" in fn_low or "kaliangkrik" in fn_low or "adipura" in fn_low: 
+                peak_title = "Puncak Sejati"
+                offset = (10, 4)
             
             # Basecamp marker
             bc_x, bc_y = latlon_to_mercator(bc_lat, bc_lon)
@@ -167,9 +178,10 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
             # Puncak marker & annotation
             p_x, p_y = latlon_to_mercator(puncak_lat, puncak_lon)
             ax.scatter(p_x, p_y, color='#ffea00', edgecolor='#000000', s=90, zorder=6, marker='^')
-            ax.annotate(peak_title, (p_x, p_y), textcoords="offset points", xytext=(4, 4),
+            ax.annotate(peak_title, (p_x, p_y), textcoords="offset points", xytext=offset,
                         fontsize=7, color='#ffffff', weight='bold',
-                        bbox=dict(boxstyle="round,pad=0.2", fc="#000000", ec="#ffea00", alpha=0.85),
+                        bbox=dict(boxstyle="round,pad=0.2", fc="#000000", ec=color, alpha=0.85),
+                        arrowprops=dict(arrowstyle="->", color=color, lw=1.2),
                         zorder=7)
 
     # Parse and plot explicit Waypoints (Pos & Spot) from GPX files if available
