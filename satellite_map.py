@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import contextily as cx
 
 DOCS_DIR = "/root/.hermes/cache/documents"
+GPX_DB_DIR = "/root/rutestrip-bot/gpx_db"
 
 def latlon_to_mercator(lat, lon):
     r_major = 6378137.0
@@ -16,14 +17,14 @@ def latlon_to_mercator(lat, lon):
     return x, y
 
 def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
-    gpx_files = glob.glob(os.path.join(DOCS_DIR, "*.gpx"))
+    gpx_files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx")) + glob.glob(os.path.join(DOCS_DIR, "*.gpx"))
     
     if query:
         q = query.lower()
         gpx_files = [f for f in gpx_files if q in os.path.basename(f).lower()]
         
     if not gpx_files:
-        gpx_files = glob.glob(os.path.join(DOCS_DIR, "*.gpx"))
+        gpx_files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx")) + glob.glob(os.path.join(DOCS_DIR, "*.gpx"))
     
     lats = []
     lons = []
