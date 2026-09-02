@@ -139,34 +139,29 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
                 has_wpts = True
                 break
                 
-        # If no explicit waypoints, check real Pos knowledge base for exact coordinates
+        # If no explicit waypoints, show Basecamp and Puncak markers on actual GPX track
         if not has_wpts and t_lats:
-            fn_low = os.path.basename(filepath).lower()
-            matched_key = None
-            for key in SUMBING_POS_MAP:
-                if key in fn_low:
-                    matched_key = key
-                    break
+            max_e_idx = 0
+            max_e = -9999
+            for i, ele in enumerate(t_eles):
+                if ele > max_e:
+                    max_e = ele
+                    max_e_idx = i
             
-            if matched_key:
-                pts = list(zip(t_lats, t_lons))
-                for lm_name, t_lat in SUMBING_POS_MAP[matched_key]:
-                    # Snap to closest latitude on actual GPX track
-                    best_pt = min(pts, key=lambda p: abs(p[0] - t_lat))
-                    wx, wy = latlon_to_mercator(best_pt[0], best_pt[1])
-                    is_peak = 'Puncak' in lm_name or 'Rajawali' in lm_name or 'Buntu' in lm_name or 'Sejati' in lm_name
-                    is_bc = 'Basecamp' in lm_name
-                    marker_style = '^' if is_peak else ('o' if is_bc else 's')
-                    marker_color = '#ffea00' if is_peak else ('#ffffff' if is_bc else color)
-                    ax.scatter(wx, wy, color=marker_color, edgecolor='#000000', s=45 if not is_peak else 80, zorder=6, marker=marker_style)
-                    ax.annotate(f"{lm_name}", (wx, wy), textcoords="offset points", xytext=(4, 4),
-                                fontsize=6.5, color='#ffffff', weight='bold',
-                                bbox=dict(boxstyle="round,pad=0.15", fc="#000000", ec=color, alpha=0.8),
-                                zorder=7)
-            else:
-                # Fallback markers
-                ax.scatter(m_xs[0], m_ys[0], color='#ffffff', edgecolor='#000000', s=50, zorder=5, marker='o')
-                ax.scatter(m_xs[-1], m_ys[-1], color='#ffea00', edgecolor='#000000', s=90, zorder=5, marker='^')
+            puncak_lat, puncak_lon = t_lats[max_e_idx], t_lons[max_e_idx]
+            bc_lat, bc_lon = t_lats[0], t_lons[0]
+            
+            # Basecamp marker
+            bc_x, bc_y = latlon_to_mercator(bc_lat, bc_lon)
+            ax.scatter(bc_x, bc_y, color='#ffffff', edgecolor='#000000', s=50, zorder=5, marker='o')
+            
+            # Puncak marker & annotation
+            p_x, p_y = latlon_to_mercator(puncak_lat, puncak_lon)
+            ax.scatter(p_x, p_y, color='#ffea00', edgecolor='#000000', s=90, zorder=6, marker='^')
+            ax.annotate("Puncak", (p_x, p_y), textcoords="offset points", xytext=(4, 4),
+                        fontsize=7, color='#ffffff', weight='bold',
+                        bbox=dict(boxstyle="round,pad=0.2", fc="#000000", ec="#ffea00", alpha=0.85),
+                        zorder=7)
 
     # Parse and plot explicit Waypoints (Pos & Spot) from GPX files if available
     for f in sorted(gpx_files):
