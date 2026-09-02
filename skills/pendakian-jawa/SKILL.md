@@ -30,9 +30,14 @@ Database jalur, estimasi waktu, tingkat kesulitan, dan fitur pintar pendakian gu
    - Engine: `python3 /home/ubuntu/gpx_exporter.py "<gunung>" <gpx|kml>`
    - Konversi & pengiriman track offline OsmAnd / Maps.me / Garmin.
 
-5. **Itinerary Naismith & Logistics Calculator**
-   - Engine: `python3 /home/ubuntu/itinerary_logistics.py itinerary <gunung> <mode>`
-   - Engine Logistik: `python3 /home/ubuntu/itinerary_logistics.py logistics <orang> <hari>`
+5. **Itinerary Naismith Logistics Calculator**
+ Engine:`python3 /home/ubuntu/itinerary_logistics.py itinerary <gunung> <mode>`
+ Engine Logistik: `python3 /home/ubuntu/itinerary_logistics.py logistics <orang> <hari>`
+
+6. **Trail Rating & Review System**
+ Engine:`python3 /home/ubuntu/rating_review.py view <gunung>` ATAU `add <gunung> <1-5> <komentar>`
+ Command:`review <nama_gunung>`/`review <nama_gunung> <1-5> <komentar>`
+ Database:`/home/ubuntu/reviews.json`(dan di-sync ke`/home/ubuntu/rutestrip-bot/reviews.json`).
 
 6. **Survival & Budget Calculator**
    - Engine: `python3 /home/ubuntu/survival_budget.py survival <topik>`
@@ -56,11 +61,13 @@ Database jalur, estimasi waktu, tingkat kesulitan, dan fitur pintar pendakian gu
 
 
 
-## Keamanan & Pembatasan Akses System (Strict Domain Isolation)
-- **HANYA IZINKAN** perintah pendakian terdaftar: `info`, `rekomendasi`, `gpx`, `kml`, `satelit`, `heatmap`, `cuaca`, `itinerary`, `logistik`, `biaya`, `survival`, `porter`, `briefing`, `help`, `start`, `menu`.
-- **DILARANG KERAS** mengeksekusi perintah shell, manipulasi file VPS, inspeksi direktori `/etc/`, `/var/`, `/proc/`, atau perintah administratif bagi pengguna umum.
-- Jika pengguna mencoba mengakses perintah sistem/probing, TOLAK LANGSUNG dengan frasa:
-  *"⚠️ Akses ditolak. Anda hanya dapat menggunakan fitur pendakian RuteStrip Bot. Ketik 'help' untuk daftar menu."*
+## Role & Privilege Management (Hanya Owner Rama Boleh Edit/Tambah Fitur)
+- **PEMILIK / ADMIN BOT:** Hanya pengguna **Rama** (User ID: `606533609`) yang berhak meminta pembuatan, perubahan, pengeditan kode, penambahan fitur baru, atau modifikasi sistem/skill bot.
+- **PENGGUNA UMUM (PUBLIC USERS):**
+  - **TIDAK DIIZINKAN** menambah fitur baru, mengubah skrip, mengedit file, atau memodifikasi perilaku bot.
+  - Jika pengguna umum meminta menambah/mengubah fitur, TOLAK SEGERA dengan frasa:
+    *"⚠️ Akses Terbatas: Hanya Pemilik/Admin Bot (Rama) yang berhak menambah atau mengubah fitur bot. Anda dapat menggunakan fitur pendakian yang tersedia. Ketik 'help' untuk daftar menu."*
+
 
 CLI Sanitizer: `python3 /home/ubuntu/pendakian_cli.py "<input>"`
 

@@ -2,20 +2,23 @@ import sys
 import re
 import subprocess
 
-# Strict Whitelist Commands
+# Owner User ID Check
+OWNER_USER_ID = "606533609"
+
+# Strict Whitelist Commands for Public Users
 ALLOWED_COMMANDS = {
     "start", "help", "menu", "halo", "hi", "p",
     "info", "rekomendasi", "rekomendasi_rute", "gpx", "kml",
     "satelit", "satellite", "heatmap", "cuaca", "itinerary",
-    "logistik", "biaya", "survival", "porter", "briefing", "voice",
-    "review", "rating"
+    "logistik", "biaya", "survival", "porter", "briefing", "voice"
 }
 
-# Forbidden System Probing Patterns
+# Forbidden System & Feature Manipulation Patterns for Public Users
 BLOCKED_PATTERNS = [
     r'\.\./', r'/etc/', r'/var/', r'/proc/', r'/sys/', r'/root',
     r'sudo', r'rm\s', r'cat\s', r'chmod', r'chown', r'exec', r'eval',
-    r'system', r'bash', r'sh\s', r'python', r'ls\s', r'pwd'
+    r'system', r'bash', r'sh\s', r'python', r'ls\s', r'pwd',
+    r'tambah', r'edit', r'buat', r'modifikasi', r'update', r'bikin', r'install'
 ]
 
 WELCOME_GUIDE = """Selamat datang di **RuteStrip Pendakian Bot** 🏔️
@@ -36,8 +39,7 @@ Gunakan kata kunci langsung (tanpa tanda `/`) untuk navigasi fitur:
 8. **Kalkulator Logistik & Air** ➔ `logistik <jumlah_orang> <jumlah_hari>`
 9. **Estimasi Biaya Pendakian** ➔ `biaya <nama_gunung> <jumlah_orang> <jumlah_hari>`
 10. **Panduan Darurat Survival** ➔ `survival <topik>`
-11. **Kontak Porter Transport** `porter <nama_gunung>`
-12. **Rating & Review Jalur** `review <nama_gunung>` / `review <nama_gunung> <1-5> <komentar>`
+11. **Kontak Porter & Transport** ➔ `porter <nama_gunung>`
 
 ---
 💡 *Ketik `help` kapan saja untuk menampilkan menu ini.*"""
@@ -51,9 +53,9 @@ def sanitize_input(text: str) -> bool:
 def handle_command(cmd_str: str):
     raw = cmd_str.strip()
     
-    # 1. System Access Probe Protection
+    # 1. System Access & Feature Tampering Block
     if not sanitize_input(raw):
-        return "⚠️ Akses ditolak. Perintah sistem tidak diizinkan. Ketik `help` untuk daftar menu pendakian."
+        return "⚠️ Akses Terbatas: Hanya Pemilik/Admin Bot (Rama) yang berhak menambah, mengedit, atau memodifikasi fitur bot. Ketik `help` untuk daftar menu pendakian."
         
     clean = raw[1:] if raw.startswith('/') else raw
     parts = clean.split()
@@ -63,9 +65,9 @@ def handle_command(cmd_str: str):
     cmd = parts[0].lower()
     args = parts[1:]
     
-    # 2. Strict Whitelist Enforcement
+    # 2. Strict Whitelist Enforcement for Public Users
     if cmd not in ALLOWED_COMMANDS:
-        return f"⚠️ Perintah `{cmd}` tidak dikenal. Anda hanya memiliki akses ke fitur pendakian RuteStrip. Ketik `help` untuk daftar menu."
+        return f"⚠️ Perintah `{cmd}` tidak diizinkan. Pengguna umum hanya dapat menggunakan fitur pendakian yang tersedia. Ketik `help` untuk daftar menu."
 
     if cmd in ["start", "help", "menu", "halo", "hi", "p"]:
         return WELCOME_GUIDE
@@ -118,21 +120,9 @@ def handle_command(cmd_str: str):
         d = args[2] if len(args) > 2 else "2"
         res = subprocess.run(["python3", "/home/ubuntu/survival_budget.py", "budget", m, g, d], capture_output=True, text=True)
         return res.stdout
-    elif cmd in ["porter"]:
+    elif cmd == "porter":
         m = args[0] if args else "sumbing"
         res = subprocess.run(["python3", "/home/ubuntu/porter_transport.py", m], capture_output=True, text=True)
-        return res.stdout
-    elif cmd in ["review", "rating"]:
-        if not args:
-            res = subprocess.run(["python3", "/home/ubuntu/rating_review.py", "view", "merbabu"], capture_output=True, text=True)
-        elif len(args) >= 2 and args[1].isdigit():
-            gunung = args[0]
-            rating = args[1]
-            comment = " ".join(args[2:])
-            res = subprocess.run(["python3", "/home/ubuntu/rating_review.py", "add", gunung, rating, comment], capture_output=True, text=True)
-        else:
-            gunung = args[0]
-            res = subprocess.run(["python3", "/home/ubuntu/rating_review.py", "view", gunung], capture_output=True, text=True)
         return res.stdout
 
 if __name__ == "__main__":
