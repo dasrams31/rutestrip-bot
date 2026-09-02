@@ -39,7 +39,9 @@ Perintah di atas otomatis:
 
 3. **🗺️ Visualisasi Peta Satelit & Topografi Kontur:**
    - **Peta Citra Satelit:** `Esri.WorldImagery` resolusi tinggi via Web Mercator EPSG:3857 (`satelit <gunung>`).
-   - **Peta Kontur Topografi:** Garis kontur elevasi mdpl + interpolasi DEM Cubic (`heatmap <gunung>`).
+   - **Peta Topografi (Kontur):** Peta fisik topografi OpenTopoMap / Esri WorldTopo (`topografi <gunung>` atau `topo <gunung>`).
+   - **Informasi Telemetri Otomatis:** Setiap peta dilengkapi data **Jarak Rute (`km`)**, **Total Elevation Gain (`+m`)**, dan **Rata-Rata Kemiringan (`%`)**.
+   - **Smart Peak & Pos Markers:** Indikator nama-nama puncak spesifik (*Puncak Rajawali, Puncak Sejati, Puncak Buntu, Puncak Bowongso, dll*) & Waypoint Pos resmi.
    - **Trail Heatmap:** Kepadatan rute pendakian Pulau Jawa (`heatmap`).
 
 4. **🎙️ Audio Voice & Text Briefing (Indonesian Ranger Tone):**
@@ -78,7 +80,8 @@ Bot mendukung kata kunci langsung tanpa tanda `/` untuk menghindari bentrok fram
 | `gpx <gunung>` | Export track file `.gpx` | `gpx sumbing` |
 | `kml <gunung>` | Export track file `.kml` | `kml merbabu` |
 | `heatmap [gunung]` | Grafik kontur topografi & heatmap rute | `heatmap sumbing` |
-| `satelit [gunung]` | Peta citra satelit Esri World Imagery | `satelit merbabu` |
+| `satelit [gunung]` | Peta citra satelit Esri World Imagery + Telemetri | `satelit sumbing` |
+| `topografi [gunung]` | Peta topografi OpenTopoMap + Telemetri | `topografi slamet` |
 | `briefing <gunung>` | Dual briefing (Teks + Voice Note Ranger) | `briefing merbabu` |
 | `cuaca <gunung>` | Forecast cuaca realtime basecamp/puncak | `cuaca prau` |
 | `itinerary <gunung> <mode>`| Timeline Naismith jam per pos | `itinerary sumbing 2d1n` |

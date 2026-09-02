@@ -64,15 +64,19 @@ for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py
     fi
 done
 
-# Copy GPX files if present
+# Copy GPX files & GPX Database if present
+mkdir -p "$BASE_DIR/gpx_db"
 cp "$BASE_DIR"/*.gpx "$DOCS_CACHE/" 2>/dev/null || true
+cp "$BASE_DIR/gpx_db"/*.gpx "$BASE_DIR/gpx_db/" 2>/dev/null || true
 
 # ------------------------------------------------------------------------------
 # 5. Config Policy & DM Authorization
 # ------------------------------------------------------------------------------
-echo "🔒 [5/7] Configuring Telegram DM Open Access Policy..."
+echo "🔒 [5/7] Configuring Telegram DM Open Access & Allowlist Policy..."
 if command -v hermes &> /dev/null; then
     hermes config set telegram.dm_policy open || true
+    hermes config set telegram.allow_from "*" || true
+    hermes config set telegram.group_allow_from "*" || true
 fi
 
 # ------------------------------------------------------------------------------
