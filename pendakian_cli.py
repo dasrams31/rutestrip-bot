@@ -10,7 +10,7 @@ PYTHON3 = "python3"
 ALLOWED_COMMANDS = {
     "start", "help", "menu", "halo", "hi", "p",
     "info", "rekomendasi", "rekomendasi_rute", "gpx", "kml",
-    "satelit", "satellite", "heatmap", "cuaca", "itinerary",
+    "satelit", "satellite", "topografi", "topo", "heatmap", "cuaca", "itinerary",
     "logistik", "biaya", "survival", "porter", "briefing", "voice"
 }
 
@@ -93,8 +93,10 @@ def handle_command(cmd_str: str):
         res = subprocess.run([VENV_PYTHON, "/root/briefing_audio.py", m], capture_output=True, text=True)
         txt = res.stdout.strip()
         return f"🎙️ **AUDIO & TEKS BRIEFING PENDAKIAN ({m.upper()})**\n\n📝 **Teks Briefing Ranger:**\n\"{txt}\"\n\n[[audio_as_voice]]\nMEDIA:/tmp/briefing_indonesia.ogg"
-    elif cmd in ["satelit", "satellite"]:
+    elif cmd in ["satelit", "satellite", "topografi", "topo"]:
         q = args[0] if args else "sumbing"
+        if cmd in ["topografi", "topo"]:
+            q += " topo"
         res = subprocess.run([VENV_PYTHON, "/root/rutestrip-bot/satellite_map.py", q], capture_output=True, text=True)
         out = res.stdout.strip()
         if "TRACK_NOT_FOUND" in out:

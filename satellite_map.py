@@ -22,7 +22,7 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
     gpx_files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx"))
     
     if query:
-        q = query.lower()
+        q = query.lower().replace("topo", "").strip()
         matched = [f for f in gpx_files if q in os.path.basename(f).lower()]
         if matched:
             gpx_files = matched
@@ -218,10 +218,15 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
     ax.set_xlim(min_x - pad_x, max_x + pad_x)
     ax.set_ylim(min_y - pad_y, max_y + pad_y)
     
-    # Add Esri World Imagery Satellite basemap
-    cx.add_basemap(ax, source=cx.providers.Esri.WorldImagery, zorder=1)
+    # Add OpenTopoMap / Esri WorldTopo basemap for Topo requests or default to Satellite
+    basemap_provider = cx.providers.OpenTopoMap if "topo" in (query or "").lower() else cx.providers.Esri.WorldImagery
+    try:
+        cx.add_basemap(ax, source=basemap_provider, zorder=1)
+    except Exception:
+        cx.add_basemap(ax, source=cx.providers.Esri.WorldTopoMap, zorder=1)
 
-    title_str = f"🛰️ PETA CITRA SATELIT & RUTE - {query.upper() if query else 'GUNUNG JAWA'}"
+    map_type_title = "PETA TOPOGRAFI (KONTUR)" if "topo" in (query or "").lower() else "PETA CITRA SATELIT"
+    title_str = f"🗺️ {map_type_title} & RUTE - {query.upper().replace('TOPO', '').strip() if query else 'GUNUNG JAWA'}"
     ax.set_title(title_str, fontsize=13, pad=12, weight='bold', color='#ffffff', bbox=dict(boxstyle="round,pad=0.3", fc="#000000", alpha=0.7))
     ax.axis('off')
     ax.legend(fontsize=8, loc='upper left', framealpha=0.85, facecolor='#000000', labelcolor='#ffffff', edgecolor='#ffea00')
