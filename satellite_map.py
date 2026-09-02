@@ -46,15 +46,22 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
             
             f_lats = []
             f_lons = []
+            f_eles = []
             for el in root.iter():
                 if el.tag.split('}')[-1] == 'trkpt':
                     f_lats.append(float(el.attrib['lat']))
                     f_lons.append(float(el.attrib['lon']))
+                    ele_val = 0.0
+                    for c in el:
+                        if c.tag.split('}')[-1] == 'ele' and c.text:
+                            try: ele_val = float(c.text)
+                            except: pass
+                    f_eles.append(ele_val)
             
             if f_lats:
                 lats.extend(f_lats)
                 lons.extend(f_lons)
-                tracks.append((clean, f_lats, f_lons))
+                tracks.append((clean, f_lats, f_lons, f_eles, f))
         except Exception:
             pass
 
@@ -68,7 +75,7 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
     all_x = []
     all_y = []
     
-    for idx, (name, t_lats, t_lons) in enumerate(tracks):
+    for idx, (name, t_lats, t_lons, t_eles, filepath) in enumerate(tracks):
         color = colors[idx % len(colors)]
         m_xs = []
         m_ys = []
@@ -80,11 +87,54 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
             all_y.append(my)
             
         ax.plot(m_xs, m_ys, color=color, linewidth=2.8, label=name, alpha=0.95, zorder=3)
-        # Basecamp & Peak markers
-        ax.scatter(m_xs[0], m_ys[0], color='#ffffff', edgecolor='#000000', s=50, zorder=5, marker='o')
-        ax.scatter(m_xs[-1], m_ys[-1], color='#ffea00', edgecolor='#000000', s=90, zorder=5, marker='^')
+        
+        # Check if file has explicit waypoints
+        tree = ET.parse(filepath)
+        wpts = tree.getroot().findall('.//{*}wpt')
+        has_wpts = False
+        for w in wpts:
+            name_el = w.find('{*}name')
+            w_name = name_el.text.strip() if name_el is not None and name_el.text else ''
+            if w_name and not re.match(r'^(ACTIVE LOG|AGUNG DOWN|jangyudi|\d+$)', w_name, re.I) and len(w_name) <= 30:
+                has_wpts = True
+                break
+                
+        # If no explicit waypoints, generate smart Pos landmarks along the ascending track
+        if not has_wpts and t_lats:
+            max_e_idx = 0
+            max_e = -9999
+            for i, ele in enumerate(t_eles):
+                if ele > max_e:
+                    max_e = ele
+                    max_e_idx = i
+            
+            asc_lats = t_lats[:max_e_idx+1] if max_e_idx > 5 else t_lats
+            asc_lons = t_lons[:max_e_idx+1] if max_e_idx > 5 else t_lons
+            n_pts = len(asc_lats)
+            
+            landmarks = [
+                ("BC", asc_lats[0], asc_lons[0]),
+                ("Pos 1", asc_lats[int(n_pts * 0.25)], asc_lons[int(n_pts * 0.25)]),
+                ("Pos 2", asc_lats[int(n_pts * 0.50)], asc_lons[int(n_pts * 0.50)]),
+                ("Pos 3", asc_lats[int(n_pts * 0.75)], asc_lons[int(n_pts * 0.75)]),
+                ("Puncak", asc_lats[-1], asc_lons[-1])
+            ]
+            
+            for lm_name, lm_lat, lm_lon in landmarks:
+                wx, wy = latlon_to_mercator(lm_lat, lm_lon)
+                marker_style = '^' if lm_name == 'Puncak' else ('o' if lm_name == 'BC' else 's')
+                marker_color = '#ffea00' if lm_name == 'Puncak' else ('#ffffff' if lm_name == 'BC' else color)
+                ax.scatter(wx, wy, color=marker_color, edgecolor='#000000', s=45 if lm_name != 'Puncak' else 80, zorder=6, marker=marker_style)
+                ax.annotate(f"{lm_name}", (wx, wy), textcoords="offset points", xytext=(4, 4),
+                            fontsize=6.5, color='#ffffff', weight='bold',
+                            bbox=dict(boxstyle="round,pad=0.15", fc="#000000", ec=color, alpha=0.8),
+                            zorder=7)
+        else:
+            # Basecamp & Peak markers fallback
+            ax.scatter(m_xs[0], m_ys[0], color='#ffffff', edgecolor='#000000', s=50, zorder=5, marker='o')
+            ax.scatter(m_xs[-1], m_ys[-1], color='#ffea00', edgecolor='#000000', s=90, zorder=5, marker='^')
 
-    # Parse and plot Waypoints (Pos & Spot) from GPX files if available
+    # Parse and plot explicit Waypoints (Pos & Spot) from GPX files if available
     for f in sorted(gpx_files):
         try:
             tree = ET.parse(f)
