@@ -23,10 +23,13 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
     
     if query:
         q = query.lower()
-        gpx_files = [f for f in gpx_files if q in os.path.basename(f).lower()]
-        
-    if not gpx_files:
-        gpx_files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx"))
+        matched = [f for f in gpx_files if q in os.path.basename(f).lower()]
+        if matched:
+            gpx_files = matched
+        else:
+            # If query not found in GPX DB, raise explicit error rather than showing ALL mountains
+            print(f"TRACK_NOT_FOUND:{query}")
+            sys.exit(1)
     
     lats = []
     lons = []

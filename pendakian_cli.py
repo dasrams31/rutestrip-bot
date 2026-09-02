@@ -95,7 +95,10 @@ def handle_command(cmd_str: str):
         return f"🎙️ **AUDIO & TEKS BRIEFING PENDAKIAN ({m.upper()})**\n\n📝 **Teks Briefing Ranger:**\n\"{txt}\"\n\n[[audio_as_voice]]\nMEDIA:/tmp/briefing_indonesia.ogg"
     elif cmd in ["satelit", "satellite"]:
         q = args[0] if args else "sumbing"
-        subprocess.run([VENV_PYTHON, "/root/satellite_map.py", q], capture_output=True, text=True)
+        res = subprocess.run([VENV_PYTHON, "/root/rutestrip-bot/satellite_map.py", q], capture_output=True, text=True)
+        out = res.stdout.strip()
+        if "TRACK_NOT_FOUND" in out:
+            return f"⚠️ File GPX trek peta untuk **Gunung {q.title()}** belum tersedia di database bot."
         return "MEDIA:/tmp/satellite_map.png"
     elif cmd == "heatmap":
         q = args[0] if args else ""
