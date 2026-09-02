@@ -38,7 +38,7 @@ fi
 # ------------------------------------------------------------------------------
 echo "🐍 [3/7] Setting up Python Virtual Environment (pendakian_env)..."
 cd "$BASE_DIR"
-uv venv pendakian_env
+uv venv pendakian_env --allow-existing
 export VENV_PYTHON="$BASE_DIR/pendakian_env/bin/python"
 
 echo "📥 Installing PyTorch CPU & Python Packages..."
@@ -57,7 +57,7 @@ cp "$BASE_DIR/skills/pendakian-jawa/SKILL.md" "$SKILLS_DIR/SKILL.md"
 cp "$BASE_DIR/cek_cuaca_gunung.py" "$SCRIPTS_DIR/cek_cuaca_gunung.py"
 cp "$BASE_DIR/auto_readme_commit.py" "$SCRIPTS_DIR/auto_readme_commit.py"
 
-# Symlink or copy python scripts to /home/ubuntu root for legacy paths if needed
+# Symlink or copy python scripts to /root root for legacy paths if needed
 for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py; do
     if [ -f "$BASE_DIR/$script" ]; then
         cp "$BASE_DIR/$script" "$HOME/$script" 2>/dev/null || true
@@ -80,8 +80,8 @@ fi
 # ------------------------------------------------------------------------------
 echo "⏰ [6/7] Setting up Weather Monitoring & Auto-Commit Cronjobs..."
 if command -v hermes &> /dev/null; then
-    hermes cronjob create --name "monitoring-cuaca-gunung" --schedule "every 3h" --script "cek_cuaca_gunung.py" --prompt "Laporkan hasil update cuaca dari script chat ini secara ringkas." --deliver "origin" || true
-    hermes cronjob create --name "random-auto-readme-commit" --schedule "every 3h" --script "auto_readme_commit.py" --prompt "Jalankan script auto_readme_commit.py untuk memproses commit acak ke GitLab." --deliver "origin" || true
+    hermes cron create "every 3h" "Laporkan hasil update cuaca dari script chat ini secara ringkas." --name "monitoring-cuaca-gunung" --script "cek_cuaca_gunung.py" --deliver "origin" || true
+    hermes cron create "every 3h" "Jalankan script auto_readme_commit.py untuk memproses commit acak ke GitLab." --name "random-auto-readme-commit" --script "auto_readme_commit.py" --deliver "origin" || true
 fi
 
 # ------------------------------------------------------------------------------

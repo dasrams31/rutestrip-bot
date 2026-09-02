@@ -3,11 +3,13 @@ import glob
 import re
 import xml.etree.ElementTree as ET
 
-DOCS_DIR = "/home/ubuntu/.hermes/cache/documents"
+DOCS_DIR = "/root/.hermes/cache/documents"
+
+GPX_DB_DIR = "/root/rutestrip-bot/gpx_db"
 
 def find_gpx(mountain_query: str) -> str:
     query = mountain_query.lower()
-    files = glob.glob(os.path.join(DOCS_DIR, "*.gpx"))
+    files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx")) + glob.glob(os.path.join(DOCS_DIR, "*.gpx"))
     
     matches = []
     for f in files:

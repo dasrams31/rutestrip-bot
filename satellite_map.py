@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
 import contextily as cx
 
-DOCS_DIR = "/home/ubuntu/.hermes/cache/documents"
+DOCS_DIR = "/root/.hermes/cache/documents"
 
 def latlon_to_mercator(lat, lon):
     r_major = 6378137.0

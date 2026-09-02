@@ -5,7 +5,8 @@ import subprocess
 # Owner User ID Check
 OWNER_USER_ID = "606533609"
 
-# Strict Whitelist Commands for Public Users
+VENV_PYTHON = "/root/rutestrip-bot/pendakian_env/bin/python"
+PYTHON3 = "python3"
 ALLOWED_COMMANDS = {
     "start", "help", "menu", "halo", "hi", "p",
     "info", "rekomendasi", "rekomendasi_rute", "gpx", "kml",
@@ -21,28 +22,44 @@ BLOCKED_PATTERNS = [
     r'tambah', r'edit', r'buat', r'modifikasi', r'update', r'bikin', r'install'
 ]
 
-WELCOME_GUIDE = """Selamat datang di **RuteStrip Pendakian Bot** 🏔️
-
-Gunakan kata kunci langsung (tanpa tanda `/`) untuk navigasi fitur:
-
----
-
-### 🗺️ **NAVIGASI UTAMA**
-
-1. **Info Gunung & Simaksi** ➔ `info <nama_gunung>`
-2. **Rekomendasi Rute (SBERT AI)** ➔ `rekomendasi <preferensi>`
-3. **Export Peta Offline** ➔ `gpx <nama_gunung>` / `kml <nama_gunung>`
-4. **Peta Satelit & Heatmap** ➔ `satelit [gunung]` / `heatmap [gunung]`
-5. **Briefing Ranger (Dual Format)** ➔ `briefing <nama_gunung>`
-6. **Prakiraan Cuaca Live** ➔ `cuaca <nama_gunung>`
-7. **Itinerary Naismith** ➔ `itinerary <nama_gunung> <2d1n|tektok>`
-8. **Kalkulator Logistik & Air** ➔ `logistik <jumlah_orang> <jumlah_hari>`
-9. **Estimasi Biaya Pendakian** ➔ `biaya <nama_gunung> <jumlah_orang> <jumlah_hari>`
-10. **Panduan Darurat Survival** ➔ `survival <topik>`
-11. **Kontak Porter & Transport** ➔ `porter <nama_gunung>`
+WELCOME_GUIDE = """Halo! Selamat datang di **RuteStrip Pendakian Bot** 🏔️
+Saya adalah asisten pintar pendakian gunung yang siap membantu perencanaan dan panduan jalur pendakian Anda.
 
 ---
-💡 *Ketik `help` kapan saja untuk menampilkan menu ini.*"""
+
+### 🗺️ **DAFTAR PERINTAH & FITUR BOT**
+
+1. 🗺️ **Rekomendasi & Pencarian Gunung**
+   * `rekomendasi <kriteria>` (cth: `rekomendasi pemula jawa tengah`)
+   * Mencari gunung sesuai preferensi Anda menggunakan sistem AI (SBERT engine).
+
+2. 🎙️ **Briefing Suara Ranger (TTS)**
+   * `briefing <nama_gunung>` (cth: `briefing prau`)
+   * Memberikan pengarahan jalur dalam bentuk teks sekaligus pesan suara (*voice note*).
+
+3. 📍 **Peta & File Navigasi (GPX / KML)**
+   * `gpx <nama_gunung>` / `kml <nama_gunung>` ➔ Download trek peta offline (OsmAnd/Garmin).
+   * `chart <nama_gunung>` ➔ Grafik profil elevasi jalur.
+   * `satelit <nama_gunung>` / `heatmap <nama_gunung>` ➔ Citra satelit asli & peta kepadatan trek.
+
+4. ☀️ **Prakiraan Cuaca Live**
+   * `cuaca <nama_gunung>` ➔ Info suhu, cuaca, dan angin terkini.
+
+5. 🧮 **Logistik, Itinerary & Anggaran**
+   * `itinerary <nama_gunung> <santai/normal/cepat>` ➔ Estimasi waktu Naismith per pos.
+   * `logistik <jumlah_orang> <jumlah_hari>` ➔ Kalkulator konsumsi air & bahan makanan.
+   * `biaya <nama_gunung> <jumlah_orang> <jumlah_hari>` ➔ Estimasi rincian biaya pendakian.
+
+6. 🦺 **Porter, Transportasi & Tips Survival**
+   * `porter <nama_gunung>` ➔ Info kontak porter & transportasi basecamp.
+   * `survival <topik>` (cth: `survival hipotermia`) ➔ Panduan penanganan darurat.
+
+7. ⭐️ **Ulasan & Rating Jalur**
+   * `review <nama_gunung>` ➔ Lihat ulasan pendaki lain.
+   * `review <nama_gunung> <1-5> <komentar>` ➔ Tambahkan ulasan Anda.
+
+---
+💡 *Ketik perintah tanpa tanda `/`. Ketik `help` atau `/start` kapan saja untuk menampilkan menu ini.*"""
 
 def sanitize_input(text: str) -> bool:
     for pat in BLOCKED_PATTERNS:
@@ -73,21 +90,21 @@ def handle_command(cmd_str: str):
         return WELCOME_GUIDE
     elif cmd in ["briefing", "voice"]:
         m = args[0] if args else "merbabu"
-        res = subprocess.run(["/home/ubuntu/pendakian_env/bin/python", "/home/ubuntu/briefing_audio.py", m], capture_output=True, text=True)
+        res = subprocess.run([VENV_PYTHON, "/root/briefing_audio.py", m], capture_output=True, text=True)
         txt = res.stdout.strip()
         return f"🎙️ **AUDIO & TEKS BRIEFING PENDAKIAN ({m.upper()})**\n\n📝 **Teks Briefing Ranger:**\n\"{txt}\"\n\n[[audio_as_voice]]\nMEDIA:/tmp/briefing_indonesia.ogg"
     elif cmd in ["satelit", "satellite"]:
         q = args[0] if args else "sumbing"
-        subprocess.run(["/home/ubuntu/pendakian_env/bin/python", "/home/ubuntu/satellite_map.py", q], capture_output=True, text=True)
+        subprocess.run([VENV_PYTHON, "/root/satellite_map.py", q], capture_output=True, text=True)
         return "MEDIA:/tmp/satellite_map.png"
     elif cmd == "heatmap":
         q = args[0] if args else ""
-        subprocess.run(["/home/ubuntu/pendakian_env/bin/python", "/home/ubuntu/gpx_heatmap.py", q], capture_output=True, text=True)
+        subprocess.run([VENV_PYTHON, "/root/gpx_heatmap.py", q], capture_output=True, text=True)
         return "MEDIA:/tmp/gpx_heatmap.png"
     elif cmd in ["gpx", "kml"]:
         q = " ".join(args) if args else "sumbing kaliangkrik"
         fmt = "kml" if cmd == "kml" else "gpx"
-        res = subprocess.run(["python3", "/home/ubuntu/gpx_exporter.py", q, fmt], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/root/rutestrip-bot/gpx_exporter.py", q, fmt], capture_output=True, text=True)
         out = res.stdout.strip()
         if out.startswith("GPX:") or out.startswith("KML:"):
             fpath = out.split(":", 1)[1]
@@ -95,34 +112,34 @@ def handle_command(cmd_str: str):
         return out
     elif cmd in ["rekomendasi", "rekomendasi_rute"]:
         query = " ".join(args) if args else "jalur landai ramah pemula"
-        res = subprocess.run(["/home/ubuntu/pendakian_env/bin/python", "/home/ubuntu/rekomendasi_pendakian.py", query], capture_output=True, text=True)
+        res = subprocess.run([VENV_PYTHON, "/root/rekomendasi_pendakian.py", query], capture_output=True, text=True)
         return res.stdout
     elif cmd == "cuaca":
-        res = subprocess.run(["python3", "/home/ubuntu/cek_cuaca_gunung.py"], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/root/cek_cuaca_gunung.py"], capture_output=True, text=True)
         return res.stdout
     elif cmd == "itinerary":
         m = args[0] if args else "sumbing"
         mode = args[1] if len(args) > 1 else "2d1n"
-        res = subprocess.run(["python3", "/home/ubuntu/itinerary_logistics.py", "itinerary", m, mode], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/root/itinerary_logistics.py", "itinerary", m, mode], capture_output=True, text=True)
         return res.stdout
     elif cmd == "logistik":
         people = args[0] if args else "3"
         days = args[1] if len(args) > 1 else "2"
-        res = subprocess.run(["python3", "/home/ubuntu/itinerary_logistics.py", "logistics", people, days], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/root/itinerary_logistics.py", "logistics", people, days], capture_output=True, text=True)
         return res.stdout
     elif cmd == "survival":
         top = args[0] if args else "hipotermia"
-        res = subprocess.run(["python3", "/home/ubuntu/survival_budget.py", "survival", top], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/root/survival_budget.py", "survival", top], capture_output=True, text=True)
         return res.stdout
     elif cmd == "biaya":
         m = args[0] if args else "sumbing"
         g = args[1] if len(args) > 1 else "3"
         d = args[2] if len(args) > 2 else "2"
-        res = subprocess.run(["python3", "/home/ubuntu/survival_budget.py", "budget", m, g, d], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/root/survival_budget.py", "budget", m, g, d], capture_output=True, text=True)
         return res.stdout
     elif cmd == "porter":
         m = args[0] if args else "sumbing"
-        res = subprocess.run(["python3", "/home/ubuntu/porter_transport.py", m], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/root/porter_transport.py", m], capture_output=True, text=True)
         return res.stdout
 
 if __name__ == "__main__":

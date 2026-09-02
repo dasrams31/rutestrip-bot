@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import griddata
 
-DOCS_DIR = "/home/ubuntu/.hermes/cache/documents"
+DOCS_DIR = "/root/.hermes/cache/documents"
 
 def generate_heatmap(query=None, output_img="/tmp/gpx_heatmap.png"):
     gpx_files = glob.glob(os.path.join(DOCS_DIR, "*.gpx"))

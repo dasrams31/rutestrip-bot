@@ -102,7 +102,7 @@ custom_providers:
 
 ```bash
 # Clone repository project dari GitLab
-cd /home/ubuntu
+cd /root
 git clone https://gitlab.com/RamsNotes31/rutestrip-bot.git
 cd rutestrip-bot
 
@@ -125,11 +125,11 @@ Bot menggunakan Custom Skill `pendakian-jawa` agar Hermes mengetahui prosedur pe
 mkdir -p ~/.hermes/skills/pendakian-jawa
 
 # Copy file SKILL.md ke folder skills Hermes
-cp /home/ubuntu/rutestrip-bot/skills/pendakian-jawa/SKILL.md ~/.hermes/skills/pendakian-jawa/SKILL.md
+cp /root/rutestrip-bot/skills/pendakian-jawa/SKILL.md ~/.hermes/skills/pendakian-jawa/SKILL.md
 
 # Copy script cuaca ke direktori script Hermes (untuk Cronjob)
 mkdir -p ~/.hermes/scripts
-cp /home/ubuntu/rutestrip-bot/cek_cuaca_gunung.py ~/.hermes/scripts/cek_cuaca_gunung.py
+cp /root/rutestrip-bot/cek_cuaca_gunung.py ~/.hermes/scripts/cek_cuaca_gunung.py
 ```
 
 ---
