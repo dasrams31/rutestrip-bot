@@ -17,25 +17,31 @@ def latlon_to_mercator(lat, lon):
     return x, y
 
 def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
-    gpx_files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx")) + glob.glob(os.path.join(DOCS_DIR, "*.gpx"))
+    # Target gpx_db only to avoid duplicates from cache
+    gpx_files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx"))
     
     if query:
         q = query.lower()
         gpx_files = [f for f in gpx_files if q in os.path.basename(f).lower()]
         
     if not gpx_files:
-        gpx_files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx")) + glob.glob(os.path.join(DOCS_DIR, "*.gpx"))
+        gpx_files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx"))
     
     lats = []
     lons = []
     tracks = []
+    seen_names = set()
     
-    for f in gpx_files:
+    for f in sorted(gpx_files):
         try:
             tree = ET.parse(f)
             root = tree.getroot()
             fname = os.path.basename(f).replace('.gpx', '')
             clean = fname.split('_')[-1]
+            
+            if clean in seen_names:
+                continue
+            seen_names.add(clean)
             
             f_lats = []
             f_lons = []
@@ -72,7 +78,7 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
             all_x.append(mx)
             all_y.append(my)
             
-        ax.plot(m_xs, m_ys, color=color, linewidth=2.8, label=name[:22], alpha=0.95, zorder=3)
+        ax.plot(m_xs, m_ys, color=color, linewidth=2.8, label=name, alpha=0.95, zorder=3)
         # Basecamp & Peak markers
         ax.scatter(m_xs[0], m_ys[0], color='#ffffff', edgecolor='#000000', s=50, zorder=5, marker='o')
         ax.scatter(m_xs[-1], m_ys[-1], color='#ffea00', edgecolor='#000000', s=90, zorder=5, marker='^')
