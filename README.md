@@ -10,6 +10,37 @@
 
 ---
 
+## 🌐 REST API Service & Web Chatbot Integration
+
+RuteStrip Bot dilengkapi dengan **REST API Service (FastAPI)** berkecepatan tinggi yang dapat langsung dihubungkan ke Frontend Web Chatbot, React, Vue, maupun Mobile App.
+
+* **Base Domain API (HTTPS):** `https://cement-affiliation-firm-jesus.trycloudflare.com`
+* **Dokumentasi Interactive Swagger:** `https://cement-affiliation-firm-jesus.trycloudflare.com/docs`
+
+### 📌 Endpoint Utama REST API:
+
+| Method | Endpoint | Deskripsi & Parameter Contoh |
+|---|---|---|
+| `GET` | `/api/rekomendasi` | **AI SBERT Recommendation.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/rekomendasi?query=gunung%203000%20mdpl%20landai%20pemula` |
+| `GET` | `/api/cuaca` | **Forecast Cuaca Live.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/cuaca?mountain=sumbing` |
+| `GET` | `/api/map/satellite` | **Peta Satelit / Topografi (PNG).** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/map/satellite?mountain=slamet&map_type=topografi` |
+| `GET` | `/api/gpx` | **Download File GPX/KML.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/gpx?mountain=cikuray&format=gpx` |
+| `GET` | `/api/itinerary` | **Naismith Itinerary Generator.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/itinerary?mountain=sumbing&mode=2d1n` |
+| `GET` | `/api/logistik` | **Kalkulator Logistik & Air.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/logistik?people=4&days=2` |
+| `GET` | `/api/biaya` | **Estimasi Biaya Pendakian.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/biaya?mountain=sumbing&people=3&days=2` |
+| `GET` | `/api/survival` | **Panduan Survival First Aid.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/survival?topic=hipotermia` |
+| `GET` | `/api/porter` | **Kontak Porter & Basecamp.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/porter?mountain=sumbing` |
+
+### 💻 Contoh Integrasi Web Chatbot (JavaScript):
+```javascript
+// Contoh pemanggilan REST API dari Web Chatbot Frontend
+fetch('https://cement-affiliation-firm-jesus.trycloudflare.com/api/rekomendasi?query=gunung%20landai%20pemula')
+  .then(res => res.json())
+  .then(data => console.log("Hasil Rekomendasi:", data.results));
+```
+
+---
+
 ## ⚡ Quickstart: One-Click Automated Installer (VPS Ubuntu)
 
 Untuk menginstall seluruh sistem RuteStrip Bot di VPS Ubuntu baru, cukup jalankan **1 baris perintah** di terminal:
