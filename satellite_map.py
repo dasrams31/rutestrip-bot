@@ -17,6 +17,14 @@ def latlon_to_mercator(lat, lon):
     y = 3189068.5 * math.log((1.0 + scale) / (1.0 - scale))
     return x, y
 
+def haversine(lat1, lon1, lat2, lon2):
+    R = 6371000.0 # meters
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = math.sin(dlat / 2)**2 + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon / 2)**2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    return R * c
+
 def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
     # Target gpx_db only to avoid duplicates from cache
     gpx_files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx"))
@@ -122,6 +130,25 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
         color = colors[idx % len(colors)]
         m_xs = []
         m_ys = []
+        
+        # Calculate stats for telemetry box
+        dist_m = 0.0
+        ele_gain = 0.0
+        for i in range(1, len(t_lats)):
+            d = haversine(t_lats[i-1], t_lons[i-1], t_lats[i], t_lons[i])
+            dist_m += d
+            if len(t_eles) > i and t_eles[i] > 0 and t_eles[i-1] > 0:
+                diff = t_eles[i] - t_eles[i-1]
+                if diff > 0: ele_gain += diff
+                
+        valid_eles = [e for e in t_eles if e > 0]
+        min_e = min(valid_eles) if valid_eles else 0
+        max_e = max(valid_eles) if valid_eles else 0
+        dist_km = dist_m / 1000.0
+        avg_slope = (max_e - min_e) / dist_m * 100 if dist_m > 0 else 0
+        
+        lbl_str = f"{name} (~{round(dist_km, 1)}km | +{round(ele_gain)}m | ~{round(avg_slope, 1)}%)"
+        
         for la, lo in zip(t_lats, t_lons):
             mx, my = latlon_to_mercator(la, lo)
             m_xs.append(mx)
@@ -129,7 +156,7 @@ def generate_satellite_map(query=None, output_img="/tmp/satellite_map.png"):
             all_x.append(mx)
             all_y.append(my)
             
-        ax.plot(m_xs, m_ys, color=color, linewidth=2.8, label=name, alpha=0.95, zorder=3)
+        ax.plot(m_xs, m_ys, color=color, linewidth=2.8, label=lbl_str, alpha=0.95, zorder=3)
         
         # Check if file has explicit waypoints
         tree = ET.parse(filepath)
