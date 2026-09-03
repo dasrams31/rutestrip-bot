@@ -10,34 +10,12 @@
 
 ---
 
-## 🌐 REST API Service & Web Chatbot Integration
+## 🌐 Informasi Resmi & Komunitas
 
-RuteStrip Bot dilengkapi dengan **REST API Service (FastAPI)** berkecepatan tinggi yang dapat langsung dihubungkan ke Frontend Web Chatbot, React, Vue, maupun Mobile App.
-
-* **Base Domain API (HTTPS):** `https://cement-affiliation-firm-jesus.trycloudflare.com`
-* **Dokumentasi Interactive Swagger:** `https://cement-affiliation-firm-jesus.trycloudflare.com/docs`
-
-### 📌 Endpoint Utama REST API:
-
-| Method | Endpoint | Deskripsi & Parameter Contoh |
-|---|---|---|
-| `GET` | `/api/rekomendasi` | **AI SBERT Recommendation.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/rekomendasi?query=gunung%203000%20mdpl%20landai%20pemula` |
-| `GET` | `/api/cuaca` | **Forecast Cuaca Live.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/cuaca?mountain=sumbing` |
-| `GET` | `/api/map/satellite` | **Peta Satelit / Topografi (PNG).** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/map/satellite?mountain=slamet&map_type=topografi` |
-| `GET` | `/api/gpx` | **Download File GPX/KML.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/gpx?mountain=cikuray&format=gpx` |
-| `GET` | `/api/itinerary` | **Naismith Itinerary Generator.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/itinerary?mountain=sumbing&mode=2d1n` |
-| `GET` | `/api/logistik` | **Kalkulator Logistik & Air.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/logistik?people=4&days=2` |
-| `GET` | `/api/biaya` | **Estimasi Biaya Pendakian.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/biaya?mountain=sumbing&people=3&days=2` |
-| `GET` | `/api/survival` | **Panduan Survival First Aid.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/survival?topic=hipotermia` |
-| `GET` | `/api/porter` | **Kontak Porter & Basecamp.** `https://cement-affiliation-firm-jesus.trycloudflare.com/api/porter?mountain=sumbing` |
-
-### 💻 Contoh Integrasi Web Chatbot (JavaScript):
-```javascript
-// Contoh pemanggilan REST API dari Web Chatbot Frontend
-fetch('https://cement-affiliation-firm-jesus.trycloudflare.com/api/rekomendasi?query=gunung%20landai%20pemula')
-  .then(res => res.json())
-  .then(data => console.log("Hasil Rekomendasi:", data.results));
-```
+* **Website Utama:** [https://rutestrip.web.id](https://rutestrip.web.id)
+* **AI Chat Assistant:** [https://airutestrip.web.id](https://airutestrip.web.id)
+* **Grup Telegram:** [@rutestrip_group](https://t.me/rutestrip_group)
+* **Channel Telegram:** [@rutestrip](https://t.me/rutestrip)
 
 ---
 
@@ -61,7 +39,7 @@ Perintah di atas otomatis:
 
 1. **🔒 Keamanan Lapis Ganda & Sandbox:**
    - **Public Open Policy (`dm_policy: open`):** Pengguna umum di Telegram dapat langsung menggunakan bot tanpa perlu kode verifikasi/pairing.
-   - **Strict Input Sanitizer Sandbox:** Pengguna umum terisolasi 100% dari sistem VPS. Perintah modifikasi file/sistem otomatis ditolak. Hanya Pemilik/Admin Bot (**Rama**) yang berhak menambah/mengedit fitur.
+   - **Strict Input Sanitizer Sandbox:** Pengguna umum terisolasi 100% dari sistem VPS. Perintah modifikasi file/sistem otomatis ditolak. Hanya Pemilik/Admin Bot yang berhak menambah/mengedit fitur.
 
 2. **🤖 Rekomendasi Rute AI (SBERT + Cosine Similarity):**
    - Menggunakan model `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` (384 dimensi).
@@ -72,7 +50,7 @@ Perintah di atas otomatis:
    - **Peta Citra Satelit:** `Esri.WorldImagery` resolusi tinggi via Web Mercator EPSG:3857 (`satelit <gunung>`).
    - **Peta Topografi (Kontur):** Peta fisik topografi OpenTopoMap / Esri WorldTopo (`topografi <gunung>` atau `topo <gunung>`).
    - **Informasi Telemetri Otomatis:** Setiap peta dilengkapi data **Jarak Rute (`km`)**, **Total Elevation Gain (`+m`)**, dan **Rata-Rata Kemiringan (`%`)**.
-   - **Smart Peak & Pos Markers:** Indikator nama-nama puncak spesifik (*Puncak Rajawali, Puncak Sejati, Puncak Buntu, Puncak Bowongso, dll*) & Waypoint Pos resmi.
+   - **Smart Peak & Pos Markers:** Indikator nama-nama puncak spesifik & Waypoint Pos resmi.
    - **Trail Heatmap:** Kepadatan rute pendakian Pulau Jawa (`heatmap`).
 
 4. **🎙️ Audio Voice & Text Briefing (Indonesian Ranger Tone):**
@@ -106,7 +84,7 @@ Bot mendukung kata kunci langsung tanpa tanda `/` untuk menghindari bentrok fram
 | Perintah | Deskripsi | Contoh |
 |---|---|---|
 | `help` / `menu` | Menampilkan menu panduan & daftar navigasi | `help` |
-| `info <gunung>` | Detail rute, ketinggian, & simaksi resmi | `info gede` |
+| `info` / `komunitas` | Informasi link website, AI chat, & grup komunitas | `info` |
 | `rekomendasi <query>` | Rekomendasi rute AI SBERT + Cosine Sim | `rekomendasi jalur landai pemula` |
 | `gpx <gunung>` | Export track file `.gpx` | `gpx sumbing` |
 | `kml <gunung>` | Export track file `.kml` | `kml merbabu` |
@@ -123,41 +101,6 @@ Bot mendukung kata kunci langsung tanpa tanda `/` untuk menghindari bentrok fram
 
 ---
 
-## 📂 Struktur Project
-
-```text
-rutestrip-bot/
-├── install.sh               # One-Click Automated VPS Installer Script
-├── rekomendasi_pendakian.py  # Engine SBERT & Cosine Similarity + GPX Extractor
-├── fitur_pendakian.py        # Weather Forecast (Open-Meteo) & Elevation Profile Chart
-├── itinerary_logistics.py    # Naismith Itinerary Generator & Logistics Calculator
-├── survival_budget.py       # Survival First-Aid Guide & Budget Calculator
-├── porter_transport.py      # Basecamp & Porter Contact Directory
-├── gpx_exporter.py          # GPX to KML Converter & Track Exporter
-├── gpx_heatmap.py           # Topographic Contour Map & Heatmap Generator
-├── satellite_map.py         # Esri World Imagery Satellite Map Generator
-├── briefing_audio.py        # Voice Note Synthesis (Edge-TTS id-ID-ArdiNeural)
-├── pendakian_cli.py         # Master CLI Command Router & Strict Input Sanitizer
-├── generate_logo.py         # Official Vector & PNG Logo Generator
-├── auto_readme_commit.py    # Automated Randomized Commit Script
-├── cek_cuaca_gunung.py      # Automated Weather Cronjob Script
-├── requirements.txt         # Package Dependencies
-├── SETUP_VPS_HERMES_BOT.md  # Panduan Instalasi Manual VPS & Configuration
-├── rutestrip_logo.png       # Official PNG Logo
-├── rutestrip_logo.svg       # Official Vector SVG Logo
-├── skills/
-│   └── pendakian-jawa/
-│       └── SKILL.md         # Skill Spec & Backend Routing Protocol
-└── README.md                # Dokumentasi Utama Project
-```
-
----
-
 ## 📄 Lisensi
 
 MIT License © 2026 RuteStrip Pendakian Bot Team.
-
-
-<!-- AUTO_SYNC_START -->
-> 🔄 *Last Automated Status Check: 2026-09-03 19:42:35 WIB*
-<!-- AUTO_SYNC_END -->
