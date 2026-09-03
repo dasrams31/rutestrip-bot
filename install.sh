@@ -56,11 +56,21 @@ mkdir -p "$DOCS_CACHE"
 cp "$BASE_DIR/skills/pendakian-jawa/SKILL.md" "$SKILLS_DIR/SKILL.md"
 cp "$BASE_DIR/cek_cuaca_gunung.py" "$SCRIPTS_DIR/cek_cuaca_gunung.py"
 cp "$BASE_DIR/auto_readme_commit.py" "$SCRIPTS_DIR/auto_readme_commit.py"
+if [ -f "$BASE_DIR/daily_web_announcer.py" ]; then
+    cp "$BASE_DIR/daily_web_announcer.py" "$SCRIPTS_DIR/daily_web_announcer.py"
+fi
 
 # Symlink or copy python scripts to /root root for legacy paths if needed
-for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py; do
+for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py daily_web_announcer.py; do
     if [ -f "$BASE_DIR/$script" ]; then
         cp "$BASE_DIR/$script" "$HOME/$script" 2>/dev/null || true
+    fi
+done
+
+# Copy reviews & subscribers if present
+for jsonfile in reviews.json subscribers.json; do
+    if [ -f "$BASE_DIR/$jsonfile" ]; then
+        cp "$BASE_DIR/$jsonfile" "$HOME/$jsonfile" 2>/dev/null || true
     fi
 done
 
@@ -86,6 +96,7 @@ echo "⏰ [6/7] Setting up Weather Monitoring & Auto-Commit Cronjobs..."
 if command -v hermes &> /dev/null; then
     hermes cron create "every 3h" "Laporkan hasil update cuaca dari script chat ini secara ringkas." --name "monitoring-cuaca-gunung" --script "cek_cuaca_gunung.py" --deliver "origin" || true
     hermes cron create "every 3h" "Jalankan script auto_readme_commit.py untuk memproses commit acak ke GitLab." --name "random-auto-readme-commit" --script "auto_readme_commit.py" --deliver "origin" || true
+    hermes cron create "0 8 * * *" "Jalankan daily web announcer untuk ringkasan pendakian harian." --name "daily-web-announcer" --script "daily_web_announcer.py" --deliver "origin" || true
 fi
 
 # ------------------------------------------------------------------------------
