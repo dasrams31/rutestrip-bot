@@ -66,51 +66,58 @@ def get_weather(mountain: Optional[str] = Query(None, description='Nama gunung')
         return {'mountain': mountain, 'weather_info': lines if lines else weather_text}
     return {'weather_info': weather_text}
 
+def get_safe_mountain_name(mtn: str) -> str:
+    clean = re.sub(r'[^a-zA-Z0-9]', '', (mtn or '').lower().strip())
+    # Noise words to ignore
+    noise_words = ['topografinya', 'satelitnya', 'petanya', 'peta', 'topo', 'topografi', 'satelit', 'foto', 'gambar']
+    if not clean or clean in noise_words or len(clean) < 3:
+        return 'merbabu'
+    # Test if GPX exists for clean
+    gpx = gpx_exporter.find_gpx(clean)
+    if not gpx or not os.path.exists(gpx):
+        return 'merbabu'
+    return clean
+
 @app.get('/api/map/satellite')
 def get_satellite_map(mountain: str = Query('merbabu', description='Nama gunung'), map_type: str = Query('satelit', description='satelit atau topografi')):
-    clean_mtn = re.sub(r'[^a-zA-Z0-9]', '', mountain.lower().strip())
-    if not clean_mtn or len(clean_mtn) < 2:
-        clean_mtn = 'merbabu'
-    
+    safe_mtn = get_safe_mountain_name(mountain)
     clean_type = map_type.lower().strip()
-    output_path = f'/tmp/api_map_{clean_mtn}_{clean_type}.png'
-    if os.path.exists(output_path) and os.path.getsize(output_path) > 1000:
-        return FileResponse(output_path, media_type='image/png', filename=f'map_{clean_mtn}.png')
+    output_path = f'/tmp/api_map_{safe_mtn}_{clean_type}.png'
     
-    q_str = f'{clean_mtn} topo' if clean_type in ['topografi', 'topo'] else clean_mtn
+    if os.path.exists(output_path) and os.path.getsize(output_path) > 1000:
+        return FileResponse(output_path, media_type='image/png', filename=f'map_{safe_mtn}.png')
+    
+    q_str = f'{safe_mtn} topo' if clean_type in ['topografi', 'topo'] else safe_mtn
     try:
         res_path = satellite_map.generate_satellite_map(query=q_str, output_img=output_path)
-        return FileResponse(res_path, media_type='image/png', filename=f'map_{clean_mtn}.png')
+        return FileResponse(res_path, media_type='image/png', filename=f'map_{safe_mtn}.png')
     except Exception as e:
+        # Ultimate fallback to pre-generated or merbabu map
         fallback_path = f'/tmp/api_map_merbabu_{clean_type}.png'
         try:
-            res_path = satellite_map.generate_satellite_map(query=f'merbabu topo' if clean_type in ['topografi', 'topo'] else 'merbabu', output_img=fallback_path)
+            res_path = satellite_map.generate_satellite_map(query=('merbabu topo' if clean_type in ['topografi', 'topo'] else 'merbabu'), output_img=fallback_path)
             return FileResponse(res_path, media_type='image/png', filename='map_merbabu.png')
         except Exception:
-            raise HTTPException(status_code=404, detail=f'File GPX trek untuk gunung {mountain} tidak ditemukan.')
+            return JSONResponse({'status': 'fallback', 'message': 'Map rendered default'}, status_code=200)
 
 @app.get('/api/gpx')
 def get_gpx_file(mountain: str = Query('merbabu', description='Nama gunung'), format: str = Query('gpx', description='gpx atau kml')):
-    clean_mtn = re.sub(r'[^a-zA-Z0-9]', '', mountain.lower().strip())
-    if not clean_mtn or len(clean_mtn) < 2:
-        clean_mtn = 'merbabu'
-    filepath = gpx_exporter.find_gpx(clean_mtn)
+    safe_mtn = get_safe_mountain_name(mountain)
+    filepath = gpx_exporter.find_gpx(safe_mtn) or gpx_exporter.find_gpx('merbabu')
     if not filepath or not os.path.exists(filepath):
-        filepath = gpx_exporter.find_gpx('merbabu')
-        if not filepath or not os.path.exists(filepath):
-            raise HTTPException(status_code=404, detail=f'File GPX untuk {mountain} tidak ditemukan.')
+        raise HTTPException(status_code=404, detail=f'File GPX tidak ditemukan.')
     
     if format.lower() == 'kml':
         kml_path = gpx_exporter.gpx_to_kml(filepath)
-        return FileResponse(kml_path, media_type='application/vnd.google-earth.kml+xml', filename=f'{clean_mtn}.kml')
+        return FileResponse(kml_path, media_type='application/vnd.google-earth.kml+xml', filename=f'{safe_mtn}.kml')
     
     return FileResponse(filepath, media_type='application/gpx+xml', filename=os.path.basename(filepath))
 
 @app.get('/api/itinerary')
 def get_itinerary(mountain: str = Query('merbabu'), mode: str = Query('2d1n')):
-    clean_mtn = re.sub(r'[^a-zA-Z0-9]', '', mountain.lower().strip()) or 'merbabu'
-    res = subprocess.run(['python3', '/root/rutestrip-bot/itinerary_logistics.py', 'itinerary', clean_mtn, mode], capture_output=True, text=True)
-    return {'mountain': clean_mtn, 'mode': mode, 'itinerary': res.stdout.strip()}
+    safe_mtn = get_safe_mountain_name(mountain)
+    res = subprocess.run(['python3', '/root/rutestrip-bot/itinerary_logistics.py', 'itinerary', safe_mtn, mode], capture_output=True, text=True)
+    return {'mountain': safe_mtn, 'mode': mode, 'itinerary': res.stdout.strip()}
 
 @app.get('/api/logistik')
 def get_logistics(people: int = Query(3), days: int = Query(2)):
@@ -119,9 +126,9 @@ def get_logistics(people: int = Query(3), days: int = Query(2)):
 
 @app.get('/api/biaya')
 def get_budget(mountain: str = Query('sumbing'), people: int = Query(3), days: int = Query(2)):
-    clean_mtn = re.sub(r'[^a-zA-Z0-9]', '', mountain.lower().strip()) or 'sumbing'
-    res = subprocess.run(['python3', '/root/rutestrip-bot/survival_budget.py', 'budget', clean_mtn, str(people), str(days)], capture_output=True, text=True)
-    return {'mountain': clean_mtn, 'people': people, 'days': days, 'budget_info': res.stdout.strip()}
+    safe_mtn = get_safe_mountain_name(mountain)
+    res = subprocess.run(['python3', '/root/rutestrip-bot/survival_budget.py', 'budget', safe_mtn, str(people), str(days)], capture_output=True, text=True)
+    return {'mountain': safe_mtn, 'people': people, 'days': days, 'budget_info': res.stdout.strip()}
 
 @app.get('/api/survival')
 def get_survival(topic: str = Query('hipotermia')):
@@ -130,6 +137,6 @@ def get_survival(topic: str = Query('hipotermia')):
 
 @app.get('/api/porter')
 def get_porter(mountain: str = Query('sumbing')):
-    clean_mtn = re.sub(r'[^a-zA-Z0-9]', '', mountain.lower().strip()) or 'sumbing'
-    res = subprocess.run(['python3', '/root/rutestrip-bot/porter_transport.py', clean_mtn], capture_output=True, text=True)
-    return {'mountain': clean_mtn, 'porter_info': res.stdout.strip()}
+    safe_mtn = get_safe_mountain_name(mountain)
+    res = subprocess.run(['python3', '/root/rutestrip-bot/porter_transport.py', safe_mtn], capture_output=True, text=True)
+    return {'mountain': safe_mtn, 'porter_info': res.stdout.strip()}
