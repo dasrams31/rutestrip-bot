@@ -68,11 +68,16 @@ def get_weather(mountain: Optional[str] = Query(None, description='Nama gunung')
 
 @app.get('/api/map/satellite')
 def get_satellite_map(mountain: str = Query('sumbing', description='Nama gunung'), map_type: str = Query('satelit', description='satelit atau topografi')):
-    output_path = f'/tmp/api_map_{mountain}_{map_type}.png'
-    q_str = f'{mountain} topo' if map_type.lower() in ['topografi', 'topo'] else mountain
+    clean_mtn = mountain.lower().strip()
+    clean_type = map_type.lower().strip()
+    output_path = f'/tmp/api_map_{clean_mtn}_{clean_type}.png'
+    if os.path.exists(output_path) and os.path.getsize(output_path) > 1000:
+        return FileResponse(output_path, media_type='image/png', filename=f'map_{clean_mtn}.png')
+    
+    q_str = f'{clean_mtn} topo' if clean_type in ['topografi', 'topo'] else clean_mtn
     try:
         res_path = satellite_map.generate_satellite_map(query=q_str, output_img=output_path)
-        return FileResponse(res_path, media_type='image/png', filename=f'map_{mountain}.png')
+        return FileResponse(res_path, media_type='image/png', filename=f'map_{clean_mtn}.png')
     except Exception as e:
         raise HTTPException(status_code=404, detail=f'File GPX trek untuk gunung {mountain} tidak ditemukan.')
 
