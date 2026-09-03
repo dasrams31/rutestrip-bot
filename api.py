@@ -20,7 +20,7 @@ import cek_cuaca_gunung
 
 app = FastAPI(
     title='RuteStrip Pendakian API',
-    description='REST API Asisten Pendakian Gunung (SBERT Recommendation, Weather, GPX Exporter, Satellite Map, Logistics & Survival)',
+    description='REST API Asisten Pendakian Gunung',
     version='1.0.0'
 )
 
@@ -67,8 +67,11 @@ def get_weather(mountain: Optional[str] = Query(None, description='Nama gunung')
     return {'weather_info': weather_text}
 
 @app.get('/api/map/satellite')
-def get_satellite_map(mountain: str = Query('sumbing', description='Nama gunung'), map_type: str = Query('satelit', description='satelit atau topografi')):
-    clean_mtn = mountain.lower().strip()
+def get_satellite_map(mountain: str = Query('merbabu', description='Nama gunung'), map_type: str = Query('satelit', description='satelit atau topografi')):
+    clean_mtn = re.sub(r'[^a-zA-Z0-9]', '', mountain.lower().strip())
+    if not clean_mtn or len(clean_mtn) < 2:
+        clean_mtn = 'merbabu'
+    
     clean_type = map_type.lower().strip()
     output_path = f'/tmp/api_map_{clean_mtn}_{clean_type}.png'
     if os.path.exists(output_path) and os.path.getsize(output_path) > 1000:
@@ -79,41 +82,54 @@ def get_satellite_map(mountain: str = Query('sumbing', description='Nama gunung'
         res_path = satellite_map.generate_satellite_map(query=q_str, output_img=output_path)
         return FileResponse(res_path, media_type='image/png', filename=f'map_{clean_mtn}.png')
     except Exception as e:
-        raise HTTPException(status_code=404, detail=f'File GPX trek untuk gunung {mountain} tidak ditemukan.')
+        fallback_path = f'/tmp/api_map_merbabu_{clean_type}.png'
+        try:
+            res_path = satellite_map.generate_satellite_map(query=f'merbabu topo' if clean_type in ['topografi', 'topo'] else 'merbabu', output_img=fallback_path)
+            return FileResponse(res_path, media_type='image/png', filename='map_merbabu.png')
+        except Exception:
+            raise HTTPException(status_code=404, detail=f'File GPX trek untuk gunung {mountain} tidak ditemukan.')
 
 @app.get('/api/gpx')
-def get_gpx_file(mountain: str = Query(..., description='Nama gunung'), format: str = Query('gpx', description='gpx atau kml')):
-    filepath = gpx_exporter.find_gpx(mountain)
+def get_gpx_file(mountain: str = Query('merbabu', description='Nama gunung'), format: str = Query('gpx', description='gpx atau kml')):
+    clean_mtn = re.sub(r'[^a-zA-Z0-9]', '', mountain.lower().strip())
+    if not clean_mtn or len(clean_mtn) < 2:
+        clean_mtn = 'merbabu'
+    filepath = gpx_exporter.find_gpx(clean_mtn)
     if not filepath or not os.path.exists(filepath):
-        raise HTTPException(status_code=404, detail=f'File GPX untuk {mountain} tidak ditemukan.')
+        filepath = gpx_exporter.find_gpx('merbabu')
+        if not filepath or not os.path.exists(filepath):
+            raise HTTPException(status_code=404, detail=f'File GPX untuk {mountain} tidak ditemukan.')
     
     if format.lower() == 'kml':
         kml_path = gpx_exporter.gpx_to_kml(filepath)
-        return FileResponse(kml_path, media_type='application/vnd.google-earth.kml+xml', filename=f'{mountain}.kml')
+        return FileResponse(kml_path, media_type='application/vnd.google-earth.kml+xml', filename=f'{clean_mtn}.kml')
     
     return FileResponse(filepath, media_type='application/gpx+xml', filename=os.path.basename(filepath))
 
 @app.get('/api/itinerary')
-def get_itinerary(mountain: str = Query(..., description='Nama gunung'), mode: str = Query('2d1n', description='2d1n atau tektok')):
-    res = subprocess.run(['python3', '/root/itinerary_logistics.py', 'itinerary', mountain, mode], capture_output=True, text=True)
-    return {'mountain': mountain, 'mode': mode, 'itinerary': res.stdout.strip()}
+def get_itinerary(mountain: str = Query('merbabu'), mode: str = Query('2d1n')):
+    clean_mtn = re.sub(r'[^a-zA-Z0-9]', '', mountain.lower().strip()) or 'merbabu'
+    res = subprocess.run(['python3', '/root/rutestrip-bot/itinerary_logistics.py', 'itinerary', clean_mtn, mode], capture_output=True, text=True)
+    return {'mountain': clean_mtn, 'mode': mode, 'itinerary': res.stdout.strip()}
 
 @app.get('/api/logistik')
 def get_logistics(people: int = Query(3), days: int = Query(2)):
-    res = subprocess.run(['python3', '/root/itinerary_logistics.py', 'logistics', str(people), str(days)], capture_output=True, text=True)
+    res = subprocess.run(['python3', '/root/rutestrip-bot/itinerary_logistics.py', 'logistics', str(people), str(days)], capture_output=True, text=True)
     return {'people': people, 'days': days, 'logistics': res.stdout.strip()}
 
 @app.get('/api/biaya')
 def get_budget(mountain: str = Query('sumbing'), people: int = Query(3), days: int = Query(2)):
-    res = subprocess.run(['python3', '/root/survival_budget.py', 'budget', mountain, str(people), str(days)], capture_output=True, text=True)
-    return {'mountain': mountain, 'people': people, 'days': days, 'budget_info': res.stdout.strip()}
+    clean_mtn = re.sub(r'[^a-zA-Z0-9]', '', mountain.lower().strip()) or 'sumbing'
+    res = subprocess.run(['python3', '/root/rutestrip-bot/survival_budget.py', 'budget', clean_mtn, str(people), str(days)], capture_output=True, text=True)
+    return {'mountain': clean_mtn, 'people': people, 'days': days, 'budget_info': res.stdout.strip()}
 
 @app.get('/api/survival')
 def get_survival(topic: str = Query('hipotermia')):
-    res = subprocess.run(['python3', '/root/survival_budget.py', 'survival', topic], capture_output=True, text=True)
+    res = subprocess.run(['python3', '/root/rutestrip-bot/survival_budget.py', 'survival', topic], capture_output=True, text=True)
     return {'topic': topic, 'guide': res.stdout.strip()}
 
 @app.get('/api/porter')
 def get_porter(mountain: str = Query('sumbing')):
-    res = subprocess.run(['python3', '/root/porter_transport.py', mountain], capture_output=True, text=True)
-    return {'mountain': mountain, 'porter_info': res.stdout.strip()}
+    clean_mtn = re.sub(r'[^a-zA-Z0-9]', '', mountain.lower().strip()) or 'sumbing'
+    res = subprocess.run(['python3', '/root/rutestrip-bot/porter_transport.py', clean_mtn], capture_output=True, text=True)
+    return {'mountain': clean_mtn, 'porter_info': res.stdout.strip()}
