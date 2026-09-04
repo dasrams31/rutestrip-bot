@@ -11,10 +11,10 @@ Database jalur, estimasi waktu, tingkat kesulitan, dan fitur pintar pendakian gu
 - **Website Utama:** https://rutestrip.web.id
 - **AI Chat RuteStrip:** https://airutestrip.web.id
 - **Grup Telegram Komunitas:** @rutestrip_group
-- **Channel Telegram Resmi:** @rutestrip / @rutestrip_channel
+- **Channel Telegram Resmi:** @rutestrip
 
-## Aturan Khusus Channel Telegram (@rutestrip_channel)
-- **HANYA POS / BROADCAST PASIF:** Di channel Telegram (`@rutestrip_channel` / `@rutestrip`), bot **HANYA BERFUNGSI SEBAGAI MEDIA INFORMASI SATU ARAH** (share buletin berita, info status gunung api, prakiraan cuaca, dan info simaksi).
+## Aturan Khusus Channel Telegram (@rutestrip)
+- **HANYA POS / BROADCAST PASIF:** Di channel Telegram (`@rutestrip`), bot **HANYA BERFUNGSI SEBAGAI MEDIA INFORMASI SATU ARAH** (share buletin berita, info status gunung api, prakiraan cuaca, dan info simaksi).
 - **DILARANG KERAS** merespons obrolan/komentar pengguna di channel, membalas chat di luar berita, atau menjalankan perintah interaktif di channel.
 - Seluruh interaksi obrolan & perintah bot interaktif HANYA dilakukan di grup `@rutestrip_group` atau DM Telegram.
 
