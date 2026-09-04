@@ -8,5 +8,20 @@
     "chat_id": 1786049024,
     "user_name": "Misaka",
     "subscribed_at": "2026-09-03T00:00:00Z"
+  },
+  "-1001281395180": {
+    "chat_id": -1001281395180,
+    "user_name": "",
+    "subscribed_at": "2026-09-03T21:08:55Z"
+  },
+  "-1001493234227": {
+    "chat_id": -1001493234227,
+    "user_name": "Telegram",
+    "subscribed_at": "2026-09-03T21:08:55Z"
+  },
+  "1285434559": {
+    "chat_id": 1285434559,
+    "user_name": "yanggampang",
+    "subscribed_at": "2026-09-03T21:52:50Z"
   }
 }

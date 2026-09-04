@@ -103,7 +103,7 @@ custom_providers:
 ```bash
 # Clone repository project dari GitLab
 cd /root
-git clone https://gitlab.com/RamsNotes31/rutestrip-bot.git
+git clone https://gitlab.com/[REDACTED]/rutestrip-bot.git
 cd rutestrip-bot
 
 # Buat virtual environment bernama `pendakian_env`

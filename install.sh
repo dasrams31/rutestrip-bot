@@ -121,3 +121,20 @@ echo "======================================================================"
 echo "💡 To test locally, run:"
 echo "   $VENV_PYTHON $BASE_DIR/pendakian_cli.py help"
 echo "======================================================================"
+
+# Deploy Additional Broadcast Scripts
+if [ -f "$BASE_DIR/broadcast_weekend_getaway.py" ]; then
+    cp "$BASE_DIR/broadcast_weekend_getaway.py" "$SCRIPTS_DIR/broadcast_weekend_getaway.py"
+fi
+if [ -f "$BASE_DIR/broadcast_survival_tips.py" ]; then
+    cp "$BASE_DIR/broadcast_survival_tips.py" "$SCRIPTS_DIR/broadcast_survival_tips.py"
+fi
+if [ -f "$BASE_DIR/broadcast_cuaca_group.py" ]; then
+    cp "$BASE_DIR/broadcast_cuaca_group.py" "$SCRIPTS_DIR/broadcast_cuaca_group.py"
+fi
+
+if command -v hermes &> /dev/null; then
+    hermes cron create "0 6 * * *" "Rekomendasi pendakian harian" --name "broadcast-weekend-getaway-group" --script "broadcast_weekend_getaway.py" --no-agent --deliver "telegram:@rutestrip_group" || true
+    hermes cron create "0 10 * * 2,4" "Tips survival & etika pendaki" --name "broadcast-survival-tips-group" --script "broadcast_survival_tips.py" --no-agent --deliver "telegram:@rutestrip_group" || true
+    hermes cron create "0 7,13,19 * * *" "Broadcast cuaca gunung rutin ke grup" --name "broadcast-cuaca-rutestrip-group" --script "broadcast_cuaca_group.py" --no-agent --deliver "telegram:@rutestrip_group" || true
+fi
