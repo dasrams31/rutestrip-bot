@@ -4,6 +4,7 @@ import glob
 import re
 import math
 import json
+import uuid
 import subprocess
 from typing import Optional
 from fastapi import FastAPI, Query, HTTPException, Header, Body
@@ -31,8 +32,8 @@ import chat_history_handler
 
 app = FastAPI(
     title='RuteStrip Pendakian API',
-    description='REST API Asisten Pendakian Gunung, Auth Service & Persistent Chat History untuk WebChat AI (Register, Login, Token Verify, Chat History, Guardrail, Rekomendasi, Cuaca, GPX, Satelit, Logistik, Bulletin, Stats)',
-    version='1.5.0'
+    description='REST API Asisten Pendakian Gunung, Auth Service & Multi-Session Chat History untuk WebChat AI (Register, Login, Token Verify, Sessions Chat, Guardrail, Rekomendasi, Cuaca, GPX, Satelit, Logistik, Bulletin, Stats)',
+    version='1.6.0'
 )
 
 app.add_middleware(
@@ -59,19 +60,20 @@ class UserLoginModel(BaseModel):
 
 class ChatPromptModel(BaseModel):
     prompt: str
+    session_id: Optional[str] = None
 
 @app.get('/')
 def root():
     return {
         'status': 'online',
-        'service': 'RuteStrip Pendakian Bot REST API, WebChat Auth & Persistent Chat History',
-        'version': '1.5.0',
+        'service': 'RuteStrip Pendakian Bot REST API, WebChat Auth & Session-based Chat History',
+        'version': '1.6.0',
         'docs_url': '/docs'
     }
 
-# --- AI CHAT QUERY & PERSISTENT HISTORY ENDPOINTS (WEBCHAT AI ASSISTANT) ---
+# --- AI CHAT QUERY & MULTI-SESSION CHAT HISTORY ENDPOINTS ---
 
-@app.post('/api/chat/query', summary='Filter & Process WebChat AI Prompt via Guardrail + Auto Save History')
+@app.post('/api/chat/query', summary='Filter & Process WebChat AI Prompt via Guardrail + Session Grouping')
 def process_chat_query(body: ChatPromptModel, authorization: Optional[str] = Header(None)):
     user_id = "anonymous_guest"
     if authorization:
@@ -80,17 +82,20 @@ def process_chat_query(body: ChatPromptModel, authorization: Optional[str] = Hea
         if v_res.get('valid'):
             user_id = v_res['user']['user_id']
 
-    # 1. Simpan pesan pengguna ke riwayat
-    chat_history_handler.save_chat_message(user_id=user_id, sender='user', text=body.prompt)
+    session_id = body.session_id or str(uuid.uuid4())
+
+    # 1. Simpan pesan pengguna ke sesi riwayat
+    chat_history_handler.save_session_message(user_id=user_id, session_id=session_id, sender='user', text=body.prompt)
 
     # 2. Pengecekan Guardrail Topik & Keamanan
     g_res = guardrail.validate_webchat_query(body.prompt)
     if not g_res.get('allowed'):
         bot_reply = g_res.get('message')
-        chat_history_handler.save_chat_message(user_id=user_id, sender='bot', text=bot_reply, meta={'guardrail_passed': False})
+        chat_history_handler.save_session_message(user_id=user_id, session_id=session_id, sender='bot', text=bot_reply, meta={'guardrail_passed': False})
         return {
             'status': 'rejected',
             'guardrail_passed': False,
+            'session_id': session_id,
             'response': bot_reply
         }
 
@@ -108,8 +113,9 @@ def process_chat_query(body: ChatPromptModel, authorization: Optional[str] = Hea
         })
 
     bot_reply = f"Berikut adalah informasi pendakian terbaik berdasarkan kriteria '{query}':"
-    chat_history_handler.save_chat_message(
+    chat_history_handler.save_session_message(
         user_id=user_id, 
+        session_id=session_id, 
         sender='bot', 
         text=bot_reply, 
         meta={'guardrail_passed': True, 'recommendations_count': len(formatted_results)}
@@ -118,13 +124,14 @@ def process_chat_query(body: ChatPromptModel, authorization: Optional[str] = Hea
     return {
         'status': 'success',
         'guardrail_passed': True,
+        'session_id': session_id,
         'query': query,
         'recommendations': formatted_results,
         'response': bot_reply
     }
 
-@app.get('/api/chat/history', summary='Ambil Riwayat Obrolan Pengguna WebChat AI')
-def get_chat_history(authorization: Optional[str] = Header(None), limit: int = 50):
+@app.get('/api/chat/sessions', summary='Ambil Daftar Sesi Percakapan Pengguna')
+def get_user_chat_sessions(authorization: Optional[str] = Header(None)):
     if not authorization:
         raise HTTPException(status_code=401, detail='Authorization header wajib disertakan.')
     
@@ -134,16 +141,16 @@ def get_chat_history(authorization: Optional[str] = Header(None), limit: int = 5
         raise HTTPException(status_code=401, detail=v_res.get('message'))
 
     user_id = v_res['user']['user_id']
-    history = chat_history_handler.get_user_chat_history(user_id=user_id, limit=limit)
+    sessions = chat_history_handler.get_user_sessions(user_id=user_id)
     return {
         'status': 'success',
         'user_id': user_id,
-        'total_messages': len(history),
-        'history': history
+        'total_sessions': len(sessions),
+        'sessions': sessions
     }
 
-@app.delete('/api/chat/history', summary='Hapus Riwayat Obrolan Pengguna WebChat AI')
-def delete_chat_history(authorization: Optional[str] = Header(None)):
+@app.get('/api/chat/sessions/{session_id}', summary='Ambil Pesan Obrolan Spesifik dari Satu Sesi')
+def get_session_chat_messages(session_id: str, authorization: Optional[str] = Header(None)):
     if not authorization:
         raise HTTPException(status_code=401, detail='Authorization header wajib disertakan.')
     
@@ -153,10 +160,47 @@ def delete_chat_history(authorization: Optional[str] = Header(None)):
         raise HTTPException(status_code=401, detail=v_res.get('message'))
 
     user_id = v_res['user']['user_id']
-    chat_history_handler.clear_user_chat_history(user_id=user_id)
+    messages = chat_history_handler.get_session_messages(user_id=user_id, session_id=session_id)
     return {
         'status': 'success',
-        'message': 'Riwayat obrolan berhasil dibersihkan.'
+        'user_id': user_id,
+        'session_id': session_id,
+        'total_messages': len(messages),
+        'messages': messages
+    }
+
+@app.delete('/api/chat/sessions/{session_id}', summary='Hapus Satu Sesi Percakapan Spesifik')
+def delete_single_session(session_id: str, authorization: Optional[str] = Header(None)):
+    if not authorization:
+        raise HTTPException(status_code=401, detail='Authorization header wajib disertakan.')
+    
+    token = authorization.replace('Bearer ', '').strip()
+    v_res = auth_handler.verify_token(token)
+    if not v_res.get('valid'):
+        raise HTTPException(status_code=401, detail=v_res.get('message'))
+
+    user_id = v_res['user']['user_id']
+    res = chat_history_handler.delete_session(user_id=user_id, session_id=session_id)
+    return {
+        'status': 'success',
+        'message': f'Sesi percakapan {session_id} berhasil dihapus.'
+    }
+
+@app.delete('/api/chat/history', summary='Hapus Seluruh Sesi Riwayat Obrolan Pengguna')
+def delete_all_chat_history(authorization: Optional[str] = Header(None)):
+    if not authorization:
+        raise HTTPException(status_code=401, detail='Authorization header wajib disertakan.')
+    
+    token = authorization.replace('Bearer ', '').strip()
+    v_res = auth_handler.verify_token(token)
+    if not v_res.get('valid'):
+        raise HTTPException(status_code=401, detail=v_res.get('message'))
+
+    user_id = v_res['user']['user_id']
+    chat_history_handler.clear_all_user_sessions(user_id=user_id)
+    return {
+        'status': 'success',
+        'message': 'Seluruh riwayat percakapan berhasil dibersihkan.'
     }
 
 # --- AUTHENTICATION ENDPOINTS (WEBCHAT AI ASSISTANT) ---

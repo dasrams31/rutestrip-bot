@@ -25,5 +25,14 @@
     "password_hash": "8ef8b75604273460a17139254062664359b3795183f1d6821a620cf566395fed",
     "created_at": "2026-09-04T10:42:30Z",
     "token": "rutestrip_24ec42f0f2bfeb0f42ece813d554a1cd"
+  },
+  "9ba3e085-fdd0-4cfd-ba15-78c4acb5517b": {
+    "user_id": "9ba3e085-fdd0-4cfd-ba15-78c4acb5517b",
+    "username": "slidertest1",
+    "email": "slider1@rutestrip.web.id",
+    "full_name": "Slider Test",
+    "password_hash": "a109e36947ad56de1dca1cc49f0ef8ac9ad9a7b1aa0df41fb3c4cb73c1ff01ea",
+    "created_at": "2026-09-04T11:06:02Z",
+    "token": "rutestrip_78f77531f6e0a2e3fba3dd04dfe263fc"
   }
 }
