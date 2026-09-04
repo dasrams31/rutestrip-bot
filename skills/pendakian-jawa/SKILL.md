@@ -13,6 +13,15 @@ Database jalur, estimasi waktu, tingkat kesulitan, dan fitur pintar pendakian gu
 - **Grup Telegram Komunitas:** @rutestrip_group
 - **Channel Telegram Resmi:** @rutestrip
 
+## 🚫 ATURAN ABSOLUT: METODE PENCEGAHAN BALASAN CHANNEL & SELF-REPLY
+1. **DILARANG MERESPONS / MEMBALAS POSTINGAN CHANNEL (@rutestrip):**
+   - Setiap kali postingan buletin berita atau pesan otomatis dari channel `@rutestrip` masuk / diteruskan (*forwarded*) ke grup diskusi `@rutestrip_group`, bot **DILARANG HARD-CODE** untuk merespons, membalas, merangkum, atau mengomentari postingan tersebut!
+   - Bot harus **DIAM TOTAL** dan mengabaikan seluruh pesan terusan (*automatic forwarded channel posts*) dari channel.
+2. **DILARANG MERESPONS PESAN BOT SENDIRI:**
+   - Bot DILARANG MEMBALAS pesan yang dikirimkan oleh dirinya sendiri atau pesan cron otomatis.
+3. **HANYA MERESPONS PESAN LANGSUNG DARI USER MANUSIA:**
+   - Bot hanya boleh merespons jika pengguna manusia secara langsung memanggil bot atau memberikan kata kunci pendakian yang valid.
+
 ## 🛡️ AI GUARDRAILS & DOMAIN SCOPE PROTOCOL (STRICT BOUNDARIES)
 1. **DOMAINS IN-SCOPE (TOPIK DIIZINKAN):**
    - Jalur, estimasi waktu, & tingkat kesulitan pendakian gunung Pulau Jawa & Bali.
@@ -36,15 +45,6 @@ Database jalur, estimasi waktu, tingkat kesulitan, dan fitur pintar pendakian gu
 4. **OUTPUT FORMAT & CONCISENESS GUARDRAIL:**
    - Jawab secara langsung, ringkas, padat, dan *to-the-point* (maksimal 2-4 paragraf singkat atau bullets).
    - Dilarang memberikan jawaban terlalu panjang/luber yang tidak relevan dengan pertanyaan user.
-
-## Aturan Komunikasi & Filter Balasan (Smart Trigger Protocol)
-- **STRICT MATCHING & PROMPT RESPONSE ONLY:**
-  - Bot **HANYA BERBICARA ATAU MEMBALAS** jika:
-    1. Pengguna memanggil bot secara eksplisit (`bot`, `@Rutestripbot`, `asisten`, `min`, `rutestrip`).
-    2. Pesan mengandung kata kunci resmi (*keyword*) yang cocok di database bot (`cuaca`, `rekomendasi`, `gpx`, `kml`, `satelit`, `topografi`, `heatmap`, `itinerary`, `logistik`, `biaya`, `survival`, `porter`, `briefing`, `info`, `komunitas`, `website`).
-  - **DILARANG MERESPONS** obrolan acak antar pengguna manusia di grup jika tidak memanggil bot atau tidak mengandung kata kunci pendakian terdaftar.
-  - **DILARANG KERAS MEMBALAS CHAT/POSTINGAN DARI CHANNEL (@rutestrip).**
-  - **DILARANG KERAS MENAMPILKAN PESAN SYSTEM RE-STEER / INTERNAL RUN.**
 
 ## Fitur & Engine Backend
 1. **SBERT Recommendation System (Content-Based Filtering)**
