@@ -57,7 +57,7 @@ mkdir -p "$DOCS_CACHE"
 cp "$BASE_DIR/skills/pendakian-jawa/SKILL.md" "$SKILLS_DIR/SKILL.md"
 
 # Copy python scripts to ~/.hermes/scripts and $HOME
-for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py daily_web_announcer.py daily_community_announcer.py broadcast_cuaca_group.py broadcast_weekend_getaway.py broadcast_survival_tips.py broadcast_bot_usage.py broadcast_channel_bulletin.py welcome_handler.py auto_delete_broadcast.py info_rutestrip.py subscriber_report.py monitor_dashboard.py api.py; do
+for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py daily_web_announcer.py daily_community_announcer.py broadcast_cuaca_group.py broadcast_weekend_getaway.py broadcast_survival_tips.py broadcast_bot_usage.py broadcast_channel_bulletin.py welcome_handler.py auto_delete_broadcast.py info_rutestrip.py subscriber_report.py monitor_dashboard.py cek_cuaca_gunung.py mountain_newsletter.py api.py; do
     if [ -f "$BASE_DIR/$script" ]; then
         cp "$BASE_DIR/$script" "$SCRIPTS_DIR/$script" 2>/dev/null || true
         cp "$BASE_DIR/$script" "$HOME/$script" 2>/dev/null || true
@@ -92,7 +92,6 @@ fi
 # ------------------------------------------------------------------------------
 echo "⏰ [6/7] Setting up Weather Monitoring, Channel & Group Broadcasts..."
 if command -v hermes &> /dev/null; then
-    # Function to create cron job only if name doesn't exist
     create_cron_if_missing() {
         local name="$1"
         local schedule="$2"
