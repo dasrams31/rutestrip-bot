@@ -22,6 +22,30 @@
           }
         }
       ]
+    },
+    "cc3a3781-ad57-4d2f-99f2-95de1c17be6b": {
+      "session_id": "cc3a3781-ad57-4d2f-99f2-95de1c17be6b",
+      "title": "Itinerary gunung Sindoro 2D1N",
+      "created_at": "2026-09-04T13:19:37Z",
+      "messages": [
+        {
+          "id": "2a01010b-9a7f-42c2-aef1-e078d40bee67",
+          "sender": "user",
+          "text": "Itinerary gunung Sindoro 2D1N",
+          "timestamp": "2026-09-04T13:19:37Z",
+          "meta": {}
+        },
+        {
+          "id": "d0b20cea-f7b8-4694-90f4-6d01cf746905",
+          "sender": "bot",
+          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'Itinerary gunung Sindoro 2D1N':",
+          "timestamp": "2026-09-04T13:19:45Z",
+          "meta": {
+            "guardrail_passed": true,
+            "recommendations_count": 3
+          }
+        }
+      ]
     }
   },
   "9ba3e085-fdd0-4cfd-ba15-78c4acb5517b": {
