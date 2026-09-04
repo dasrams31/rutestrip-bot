@@ -54,24 +54,17 @@ mkdir -p "$SCRIPTS_DIR"
 mkdir -p "$DOCS_CACHE"
 
 cp "$BASE_DIR/skills/pendakian-jawa/SKILL.md" "$SKILLS_DIR/SKILL.md"
-cp "$BASE_DIR/cek_cuaca_gunung.py" "$SCRIPTS_DIR/cek_cuaca_gunung.py"
-cp "$BASE_DIR/auto_readme_commit.py" "$SCRIPTS_DIR/auto_readme_commit.py"
-if [ -f "$BASE_DIR/daily_web_announcer.py" ]; then
-    cp "$BASE_DIR/daily_web_announcer.py" "$SCRIPTS_DIR/daily_web_announcer.py"
-fi
-if [ -f "$BASE_DIR/daily_community_announcer.py" ]; then
-    cp "$BASE_DIR/daily_community_announcer.py" "$SCRIPTS_DIR/daily_community_announcer.py"
-fi
 
-# Symlink or copy python scripts to /root root for legacy paths if needed
-for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py daily_web_announcer.py daily_community_announcer.py api.py; do
+# Copy python scripts to ~/.hermes/scripts and $HOME
+for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py daily_web_announcer.py daily_community_announcer.py broadcast_cuaca_group.py broadcast_weekend_getaway.py broadcast_survival_tips.py broadcast_bot_usage.py welcome_handler.py auto_delete_broadcast.py info_rutestrip.py api.py; do
     if [ -f "$BASE_DIR/$script" ]; then
+        cp "$BASE_DIR/$script" "$SCRIPTS_DIR/$script" 2>/dev/null || true
         cp "$BASE_DIR/$script" "$HOME/$script" 2>/dev/null || true
     fi
 done
 
-# Copy reviews & subscribers if present
-for jsonfile in reviews.json subscribers.json; do
+# Copy JSON data files if present
+for jsonfile in reviews.json subscribers.json info_rutestrip.json recommendation_history.json tips_history.json broadcast_messages.json; do
     if [ -f "$BASE_DIR/$jsonfile" ]; then
         cp "$BASE_DIR/$jsonfile" "$HOME/$jsonfile" 2>/dev/null || true
     fi
@@ -90,17 +83,24 @@ if command -v hermes &> /dev/null; then
     hermes config set telegram.dm_policy open || true
     hermes config set telegram.allow_from "*" || true
     hermes config set telegram.group_allow_from "*" || true
+    hermes config set cron.wrap_response false || true
 fi
 
 # ------------------------------------------------------------------------------
 # 6. Setup Automated Cronjobs & Systemd/Daemon Services
 # ------------------------------------------------------------------------------
-echo "⏰ [6/7] Setting up Weather Monitoring, Announcers & Cronjobs..."
+echo "⏰ [6/7] Setting up Weather Monitoring, Group Broadcasts & Cronjobs..."
 if command -v hermes &> /dev/null; then
-    hermes cron create "every 3h" "Laporkan hasil update cuaca dari script chat ini secara ringkas." --name "monitoring-cuaca-gunung" --script "cek_cuaca_gunung.py" --deliver "origin" || true
-    hermes cron create "every 3h" "Jalankan script auto_readme_commit.py untuk memproses commit acak ke GitLab." --name "random-auto-readme-commit" --script "auto_readme_commit.py" --deliver "origin" || true
+    hermes cron create "every 180m" "Laporkan hasil update cuaca dari script chat ini secara ringkas." --name "monitoring-cuaca-gunung" --script "cek_cuaca_gunung.py" --deliver "origin" || true
+    hermes cron create "every 180m" "Jalankan script auto_readme_commit.py untuk memproses commit acak ke GitLab." --name "random-auto-readme-commit" --script "auto_readme_commit.py" --deliver "origin" || true
     hermes cron create "0 8 * * *" "Jalankan daily web announcer untuk ringkasan pendakian harian." --name "daily-web-announcer" --script "daily_web_announcer.py" --deliver "origin" || true
     hermes cron create "0 9 * * *" "Jalankan daily community announcer untuk update komunitas." --name "daily-community-announcer" --script "daily_community_announcer.py" --deliver "origin" || true
+    
+    # Group Broadcast Cronjobs
+    hermes cron create "0 7,13,19 * * *" "Broadcast cuaca gunung rutin ke grup" --name "broadcast-cuaca-rutestrip-group" --script "broadcast_cuaca_group.py" --no-agent --deliver "telegram:@rutestrip_group" || true
+    hermes cron create "0 6 * * *" "Rekomendasi pendakian harian & weekend getaway" --name "broadcast-weekend-getaway-group" --script "broadcast_weekend_getaway.py" --no-agent --deliver "telegram:@rutestrip_group" || true
+    hermes cron create "0 10 * * 2,4" "Tips survival & etika pendaki" --name "broadcast-survival-tips-group" --script "broadcast_survival_tips.py" --no-agent --deliver "telegram:@rutestrip_group" || true
+    hermes cron create "0 20 * * *" "Broadcast panduan penggunaan bot harian" --name "broadcast-bot-usage-group" --script "broadcast_bot_usage.py" --no-agent --deliver "telegram:@rutestrip_group" || true
 fi
 
 # Launch API Daemon in Background if not running
@@ -121,28 +121,3 @@ echo "======================================================================"
 echo "💡 To test locally, run:"
 echo "   $VENV_PYTHON $BASE_DIR/pendakian_cli.py help"
 echo "======================================================================"
-
-# Deploy Additional Broadcast Scripts
-if [ -f "$BASE_DIR/broadcast_weekend_getaway.py" ]; then
-    cp "$BASE_DIR/broadcast_weekend_getaway.py" "$SCRIPTS_DIR/broadcast_weekend_getaway.py"
-fi
-if [ -f "$BASE_DIR/broadcast_survival_tips.py" ]; then
-    cp "$BASE_DIR/broadcast_survival_tips.py" "$SCRIPTS_DIR/broadcast_survival_tips.py"
-fi
-if [ -f "$BASE_DIR/broadcast_cuaca_group.py" ]; then
-    cp "$BASE_DIR/broadcast_cuaca_group.py" "$SCRIPTS_DIR/broadcast_cuaca_group.py"
-fi
-
-if command -v hermes &> /dev/null; then
-    hermes cron create "0 6 * * *" "Rekomendasi pendakian harian" --name "broadcast-weekend-getaway-group" --script "broadcast_weekend_getaway.py" --no-agent --deliver "telegram:@rutestrip_group" || true
-    hermes cron create "0 10 * * 2,4" "Tips survival & etika pendaki" --name "broadcast-survival-tips-group" --script "broadcast_survival_tips.py" --no-agent --deliver "telegram:@rutestrip_group" || true
-    hermes cron create "0 7,13,19 * * *" "Broadcast cuaca gunung rutin ke grup" --name "broadcast-cuaca-rutestrip-group" --script "broadcast_cuaca_group.py" --no-agent --deliver "telegram:@rutestrip_group" || true
-fi
-
-if [ -f "$BASE_DIR/broadcast_bot_usage.py" ]; then
-    cp "$BASE_DIR/broadcast_bot_usage.py" "$SCRIPTS_DIR/broadcast_bot_usage.py"
-fi
-
-if command -v hermes &> /dev/null; then
-    hermes cron create "0 20 * * *" "Broadcast panduan bot harian jam 8 malam" --name "broadcast-bot-usage-group" --script "broadcast_bot_usage.py" --no-agent --deliver "telegram:@rutestrip_group" || true
-fi
