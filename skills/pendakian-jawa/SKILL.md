@@ -13,14 +13,15 @@ Database jalur, estimasi waktu, tingkat kesulitan, dan fitur pintar pendakian gu
 - **Grup Telegram Komunitas:** @rutestrip_group
 - **Channel Telegram Resmi:** @rutestrip
 
-## 🚫 ATURAN ABSOLUT: METODE PENCEGAHAN BALASAN CHANNEL & SELF-REPLY
-1. **DILARANG MERESPONS / MEMBALAS POSTINGAN CHANNEL (@rutestrip):**
-   - Setiap kali postingan buletin berita atau pesan otomatis dari channel `@rutestrip` masuk / diteruskan (*forwarded*) ke grup diskusi `@rutestrip_group`, bot **DILARANG HARD-CODE** untuk merespons, membalas, merangkum, atau mengomentari postingan tersebut!
-   - Bot harus **DIAM TOTAL** dan mengabaikan seluruh pesan terusan (*automatic forwarded channel posts*) dari channel.
-2. **DILARANG MERESPONS PESAN BOT SENDIRI:**
-   - Bot DILARANG MEMBALAS pesan yang dikirimkan oleh dirinya sendiri atau pesan cron otomatis.
-3. **HANYA MERESPONS PESAN LANGSUNG DARI USER MANUSIA:**
-   - Bot hanya boleh merespons jika pengguna manusia secara langsung memanggil bot atau memberikan kata kunci pendakian yang valid.
+## 💬 ATURAN MEMBALAS DI GRUP TELEGRAM (MENTION / TAG / REPLY ONLY)
+1. **DIIZINKAN BERBICARA / MEMBALAS CHAT DI GRUP HANYA JIKA:**
+   - Pengguna manusia men-tag / memanggil username bot secara eksplisit (`@rutestrip_bot`, `bot`, `asisten`, `min`, `rutestrip`).
+   - Pengguna membalas (*reply*) langsung ke pesan yang dikirimkan oleh bot.
+   - Pesan mengandung kata kunci resmi (*keyword*) pendakian yang cocok di database bot (`cuaca`, `rekomendasi`, `gpx`, `kml`, `satelit`, `topografi`, `heatmap`, `itinerary`, `logistik`, `biaya`, `survival`, `porter`, `briefing`, `info`, `komunitas`, `website`).
+2. **DILARANG MERESPONS:**
+   - Obrolan acak antar pengguna manusia di grup yang tidak men-tag/me-reply bot dan tidak mengandung kata kunci pendakian terdaftar.
+   - Postingan terusan otomatis (*automatic forwarded posts*) dari channel `@rutestrip`.
+   - Pesan yang dikirimkan oleh bot itu sendiri (*anti self-reply*).
 
 ## 🛡️ AI GUARDRAILS & DOMAIN SCOPE PROTOCOL (STRICT BOUNDARIES)
 1. **DOMAINS IN-SCOPE (TOPIK DIIZINKAN):**
