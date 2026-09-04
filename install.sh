@@ -176,3 +176,15 @@ fi
 if command -v hermes &> /dev/null; then
     create_cron_if_missing "notif-pengguna-baru-webchat" "every 1m" "notify_new_web_user.py" "origin" "true"
 fi
+
+if [ -f "$BASE_DIR/portal_news_scraper.py" ]; then
+    cp "$BASE_DIR/portal_news_scraper.py" "$SCRIPTS_DIR/portal_news_scraper.py"
+fi
+if [ -f "$BASE_DIR/broadcast_portal_news_to_users.py" ]; then
+    cp "$BASE_DIR/broadcast_portal_news_to_users.py" "$SCRIPTS_DIR/broadcast_portal_news_to_users.py"
+fi
+
+if command -v hermes &> /dev/null; then
+    create_cron_if_missing "channel-portal-news-bulletin" "0 16 * * *" "portal_news_scraper.py" "telegram:@rutestrip" "true"
+    create_cron_if_missing "user-dm-portal-news-bulletin" "0 16 * * *" "broadcast_portal_news_to_users.py" "origin" "true"
+fi

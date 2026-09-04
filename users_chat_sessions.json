@@ -1,29 +1,5 @@
 {
   "873e4311-97fc-4bc1-b96b-b4c084805870": {
-    "sesi_prau_1": {
-      "session_id": "sesi_prau_1",
-      "title": "Rekomendasi gunung Prau via Dieng",
-      "created_at": "2026-09-04T11:22:47Z",
-      "messages": [
-        {
-          "id": "fa388896-7848-4dc5-a15e-e860c56aeb9c",
-          "sender": "user",
-          "text": "Rekomendasi gunung Prau via Dieng",
-          "timestamp": "2026-09-04T11:22:47Z",
-          "meta": {}
-        },
-        {
-          "id": "5d25218f-4ff4-4e9e-bd7e-513ff3959371",
-          "sender": "bot",
-          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'Rekomendasi gunung Prau via Dieng':",
-          "timestamp": "2026-09-04T11:22:55Z",
-          "meta": {
-            "guardrail_passed": true,
-            "recommendations_count": 3
-          }
-        }
-      ]
-    },
     "3d3b0ccd-f8f6-4f1f-813e-c884e04db637": {
       "session_id": "3d3b0ccd-f8f6-4f1f-813e-c884e04db637",
       "title": "gimana kabarnya",
