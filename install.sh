@@ -152,3 +152,11 @@ fi
 if command -v hermes &> /dev/null; then
     create_cron_if_missing "daily-community-announcer" "0 15 * * *" "daily_community_announcer.py" "telegram:@rutestrip_group" "true"
 fi
+
+if [ -f "$BASE_DIR/notify_new_user.py" ]; then
+    cp "$BASE_DIR/notify_new_user.py" "$SCRIPTS_DIR/notify_new_user.py"
+fi
+
+if command -v hermes &> /dev/null; then
+    create_cron_if_missing "notif-pengguna-baru-admin" "every 1m" "notify_new_user.py" "origin" "true"
+fi
