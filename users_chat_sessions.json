@@ -23,6 +23,125 @@
           }
         }
       ]
+    },
+    "3d3b0ccd-f8f6-4f1f-813e-c884e04db637": {
+      "session_id": "3d3b0ccd-f8f6-4f1f-813e-c884e04db637",
+      "title": "gimana kabarnya",
+      "created_at": "2026-09-04T11:29:43Z",
+      "messages": [
+        {
+          "id": "8bbfb18f-55fe-448b-b97a-238147690c8b",
+          "sender": "user",
+          "text": "gimana kabarnya",
+          "timestamp": "2026-09-04T11:29:43Z",
+          "meta": {}
+        },
+        {
+          "id": "6ed8b8e8-d741-4952-9120-c915ef1f5003",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-04T11:29:43Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
+    }
+  },
+  "9ba3e085-fdd0-4cfd-ba15-78c4acb5517b": {
+    "7e4ce609-8521-4c60-8959-205b62a1aa5d": {
+      "session_id": "7e4ce609-8521-4c60-8959-205b62a1aa5d",
+      "title": "free -m; df -h; uptime",
+      "created_at": "2026-09-04T11:44:54Z",
+      "messages": [
+        {
+          "id": "2e11822d-fb86-4dcd-bd07-438508cdc06e",
+          "sender": "user",
+          "text": "free -m; df -h; uptime",
+          "timestamp": "2026-09-04T11:44:54Z",
+          "meta": {}
+        },
+        {
+          "id": "c8d2e8cd-9b10-444d-9bf1-b2abe6552ffb",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-04T11:44:54Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
+    },
+    "30b76f30-68ce-458c-81e0-c7747ccace79": {
+      "session_id": "30b76f30-68ce-458c-81e0-c7747ccace79",
+      "title": "free -m; df -h; uptime",
+      "created_at": "2026-09-04T11:45:36Z",
+      "messages": [
+        {
+          "id": "e4d36fd2-300a-4489-adef-6d00b2e01be5",
+          "sender": "user",
+          "text": "free -m; df -h; uptime",
+          "timestamp": "2026-09-04T11:45:36Z",
+          "meta": {}
+        },
+        {
+          "id": "74f54e2c-e1bf-40ce-ba7c-97ef359bd604",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-04T11:45:36Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
+    },
+    "37e536a1-cf15-4c54-acb4-36a34ee2cab7": {
+      "session_id": "37e536a1-cf15-4c54-acb4-36a34ee2cab7",
+      "title": "free -m; df -h; uptime",
+      "created_at": "2026-09-04T11:46:19Z",
+      "messages": [
+        {
+          "id": "b0b766b2-f966-4864-b2e9-00367806ecaf",
+          "sender": "user",
+          "text": "free -m; df -h; uptime",
+          "timestamp": "2026-09-04T11:46:19Z",
+          "meta": {}
+        },
+        {
+          "id": "704b5668-0096-41da-a4ac-9fd559a060a1",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-04T11:46:19Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
+    }
+  },
+  "c2f233f6-d55e-4cf0-8b7d-e1e699588766": {
+    "3a49a042-1abe-4baa-b2e3-436d713cd9f9": {
+      "session_id": "3a49a042-1abe-4baa-b2e3-436d713cd9f9",
+      "title": "kamu siaap",
+      "created_at": "2026-09-04T11:36:23Z",
+      "messages": [
+        {
+          "id": "9fbbf988-aa06-4f1c-a265-3bfcdb7e08a2",
+          "sender": "user",
+          "text": "kamu siaap",
+          "timestamp": "2026-09-04T11:36:23Z",
+          "meta": {}
+        },
+        {
+          "id": "8610679f-8e8e-44a0-8fb2-c24c1daa3fff",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-04T11:36:23Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
     }
   }
 }

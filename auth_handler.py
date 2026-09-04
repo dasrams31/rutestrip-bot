@@ -115,3 +115,32 @@ def verify_token(token: str):
                 }
             }
     return {"status": "error", "valid": False, "message": "Token tidak valid atau telah kedaluwarsa."}
+
+def reset_password(username_or_email: str, new_password: str):
+    users = _load_users()
+    query = username_or_email.strip().lower()
+    
+    if not query or not new_password:
+        return {"status": "error", "message": "Username/email dan password baru wajib diisi."}
+        
+    target_user = None
+    for uid, uinfo in users.items():
+        if uinfo.get("username") == query or uinfo.get("email") == query:
+            target_user = uinfo
+            break
+            
+    if not target_user:
+        return {"status": "error", "message": "Username atau email tidak ditemukan."}
+        
+    target_user["password_hash"] = hash_password(new_password)
+    # Revoke token lama setelah reset
+    raw_token_str = f"{target_user['user_id']}_{time.time()}"
+    target_user["token"] = f"rutestrip_{hashlib.md5(raw_token_str.encode()).hexdigest()}"
+    
+    users[target_user["user_id"]] = target_user
+    _save_users(users)
+    
+    return {
+        "status": "success",
+        "message": f"Password untuk akun {target_user['username']} berhasil diperbarui!"
+    }

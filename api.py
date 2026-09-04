@@ -32,8 +32,8 @@ import chat_history_handler
 
 app = FastAPI(
     title='RuteStrip Pendakian API',
-    description='REST API Asisten Pendakian Gunung, Auth Service & Multi-Session Chat History untuk WebChat AI (Register, Login, Token Verify, Sessions Chat, Guardrail, Rekomendasi, Cuaca, GPX, Satelit, Logistik, Bulletin, Stats)',
-    version='1.6.0'
+    description='REST API Asisten Pendakian Gunung, Auth Service, Reset Password & Multi-Session Chat History untuk WebChat AI',
+    version='1.7.0'
 )
 
 app.add_middleware(
@@ -58,6 +58,10 @@ class UserLoginModel(BaseModel):
     username_or_email: str
     password: str
 
+class ResetPasswordModel(BaseModel):
+    username_or_email: str
+    new_password: str
+
 class ChatPromptModel(BaseModel):
     prompt: str
     session_id: Optional[str] = None
@@ -66,10 +70,55 @@ class ChatPromptModel(BaseModel):
 def root():
     return {
         'status': 'online',
-        'service': 'RuteStrip Pendakian Bot REST API, WebChat Auth & Session-based Chat History',
-        'version': '1.6.0',
+        'service': 'RuteStrip Pendakian Bot REST API, WebChat Auth & Reset Password',
+        'version': '1.7.0',
         'docs_url': '/docs'
     }
+
+# --- AUTHENTICATION & PASSWORD RESET ENDPOINTS (WEBCHAT AI ASSISTANT) ---
+
+@app.post('/api/auth/register', summary='Registrasi Akun Baru WebChat AI')
+def register_account(body: UserRegisterModel):
+    res = auth_handler.register_user(
+        username=body.username,
+        email=body.email,
+        password=body.password,
+        full_name=body.full_name or body.username
+    )
+    if res.get('status') == 'error':
+        raise HTTPException(status_code=400, detail=res.get('message'))
+    return res
+
+@app.post('/api/auth/login', summary='Login Pengguna WebChat AI')
+def login_account(body: UserLoginModel):
+    res = auth_handler.login_user(
+        username_or_email=body.username_or_email,
+        password=body.password
+    )
+    if res.get('status') == 'error':
+        raise HTTPException(status_code=401, detail=res.get('message'))
+    return res
+
+@app.post('/api/auth/reset-password', summary='Reset Password Akun WebChat AI')
+def reset_user_password(body: ResetPasswordModel):
+    res = auth_handler.reset_password(
+        username_or_email=body.username_or_email,
+        new_password=body.new_password
+    )
+    if res.get('status') == 'error':
+        raise HTTPException(status_code=400, detail=res.get('message'))
+    return res
+
+@app.get('/api/auth/me', summary='Verifikasi Sesi Token & Profil Pengguna')
+def get_user_profile(authorization: Optional[str] = Header(None, description='Bearer <token>')):
+    if not authorization:
+        raise HTTPException(status_code=401, detail='Authorization header wajib disertakan.')
+    
+    token = authorization.replace('Bearer ', '').strip()
+    res = auth_handler.verify_token(token)
+    if not res.get('valid'):
+        raise HTTPException(status_code=401, detail=res.get('message'))
+    return res
 
 # --- AI CHAT QUERY & MULTI-SESSION CHAT HISTORY ENDPOINTS ---
 
@@ -84,10 +133,8 @@ def process_chat_query(body: ChatPromptModel, authorization: Optional[str] = Hea
 
     session_id = body.session_id or str(uuid.uuid4())
 
-    # 1. Simpan pesan pengguna ke sesi riwayat
     chat_history_handler.save_session_message(user_id=user_id, session_id=session_id, sender='user', text=body.prompt)
 
-    # 2. Pengecekan Guardrail Topik & Keamanan
     g_res = guardrail.validate_webchat_query(body.prompt)
     if not g_res.get('allowed'):
         bot_reply = g_res.get('message')
@@ -99,7 +146,6 @@ def process_chat_query(body: ChatPromptModel, authorization: Optional[str] = Hea
             'response': bot_reply
         }
 
-    # 3. Proses Pencarian Rekomendasi / Jawaban Pendakian AI
     query = g_res.get('clean_prompt')
     rec_results = rec_system.search(query, top_n=3)
     
@@ -202,41 +248,6 @@ def delete_all_chat_history(authorization: Optional[str] = Header(None)):
         'status': 'success',
         'message': 'Seluruh riwayat percakapan berhasil dibersihkan.'
     }
-
-# --- AUTHENTICATION ENDPOINTS (WEBCHAT AI ASSISTANT) ---
-
-@app.post('/api/auth/register', summary='Registrasi Akun Baru WebChat AI')
-def register_account(body: UserRegisterModel):
-    res = auth_handler.register_user(
-        username=body.username,
-        email=body.email,
-        password=body.password,
-        full_name=body.full_name or body.username
-    )
-    if res.get('status') == 'error':
-        raise HTTPException(status_code=400, detail=res.get('message'))
-    return res
-
-@app.post('/api/auth/login', summary='Login Pengguna WebChat AI')
-def login_account(body: UserLoginModel):
-    res = auth_handler.login_user(
-        username_or_email=body.username_or_email,
-        password=body.password
-    )
-    if res.get('status') == 'error':
-        raise HTTPException(status_code=401, detail=res.get('message'))
-    return res
-
-@app.get('/api/auth/me', summary='Verifikasi Sesi Token & Profil Pengguna')
-def get_user_profile(authorization: Optional[str] = Header(None, description='Bearer <token>')):
-    if not authorization:
-        raise HTTPException(status_code=401, detail='Authorization header wajib disertakan.')
-    
-    token = authorization.replace('Bearer ', '').strip()
-    res = auth_handler.verify_token(token)
-    if not res.get('valid'):
-        raise HTTPException(status_code=401, detail=res.get('message'))
-    return res
 
 # --- ENDPOINTS INFORMASI & BOT ---
 
