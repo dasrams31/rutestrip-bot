@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
+import os
+import json
 import random
+
+STATE_FILE = "/root/rutestrip-bot/tips_history.json"
 
 SURVIVAL_TIPS = [
     {
@@ -46,10 +50,51 @@ SURVIVAL_TIPS = [
             "Minum secara berkala dalam tegukan kecil, jangan menunggu sampai terlalu haus.",
             "Gunakan penyaring air (water filter) atau rebus air jika mengambil dari mata air alam."
         ]
+    },
+    {
+        "judul": "Persiapan & Pilihan Pakaian Pendakian Layering System 🧥",
+        "poin": [
+            "Base Layer: Bawa baju berbahan sintetis/quick-dry (hindari bahan katun/jeans).",
+            "Insulating Layer: Jaket fleece atau jaket bulu angsa (down jacket) untuk menjaga suhu tubuh.",
+            "Outer Layer: Jaket windproof dan waterproof (jas hujan/hardshell) penahan angin dan hujan."
+        ]
+    },
+    {
+        "judul": "Tips Navigasi & Pencegahan Tersesat Saat Kabut Tebal 🌫️",
+        "poin": [
+            "Jangan pernah terpisah dari rombongan, atur kecepatan sesuai pendaki tersantai.",
+            "Gunakan aplikasi peta offline (OsmAnd, Locus, Garmin) yang sudah di-download file GPX-nya.",
+            "Tandai patok atau plang penunjuk arah di setiap persimpangan jalur."
+        ]
     }
 ]
 
-item = random.choice(SURVIVAL_TIPS)
+def get_next_tips():
+    used = []
+    if os.path.exists(STATE_FILE):
+        try:
+            with open(STATE_FILE, "r") as f:
+                used = json.load(f)
+        except Exception:
+            used = []
+
+    available = [item for item in SURVIVAL_TIPS if item["judul"] not in used]
+    if not available:
+        used = []
+        available = SURVIVAL_TIPS
+
+    selected = random.choice(available)
+    used.append(selected["judul"])
+
+    try:
+        with open(STATE_FILE, "w") as f:
+            json.dump(used, f, indent=2)
+    except Exception:
+        pass
+
+    return selected
+
+item = get_next_tips()
 
 output = f"""EDUKASI SURVIVAL & ETIKA PENDAKI RUTESTRIP 🦺
 Tips Keselamatan & Kelestarian Alam

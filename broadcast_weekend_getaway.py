@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
+import os
+import json
 import random
+
+STATE_FILE = "/root/rutestrip-bot/recommendation_history.json"
 
 RECOMMENDATIONS = [
     {
@@ -57,10 +61,75 @@ RECOMMENDATIONS = [
         "estimasi": "6 - 7 Jam",
         "highlight": "Negeri di atas awan dengan samudra awan tebal di pagi hari dan trek menanjak tanpa bonus.",
         "tips": "Latih fisik kaki sebelum mendaki dan pastikan pasokan air minum mencukupi."
+    },
+    {
+        "nama": "Gunung Merbabu via Selo",
+        "tinggi": "3.145 mdpl",
+        "level": "Menengah",
+        "estimasi": "6 - 7 Jam",
+        "highlight": "Hamparan sabana luas nan hijau, pemandangan Gunung Merapi dari dekat, dan sunset memukau di Pos 4 / Sabana 1.",
+        "tips": "Bawa stok air minum yang cukup karena mata air hanya ada di bagian bawah jalur."
+    },
+    {
+        "nama": "Gunung Sumbing via Kaliangkrik / Adipura",
+        "tinggi": "3.371 mdpl",
+        "level": "Menengah - Tantangan",
+        "estimasi": "7 - 8 Jam",
+        "highlight": "Desa Nepal van Java yang ikonik di kaki gunung, lautan awan menakjubkan, dan kawah aktif Sumbing.",
+        "tips": "Jalur cukup terik di bagian awal, disarankan memakai topi atau balaclava serta sunscreen."
+    },
+    {
+        "nama": "Gunung Papandayan via Cisurupan",
+        "tinggi": "2.665 mdpl",
+        "level": "Sangat Ramah Pemula",
+        "estimasi": "2 - 3 Jam",
+        "highlight": "Kawasan kawah aktif yang spektakuler, Hutan Mati yang eksotis, dan padang Edelweiss Tegal Panjang.",
+        "tips": "Jalur sangat bersahabat bagi pendaki pemula maupun keluarga."
+    },
+    {
+        "nama": "Gunung Slamet via Bambangan",
+        "tinggi": "3.428 mdpl",
+        "level": "Menengah - Berat",
+        "estimasi": "9 - 11 Jam",
+        "highlight": "Atap tertinggi Jawa Tengah, medan batuan vulkanik puncak yang menantang, dan pemandangan pulau Jawa yang luas.",
+        "tips": "Gunakan gaiter dan alas kaki ber-grip kuat untuk melewati tanjakan pasir dan batuan puncak."
+    },
+    {
+        "nama": "Gunung Sindoro via Kledung",
+        "tinggi": "3.153 mdpl",
+        "level": "Menengah",
+        "estimasi": "6 - 7 Jam",
+        "highlight": "Sabana edelweiss di Pos 3, pemandangan Gunung Sumbing di seberang, dan kawah pasir luas di puncak.",
+        "tips": "Waspadai bau belerang di sekitar puncak jika angin berhembus ke arah jalur."
     }
 ]
 
-item = random.choice(RECOMMENDATIONS)
+def get_next_recommendation():
+    used = []
+    if os.path.exists(STATE_FILE):
+        try:
+            with open(STATE_FILE, "r") as f:
+                used = json.load(f)
+        except Exception:
+            used = []
+
+    available = [item for item in RECOMMENDATIONS if item["nama"] not in used]
+    if not available:
+        used = []
+        available = RECOMMENDATIONS
+
+    selected = random.choice(available)
+    used.append(selected["nama"])
+
+    try:
+        with open(STATE_FILE, "w") as f:
+            json.dump(used, f, indent=2)
+    except Exception:
+        pass
+
+    return selected
+
+item = get_next_recommendation()
 
 output = f"""REKOMENDASI PENDAKIAN HARIAN & WEEKEND GETAWAY 🌄
 Inspirasi Rute Pendakian RuteStrip
