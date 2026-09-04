@@ -1,69 +1,110 @@
-# 🏔️ RuteStrip Pendakian Bot & REST API Engine
+<div align="center">
+  <img src="rutestrip_logo.png" alt="RuteStrip Pendakian Bot Logo" width="220"/>
+  <h1>🏔️ RuteStrip Pendakian Bot</h1>
+  <p><b>Asisten Pintar & Engine Rekomendasi Pendakian Gunung berbasis AI (SBERT), Analisis GPX, Peta Satelit, Topografi Kontur, Forecast Cuaca Realtime, & Audio Voice Briefing.</b></p>
 
-RuteStrip Pendakian Bot adalah asisten AI pintar, visualizer peta satelit/topografi, serta kalkulator pendakian gunung profesional untuk kawasan pendakian gunung di Indonesia (khususnya Pulau Jawa).
-
----
-
-## 🌟 Informasi Resmi RuteStrip Platform
-
-- 🌐 **Website Utama:** https://rutestrip.web.id
-- 🤖 **Web Chat AI:** https://airutestrip.web.id
-- 💬 **Telegram Bot:** https://t.me/rutestrip_bot
-- 📢 **Channel Resmi Telegram:** https://t.me/rutestrip
+  [![GitLab](https://img.shields.io/badge/GitLab-RuteStrip--Bot-orange?logo=gitlab)](https://gitlab.com/RamsNotes31/rutestrip-bot)
+  [![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python)](https://python.org)
+  [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+</div>
 
 ---
 
-## ⚡ Fitur Utama System
+## 🖥️ Live Realtime Monitoring Dashboard & REST API
 
-1. **🤖 Rekomendasi Rute AI (SBERT + Cosine Similarity):**
-   - Engine rekomendasi berbasis AI SBERT (`sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`) 384-dimensi.
-   - Pengecekan elevasi, Naismith duration, & skor relevansi query.
+RuteStrip dilengkapi dengan **Realtime Infrastructure Dashboard** dan **REST API Service** untuk memantau performa VPS, status bot, serta mengintegrasikan data pendakian ke Web/Mobile App:
 
-2. **🗺️ Visualisasi Peta Satelit & Topografi Kontur:**
-   - Citra Satelit Esri WorldImagery resolusi tinggi & Peta fisik topografi kontur.
-   - Dilengkapi garis rute trek GPX, waypoint pos, & telemetri elevasi.
-
-3. **📡 Monitoring Cuaca Realtime (Open-Meteo API):**
-   - Forecast cuaca realtime basecamp & puncak gunung (Suhu, Angin, Peringatan Cuaca Ekstrem).
-
-4. **⏱️ Itinerary & Kalkulator Pendakian:**
-   - Naismith Itinerary Generator (2D1N vs Tek-tok).
-   - Kalkulator Logistik Air (3L/orang/hari) & Estimasi Budget Biaya Pendakian.
-
-5. **🧳 Kontak Porter & Basecamp Directory:**
-   - Database nomor kontak basecamp pendakian & tarif porter lokal.
-
-6. **🚑 First Aid & Survival Guide:**
-   - Panduan darurat penanganan Hipotermia, AMS, & STOP Rule di alam bebas.
-
-7. **📥 Export Peta Offline (.gpx & .kml):**
-   - Download file rute `.gpx` & `.kml` untuk OsmAnd, Maps.me, Locus Map, atau Garmin.
+* 📊 **Realtime Status Dashboard:** `http://188.166.224.148:9000`
+* 🌐 **REST API Interactive Docs:** `http://188.166.224.148:8000/docs`
+* 🌐 **Website Utama:** [https://rutestrip.web.id](https://rutestrip.web.id)
+* 🤖 **AI Chat Assistant:** [https://airutestrip.web.id](https://airutestrip.web.id)
+* 💬 **Grup Telegram Komunitas:** [@rutestrip_group](https://t.me/rutestrip_group)
+* 📢 **Channel Telegram Resmi:** [@rutestrip](https://t.me/rutestrip)
 
 ---
 
-## 🚀 Perintah Navigasi Telegram Bot
+## ⚡ Quickstart: One-Click Automated Installer (VPS Ubuntu)
 
-Pengguna dapat mengetik kata kunci langsung di Telegram Bot tanpa tanda `/`:
+Untuk menginstall seluruh sistem RuteStrip Bot di VPS Ubuntu baru, cukup jalankan **1 baris perintah** di terminal:
 
-- `help` / `menu` : Menampilkan menu utama & panduan
-- `rekomendasi <query>` : Rekomendasi rute AI SBERT
-- `satelit <gunung>` : Peta citra satelit Esri + telemetri
-- `topografi <gunung>` : Peta topografi kontur + telemetri
-- `cuaca <gunung>` : Prakiraan cuaca realtime
-- `itinerary <gunung> <mode>` : Timeline Naismith 2D1N/Tek-tok
-- `biaya <gunung> <orang> <hari>` : Estimasi total budget
-- `logistik <orang> <hari>` : Kalkulator kebutuhan air & bahan
-- `gpx <gunung>` : Export track file `.gpx` / `.kml`
-- `porter <gunung>` : Kontak basecamp & ojek lokal
-- `survival <topik>` : Panduan first-aid darurat
+```bash
+curl -fsSL https://gitlab.com/RamsNotes31/rutestrip-bot/-/raw/main/install.sh | bash
+```
+
+Perintah di atas otomatis:
+- Mengunduh & menginstall paket sistem Linux (`git`, `ffmpeg`, `curl`, `python3`).
+- Menyiapkan environment Python via `uv` & menginstall dependensi PyTorch CPU, SBERT, Matplotlib, Contextily, Psutil & Edge-TTS.
+- Memasang Custom Skill `pendakian-jawa`, script backend, & konfigurasi Telegram DM Open Policy (`dm_policy: open`).
+- Mengaktifkan cronjob pemantauan cuaca otomatis 7 gunung utama Pulau Jawa & auto-commit harian.
+
+---
+
+## 🌟 Fitur Utama & Arsitektur Sistem
+
+1. **🔒 Keamanan Lapis Ganda & Sandbox:**
+   - **Public Open Policy (`dm_policy: open`):** Pengguna umum di Telegram dapat langsung menggunakan bot tanpa perlu kode verifikasi/pairing.
+   - **Strict Input Sanitizer Sandbox:** Pengguna umum terisolasi 100% dari sistem VPS. Perintah modifikasi file/sistem otomatis ditolak. Hanya Pemilik/Admin Bot yang berhak menambah/mengedit fitur.
+
+2. **🤖 Rekomendasi Rute AI (SBERT + Cosine Similarity):**
+   - Menggunakan model `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` (384 dimensi).
+   - Fitur GPX (Jarak 3D, Elevation Gain, Grade %, Naismith Duration) + Deskripsi Manual.
+   - High-speed JSON Caching (< 0.05 detik per query).
+
+3. **🗺️ Visualisasi Peta Satelit & Topografi Kontur:**
+   - **Peta Citra Satelit:** `Esri.WorldImagery` resolusi tinggi via Web Mercator EPSG:3857 (`satelit <gunung>`).
+   - **Peta Topografi (Kontur):** Peta fisik topografi OpenTopoMap / Esri WorldTopo (`topografi <gunung>` atau `topo <gunung>`).
+   - **Informasi Telemetri Otomatis:** Setiap peta dilengkapi data **Jarak Rute (`km`)**, **Total Elevation Gain (`+m`)**, dan **Rata-Rata Kemiringan (`%`)**.
+   - **Smart Peak & Pos Markers:** Indikator nama-nama puncak spesifik & Waypoint Pos resmi.
+   - **Trail Heatmap:** Kepadatan rute pendakian Pulau Jawa (`heatmap`).
+
+4. **🎙️ Audio Voice & Text Briefing (Indonesian Ranger Tone):**
+   - Sintesis suara pemandu ranger lokal Indonesia (`id-ID-ArdiNeural` via Edge-TTS & Opus).
+   - Format ganda: Teks Markdown + Bubble Voice Note Telegram (`briefing <gunung>`).
+
+5. **📡 Monitoring Cuaca Realtime (Open-Meteo API & Cronjob):**
+   - Update cuaca berkala tiap 3 jam (Suhu, Angin, Peringatan Hujan/Badai).
+   - Alert otomatis jika terjadi cuaca ekstrem di kawasan pendakian.
+
+6. **⏱️ Itinerary & Kalkulator Pendakian:**
+   - **Naismith Itinerary Generator:** Estimasi jam per pos (2D1N vs Tek-tok).
+   - **Kalkulator Logistik & Air:** Estimasi konsumsi air (3L/orang/hari), tenda, gas kaleng, P3K (`logistik <orang> <hari>`).
+   - **Kalkulator Biaya Pendakian:** Estimasi total budget simaksi, ojek, parkir, & konsumsi (`biaya <gunung> <orang> <hari>`).
+
+7. **🗺️ Export Peta Offline (.gpx & .kml):**
+   - Download file track `.gpx` & `.kml` langsung untuk OsmAnd, Maps.me, Locus Map, atau Garmin (`gpx <gunung>` / `kml <gunung>`).
+
+8. **🧳 Kontak Porter & Basecamp Directory:**
+   - Database telepon basecamp, ojek lokal, & estimasi tarif porter (`porter <gunung>`).
+
+9. **🚑 First Aid & Survival Guide Offline:**
+   - Panduan darurat penanganan Hipotermia, AMS, Tersesat (STOP Rule), & Gigitan Ular (`survival <topik>`).
+
+---
+
+## 🚀 Perintah Navigasi (Command CLI)
+
+Bot mendukung kata kunci langsung tanpa tanda `/` untuk menghindari bentrok framework internal:
+
+| Perintah | Deskripsi | Contoh |
+|---|---|---|
+| `help` / `menu` | Menampilkan menu panduan & daftar navigasi | `help` |
+| `info` / `komunitas` | Informasi link website, AI chat, & grup komunitas | `info` |
+| `rekomendasi <query>` | Rekomendasi rute AI SBERT + Cosine Sim | `rekomendasi jalur landai pemula` |
+| `gpx <gunung>` | Export track file `.gpx` | `gpx sumbing` |
+| `kml <gunung>` | Export track file `.kml` | `kml merbabu` |
+| `heatmap [gunung]` | Grafik kontur topografi & heatmap rute | `heatmap sumbing` |
+| `satelit [gunung]` | Peta citra satelit Esri World Imagery + Telemetri | `satelit sumbing` |
+| `topografi [gunung]` | Peta topografi OpenTopoMap + Telemetri | `topografi slamet` |
+| `briefing <gunung>` | Dual briefing (Teks + Voice Note Ranger) | `briefing merbabu` |
+| `cuaca <gunung>` | Forecast cuaca realtime basecamp/puncak | `cuaca prau` |
+| `itinerary <gunung> <mode>`| Timeline Naismith jam per pos | `itinerary sumbing 2d1n` |
+| `logistik <orang> <hari>` | Kalkulator air & kebutuhan perlengkapan | `logistik 4 2` |
+| `biaya <gunung> <orang> <hari>` | Estimasi total budget pendakian | `biaya sumbing 4 2` |
+| `survival <topik>` | Panduan first aid darurat | `survival hipotermia` |
+| `porter <gunung>` | Kontak basecamp, ojek, & tarif porter | `porter sumbing` |
 
 ---
 
 ## 📄 Lisensi
 
-MIT License © 2026 RuteStrip Pendakian Team.
-
-
-<!-- AUTO_SYNC_START -->
-> 🔄 *Last Automated Status Check: 2026-09-04 05:36:24 WIB*
-<!-- AUTO_SYNC_END -->
+MIT License © 2026 RuteStrip Pendakian Bot Team.

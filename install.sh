@@ -125,3 +125,14 @@ echo "======================================================================"
 echo "💡 To test locally, run:"
 echo "   $VENV_PYTHON $BASE_DIR/pendakian_cli.py help"
 echo "======================================================================"
+
+# Deploy Monitoring Dashboard
+if [ -f "$BASE_DIR/monitor_dashboard.py" ]; then
+    cp "$BASE_DIR/monitor_dashboard.py" "$SCRIPTS_DIR/monitor_dashboard.py"
+    cp "$BASE_DIR/monitor_dashboard.py" "$HOME/monitor_dashboard.py"
+fi
+
+if ! pgrep -f "uvicorn monitor_dashboard:app" > /dev/null; then
+    echo "📊 Starting Monitoring Dashboard Service (Port 9000)..."
+    nohup "$VENV_PYTHON" -m uvicorn monitor_dashboard:app --host 0.0.0.0 --port 9000 > /dev/null 2>&1 &
+fi
