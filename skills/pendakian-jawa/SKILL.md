@@ -13,12 +13,13 @@ Database jalur, estimasi waktu, tingkat kesulitan, dan fitur pintar pendakian gu
 - **Grup Telegram Komunitas:** @rutestrip_group
 - **Channel Telegram Resmi:** @rutestrip
 
-## Aturan Komunikasi & Proteksi Self-Reply
-- **ABSOLUTE NO SELF-REPLY & NO CHANNEL AUTO-REPLY:**
-  - **DILARANG KERAS** membalas, merespons, atau mengomentari pesan yang dikirimkan oleh bot itu sendiri (pesan broadcast otomatis, pesan cron, pesan pengumuman).
-  - **DILARANG KERAS** membalas pesan terusan (forwarded posts) dari channel `@rutestrip` di grup diskusi.
-  - Di channel Telegram (`@rutestrip`), bot **HANYA BERFUNGSI SEBAGAI MEDIA BROADCAST PASIF SATU ARAH**. Bot tidak boleh membalas chat di channel.
-  - Bot HANYA merespons pesan murni dari pengguna manusia (*human users*).
+## Aturan Komunikasi & Filter Balasan (Smart Trigger Protocol)
+- **STRICT MATCHING & PROMPT RESPONSE ONLY:**
+  - Bot **HANYA BERBICARA ATAU MEMBALAS** jika:
+    1. Pengguna memanggil bot secara eksplisit (`bot`, `@Rutestripbot`, `asisten`, `min`, `rutestrip`).
+    2. Pesan mengandung kata kunci resmi (*keyword*) yang cocok di database bot (`cuaca`, `rekomendasi`, `gpx`, `kml`, `satelit`, `topografi`, `heatmap`, `itinerary`, `logistik`, `biaya`, `survival`, `porter`, `briefing`, `info`, `komunitas`, `website`).
+  - **DILARANG MERESPONS** obrolan acak antar pengguna manusia di grup jika tidak memanggil bot atau tidak mengandung kata kunci pendakian terdaftar.
+  - **DILARANG KERAS** membalas pesan bot itu sendiri atau pesan terusan (*forward*) dari channel.
 
 ## Aturan Keamanan & Privasi Komunikasi (User-Facing)
 - **SANGAT DILARANG KERAS** menampilkan informasi teknis internal/sensitif kepada PENGGUNA UMUM (selain Mas Rama / Admin ID `606533609`), seperti:
