@@ -26,11 +26,12 @@ import broadcast_weekend_getaway
 import broadcast_survival_tips
 import broadcast_bot_usage
 import auth_handler
+import guardrail
 
 app = FastAPI(
     title='RuteStrip Pendakian API',
-    description='REST API Asisten Pendakian Gunung & Auth Service untuk Web Chat AI (Register, Login, Token Verify, Rekomendasi, Cuaca, GPX, Satelit, Logistik, Bulletin, Stats)',
-    version='1.3.0'
+    description='REST API Asisten Pendakian Gunung & Auth Service untuk WebChat AI (Register, Login, Token Verify, AI Chat Guardrail, Rekomendasi, Cuaca, GPX, Satelit, Logistik, Bulletin, Stats)',
+    version='1.4.0'
 )
 
 app.add_middleware(
@@ -44,7 +45,7 @@ app.add_middleware(
 rec_system = RecommendationSystem()
 rec_system.index_directory('/root/rutestrip-bot/gpx_db', use_cache=True)
 
-# Schema Models untuk Authentication Webchat AI
+# Schema Models
 class UserRegisterModel(BaseModel):
     username: str
     email: str
@@ -55,13 +56,50 @@ class UserLoginModel(BaseModel):
     username_or_email: str
     password: str
 
+class ChatPromptModel(BaseModel):
+    prompt: str
+
 @app.get('/')
 def root():
     return {
         'status': 'online',
-        'service': 'RuteStrip Pendakian Bot REST API & WebChat Auth',
-        'version': '1.3.0',
+        'service': 'RuteStrip Pendakian Bot REST API, WebChat Auth & Guardrail Service',
+        'version': '1.4.0',
         'docs_url': '/docs'
+    }
+
+# --- AI CHAT GUARDRAIL ENDPOINT (WEBCHAT AI ASSISTANT) ---
+
+@app.post('/api/chat/query', summary='Filter & Process WebChat AI Prompt via Guardrail')
+def process_chat_query(body: ChatPromptModel, authorization: Optional[str] = Header(None)):
+    # 1. Pengecekan Guardrail Topik & Keamanan
+    g_res = guardrail.validate_webchat_query(body.prompt)
+    if not g_res.get('allowed'):
+        return {
+            'status': 'rejected',
+            'guardrail_passed': False,
+            'response': g_res.get('message')
+        }
+
+    # 2. Proses Pencarian Rekomendasi / Jawaban Pendakian AI
+    query = g_res.get('clean_prompt')
+    rec_results = rec_system.search(query, top_n=3)
+    
+    formatted_results = []
+    for r in rec_results:
+        item = r['item']
+        formatted_results.append({
+            'mountain_route': item['name'],
+            'stats': item['stats'],
+            'narrative': item['narrative']
+        })
+
+    return {
+        'status': 'success',
+        'guardrail_passed': True,
+        'query': query,
+        'recommendations': formatted_results,
+        'response': f"Berikut adalah informasi pendakian terbaik berdasarkan kriteria '{query}':"
     }
 
 # --- AUTHENTICATION ENDPOINTS (WEBCHAT AI ASSISTANT) ---
