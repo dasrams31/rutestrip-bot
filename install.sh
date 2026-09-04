@@ -44,6 +44,7 @@ export VENV_PYTHON="$BASE_DIR/pendakian_env/bin/python"
 echo "📥 Installing PyTorch CPU & Python Packages..."
 uv pip install --python "$VENV_PYTHON" torch torchaudio --index-url https://download.pytorch.org/whl/cpu
 uv pip install --python "$VENV_PYTHON" -r "$BASE_DIR/requirements.txt"
+uv pip install --python "$VENV_PYTHON" psutil
 
 # ------------------------------------------------------------------------------
 # 4. Hermes Framework & Skill Placement
@@ -56,7 +57,7 @@ mkdir -p "$DOCS_CACHE"
 cp "$BASE_DIR/skills/pendakian-jawa/SKILL.md" "$SKILLS_DIR/SKILL.md"
 
 # Copy python scripts to ~/.hermes/scripts and $HOME
-for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py daily_web_announcer.py daily_community_announcer.py broadcast_cuaca_group.py broadcast_weekend_getaway.py broadcast_survival_tips.py broadcast_bot_usage.py broadcast_channel_bulletin.py welcome_handler.py auto_delete_broadcast.py info_rutestrip.py subscriber_report.py api.py; do
+for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py daily_web_announcer.py daily_community_announcer.py broadcast_cuaca_group.py broadcast_weekend_getaway.py broadcast_survival_tips.py broadcast_bot_usage.py broadcast_channel_bulletin.py welcome_handler.py auto_delete_broadcast.py info_rutestrip.py subscriber_report.py monitor_dashboard.py api.py; do
     if [ -f "$BASE_DIR/$script" ]; then
         cp "$BASE_DIR/$script" "$SCRIPTS_DIR/$script" 2>/dev/null || true
         cp "$BASE_DIR/$script" "$HOME/$script" 2>/dev/null || true
@@ -87,30 +88,46 @@ if command -v hermes &> /dev/null; then
 fi
 
 # ------------------------------------------------------------------------------
-# 6. Setup Automated Cronjobs & Systemd/Daemon Services
+# 6. Setup Automated Cronjobs & Systemd/Daemon Services (Idempotent Check)
 # ------------------------------------------------------------------------------
 echo "⏰ [6/7] Setting up Weather Monitoring, Channel & Group Broadcasts..."
 if command -v hermes &> /dev/null; then
-    hermes cron create "every 180m" "Laporkan hasil update cuaca dari script chat ini secara ringkas." --name "monitoring-cuaca-gunung" --script "cek_cuaca_gunung.py" --deliver "origin" || true
-    hermes cron create "every 180m" "Jalankan script auto_readme_commit.py untuk memproses commit acak ke GitLab." --name "random-auto-readme-commit" --script "auto_readme_commit.py" --deliver "origin" || true
-    
-    # Official Channel Bulletin (Pasif Satu Arah)
-    hermes cron create "0 8 * * *" "Daily mountain news bulletin to channel" --name "channel-bulletin-rutestrip" --script "broadcast_channel_bulletin.py" --no-agent --deliver "telegram:@rutestrip" || true
+    # Function to create cron job only if name doesn't exist
+    create_cron_if_missing() {
+        local name="$1"
+        local schedule="$2"
+        local script="$3"
+        local deliver="$4"
+        local is_no_agent="$5"
+        
+        if ! hermes cron list | grep -q "$name"; then
+            if [ "$is_no_agent" = "true" ]; then
+                hermes cron create "$schedule" --name "$name" --script "$script" --no-agent --deliver "$deliver" || true
+            else
+                hermes cron create "$schedule" "$name" --name "$name" --script "$script" --deliver "$deliver" || true
+            fi
+        fi
+    }
 
-    # Group Broadcast Cronjobs
-    hermes cron create "0 7,13,19 * * *" "Broadcast cuaca gunung rutin ke grup" --name "broadcast-cuaca-rutestrip-group" --script "broadcast_cuaca_group.py" --no-agent --deliver "telegram:@rutestrip_group" || true
-    hermes cron create "0 6 * * *" "Rekomendasi pendakian harian & weekend getaway" --name "broadcast-weekend-getaway-group" --script "broadcast_weekend_getaway.py" --no-agent --deliver "telegram:@rutestrip_group" || true
-    hermes cron create "0 10 * * 2,4" "Tips survival & etika pendaki" --name "broadcast-survival-tips-group" --script "broadcast_survival_tips.py" --no-agent --deliver "telegram:@rutestrip_group" || true
-    hermes cron create "0 20 * * *" "Broadcast panduan penggunaan bot harian" --name "broadcast-bot-usage-group" --script "broadcast_bot_usage.py" --no-agent --deliver "telegram:@rutestrip_group" || true
-    
-    # Admin Growth Report
-    hermes cron create "0 21 * * *" "Laporan statistik pengguna harian ke admin" --name "laporan-rutin-pengguna-bot" --script "subscriber_report.py" --no-agent --deliver "origin" || true
+    create_cron_if_missing "monitoring-cuaca-gunung" "every 180m" "cek_cuaca_gunung.py" "origin" "false"
+    create_cron_if_missing "random-auto-readme-commit" "every 180m" "auto_readme_commit.py" "origin" "false"
+    create_cron_if_missing "channel-bulletin-rutestrip" "0 8 * * *" "broadcast_channel_bulletin.py" "telegram:@rutestrip" "true"
+    create_cron_if_missing "broadcast-cuaca-rutestrip-group" "0 7,13,19 * * *" "broadcast_cuaca_group.py" "telegram:@rutestrip_group" "true"
+    create_cron_if_missing "broadcast-weekend-getaway-group" "0 6 * * *" "broadcast_weekend_getaway.py" "telegram:@rutestrip_group" "true"
+    create_cron_if_missing "broadcast-survival-tips-group" "0 10 * * 2,4" "broadcast_survival_tips.py" "telegram:@rutestrip_group" "true"
+    create_cron_if_missing "broadcast-bot-usage-group" "0 20 * * *" "broadcast_bot_usage.py" "telegram:@rutestrip_group" "true"
+    create_cron_if_missing "laporan-rutin-pengguna-bot" "0 21 * * *" "subscriber_report.py" "origin" "true"
 fi
 
-# Launch API Daemon in Background if not running
+# Launch API & Monitoring Daemons in Background if not running
 if ! pgrep -f "uvicorn api:app" > /dev/null; then
-    echo "🌐 Starting REST API Service (Uvicorn)..."
+    echo "🌐 Starting REST API Service (Uvicorn Port 8000)..."
     nohup "$VENV_PYTHON" -m uvicorn api:app --host 0.0.0.0 --port 8000 > /dev/null 2>&1 &
+fi
+
+if ! pgrep -f "uvicorn monitor_dashboard:app" > /dev/null; then
+    echo "📊 Starting Monitoring Dashboard Service (Uvicorn Port 9000)..."
+    nohup "$VENV_PYTHON" -m uvicorn monitor_dashboard:app --host 0.0.0.0 --port 9000 > /dev/null 2>&1 &
 fi
 
 # ------------------------------------------------------------------------------
@@ -125,14 +142,3 @@ echo "======================================================================"
 echo "💡 To test locally, run:"
 echo "   $VENV_PYTHON $BASE_DIR/pendakian_cli.py help"
 echo "======================================================================"
-
-# Deploy Monitoring Dashboard
-if [ -f "$BASE_DIR/monitor_dashboard.py" ]; then
-    cp "$BASE_DIR/monitor_dashboard.py" "$SCRIPTS_DIR/monitor_dashboard.py"
-    cp "$BASE_DIR/monitor_dashboard.py" "$HOME/monitor_dashboard.py"
-fi
-
-if ! pgrep -f "uvicorn monitor_dashboard:app" > /dev/null; then
-    echo "📊 Starting Monitoring Dashboard Service (Port 9000)..."
-    nohup "$VENV_PYTHON" -m uvicorn monitor_dashboard:app --host 0.0.0.0 --port 9000 > /dev/null 2>&1 &
-fi
