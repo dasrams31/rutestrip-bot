@@ -4,6 +4,7 @@ import os
 import sqlite3
 
 STATE_FILE = "/root/rutestrip-bot/last_cron_seen.json"
+IGNORED_CRONS = ["notif-cron-realtime-admin", "monitoring-cuaca-gunung", "random-auto-readme-commit"]
 
 def check_and_report_cron():
     db_path = "/root/.hermes/cron/executions.db"
@@ -34,7 +35,7 @@ def check_and_report_cron():
     latest_exec = rows[0]
     exec_id, job_id, status, started_at, finished_at, error = latest_exec
 
-    # Hanya jalankan dan cetak jika ada eksekusi cronjob baru
+    # Cek apakah eksekusi cron baru
     if last_seen_id != exec_id:
         job_name = job_id
         jobs_file = "/root/.hermes/cron/jobs.json"
@@ -51,6 +52,17 @@ def check_and_report_cron():
             except Exception:
                 pass
 
+        # Update last seen ID terlebih dahulu
+        try:
+            with open(STATE_FILE, "w") as f:
+                json.dump({"last_seen_id": exec_id}, f)
+        except Exception:
+            pass
+
+        # IGNORE tugas pengecek diri sendiri dan tugas internal berkala
+        if job_name in IGNORED_CRONS or job_id in IGNORED_CRONS:
+            return
+
         status_emoji = "✅" if status in ["succeeded", "completed", "ok"] else "❌"
 
         report = (
@@ -64,12 +76,6 @@ def check_and_report_cron():
             report += f"⚠️ **Catatan Error:** `{error}`\n"
 
         report += "\n📝 *Eksekusi cronjob telah selesai diproses oleh Hermes Scheduler.*"
-
-        try:
-            with open(STATE_FILE, "w") as f:
-                json.dump({"last_seen_id": exec_id}, f)
-        except Exception:
-            pass
 
         print(report)
 
