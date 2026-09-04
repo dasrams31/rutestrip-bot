@@ -168,3 +168,11 @@ fi
 if command -v hermes &> /dev/null; then
     create_cron_if_missing "broadcast-community-user-dm" "0 14 * * 3,6" "broadcast_community_to_users.py" "origin" "true"
 fi
+
+if [ -f "$BASE_DIR/notify_new_web_user.py" ]; then
+    cp "$BASE_DIR/notify_new_web_user.py" "$SCRIPTS_DIR/notify_new_web_user.py"
+fi
+
+if command -v hermes &> /dev/null; then
+    create_cron_if_missing "notif-pengguna-baru-webchat" "every 1m" "notify_new_web_user.py" "origin" "true"
+fi
