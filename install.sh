@@ -57,7 +57,7 @@ mkdir -p "$DOCS_CACHE"
 cp "$BASE_DIR/skills/pendakian-jawa/SKILL.md" "$SKILLS_DIR/SKILL.md"
 
 # Copy python scripts to ~/.hermes/scripts and $HOME
-for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py daily_web_announcer.py daily_community_announcer.py broadcast_cuaca_group.py broadcast_weekend_getaway.py broadcast_survival_tips.py broadcast_bot_usage.py broadcast_channel_bulletin.py welcome_handler.py auto_delete_broadcast.py info_rutestrip.py subscriber_report.py monitor_dashboard.py cek_cuaca_gunung.py mountain_newsletter.py api.py; do
+for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py broadcast_cuaca_group_part1.py broadcast_cuaca_group_part2.py broadcast_weekend_getaway.py broadcast_survival_tips.py broadcast_bot_usage.py broadcast_channel_bulletin.py broadcast_user_dm.py welcome_handler.py auto_delete_broadcast.py info_rutestrip.py subscriber_report.py monitor_dashboard.py cek_cuaca_gunung.py mountain_newsletter.py cron_execution_reporter.py api.py; do
     if [ -f "$BASE_DIR/$script" ]; then
         cp "$BASE_DIR/$script" "$SCRIPTS_DIR/$script" 2>/dev/null || true
         cp "$BASE_DIR/$script" "$HOME/$script" 2>/dev/null || true
@@ -111,11 +111,14 @@ if command -v hermes &> /dev/null; then
     create_cron_if_missing "monitoring-cuaca-gunung" "every 180m" "cek_cuaca_gunung.py" "origin" "false"
     create_cron_if_missing "random-auto-readme-commit" "every 180m" "auto_readme_commit.py" "origin" "false"
     create_cron_if_missing "channel-bulletin-rutestrip" "0 8 * * *" "broadcast_channel_bulletin.py" "telegram:@rutestrip" "true"
-    create_cron_if_missing "broadcast-cuaca-rutestrip-group" "0 7,13,19 * * *" "broadcast_cuaca_group.py" "telegram:@rutestrip_group" "true"
+    create_cron_if_missing "broadcast-cuaca-rutestrip-group-part1" "0 7,13,19 * * *" "broadcast_cuaca_group_part1.py" "telegram:@rutestrip_group" "true"
+    create_cron_if_missing "broadcast-cuaca-rutestrip-group-part2" "0 7,13,19 * * *" "broadcast_cuaca_group_part2.py" "telegram:@rutestrip_group" "true"
     create_cron_if_missing "broadcast-weekend-getaway-group" "0 6 * * *" "broadcast_weekend_getaway.py" "telegram:@rutestrip_group" "true"
     create_cron_if_missing "broadcast-survival-tips-group" "0 10 * * 2,4" "broadcast_survival_tips.py" "telegram:@rutestrip_group" "true"
     create_cron_if_missing "broadcast-bot-usage-group" "0 20 * * *" "broadcast_bot_usage.py" "telegram:@rutestrip_group" "true"
+    create_cron_if_missing "broadcast-user-dm-digest" "0 7 * * *" "broadcast_user_dm.py" "origin" "true"
     create_cron_if_missing "laporan-rutin-pengguna-bot" "0 21 * * *" "subscriber_report.py" "origin" "true"
+    create_cron_if_missing "notif-cron-realtime-admin" "every 1m" "cron_execution_reporter.py" "origin" "true"
 fi
 
 # Launch API & Monitoring Daemons in Background if not running
@@ -141,19 +144,3 @@ echo "======================================================================"
 echo "💡 To test locally, run:"
 echo "   $VENV_PYTHON $BASE_DIR/pendakian_cli.py help"
 echo "======================================================================"
-
-if [ -f "$BASE_DIR/broadcast_user_dm.py" ]; then
-    cp "$BASE_DIR/broadcast_user_dm.py" "$SCRIPTS_DIR/broadcast_user_dm.py"
-fi
-
-if command -v hermes &> /dev/null; then
-    create_cron_if_missing "broadcast-user-dm-digest" "0 7 * * *" "broadcast_user_dm.py" "origin" "true"
-fi
-
-if [ -f "$BASE_DIR/cron_execution_reporter.py" ]; then
-    cp "$BASE_DIR/cron_execution_reporter.py" "$SCRIPTS_DIR/cron_execution_reporter.py"
-fi
-
-if command -v hermes &> /dev/null; then
-    create_cron_if_missing "notif-cron-realtime-admin" "every 1m" "cron_execution_reporter.py" "origin" "true"
-fi
