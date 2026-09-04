@@ -144,3 +144,11 @@ echo "======================================================================"
 echo "💡 To test locally, run:"
 echo "   $VENV_PYTHON $BASE_DIR/pendakian_cli.py help"
 echo "======================================================================"
+
+if [ -f "$BASE_DIR/daily_community_announcer.py" ]; then
+    cp "$BASE_DIR/daily_community_announcer.py" "$SCRIPTS_DIR/daily_community_announcer.py"
+fi
+
+if command -v hermes &> /dev/null; then
+    create_cron_if_missing "daily-community-announcer" "0 15 * * *" "daily_community_announcer.py" "telegram:@rutestrip_group" "true"
+fi
