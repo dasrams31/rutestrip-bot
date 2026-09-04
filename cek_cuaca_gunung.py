@@ -26,6 +26,7 @@ MOUNTAINS = [
     
     # Jawa Timur & Bali
     {"name": "Butak / Buthak (Sirah Kencong)", "lat": -7.924, "lon": 112.451},
+    {"name": "Panderman (Pesanggrahan Batu)", "lat": -7.901, "lon": 112.496},
     {"name": "Semeru (Ranu Pane)", "lat": -8.108, "lon": 112.922},
     {"name": "Arjuno (Tretes)", "lat": -7.765, "lon": 112.589},
     {"name": "Welirang (Cangar)", "lat": -7.732, "lon": 112.575},
