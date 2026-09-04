@@ -138,3 +138,11 @@ if command -v hermes &> /dev/null; then
     hermes cron create "0 10 * * 2,4" "Tips survival & etika pendaki" --name "broadcast-survival-tips-group" --script "broadcast_survival_tips.py" --no-agent --deliver "telegram:@rutestrip_group" || true
     hermes cron create "0 7,13,19 * * *" "Broadcast cuaca gunung rutin ke grup" --name "broadcast-cuaca-rutestrip-group" --script "broadcast_cuaca_group.py" --no-agent --deliver "telegram:@rutestrip_group" || true
 fi
+
+if [ -f "$BASE_DIR/broadcast_bot_usage.py" ]; then
+    cp "$BASE_DIR/broadcast_bot_usage.py" "$SCRIPTS_DIR/broadcast_bot_usage.py"
+fi
+
+if command -v hermes &> /dev/null; then
+    hermes cron create "0 20 * * *" "Broadcast panduan bot harian jam 8 malam" --name "broadcast-bot-usage-group" --script "broadcast_bot_usage.py" --no-agent --deliver "telegram:@rutestrip_group" || true
+fi
