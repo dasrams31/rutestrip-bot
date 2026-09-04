@@ -1,0 +1,21 @@
+{
+  "b6dcdb66-44c5-41a6-8405-b8717f28e774": [
+    {
+      "id": "52f48641-4c50-4381-aee0-66d509ffb7a3",
+      "sender": "user",
+      "text": "rekomendasi gunung landai untuk pemula",
+      "timestamp": "2026-09-04T11:01:05Z",
+      "meta": {}
+    },
+    {
+      "id": "2035c43b-933c-46f1-ba1c-7948629d8206",
+      "sender": "bot",
+      "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'rekomendasi gunung landai untuk pemula':",
+      "timestamp": "2026-09-04T11:01:13Z",
+      "meta": {
+        "guardrail_passed": true,
+        "recommendations_count": 3
+      }
+    }
+  ]
+}
