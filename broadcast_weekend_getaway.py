@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 import random
-import datetime
 
-# Daftar Gunung & Bukit Mini untuk Rekomendasi Pendakian Harian / Weekend Getaway
 RECOMMENDATIONS = [
     {
         "nama": "Gunung Prau via Dieng / Patakbanteng",
@@ -62,25 +60,24 @@ RECOMMENDATIONS = [
     }
 ]
 
-# Pilih rekomendasi acak berdasarkan hari
 item = random.choice(RECOMMENDATIONS)
 
-output = f"""🏞️ **REKOMENDASI PENDAKIAN HARIAN & WEEKEND GETAWAY** 🎒
-*(Inspirasi Rute Pendakian RuteStrip)*
+output = f"""REKOMENDASI PENDAKIAN HARIAN & WEEKEND GETAWAY 🌄
+Inspirasi Rute Pendakian RuteStrip
 
-📍 **{item['nama']}**
-• **Ketinggian:** {item['tinggi']}
-• **Tingkat Kesulitan:** {item['level']}
-• **Estimasi Waktu:** {item['estimasi']}
+📍 {item['nama']}
+• Ketinggian: {item['tinggi']}
+• Tingkat Kesulitan: {item['level']}
+• Estimasi Waktu: {item['estimasi']}
 
-✨ **Highlight & Pesona Jalur:**
+Pesona Jalur:
 {item['highlight']}
 
-💡 **Tips Ranger RuteStrip:**
+Tips Ranger RuteStrip:
 {item['tips']}
 
 ---
-🔎 *Cek rute & gpx gunung lainnya dengan ketik `rekomendasi <kriteria>` atau `gpx <nama_gunung>`!*
-🌐 **Website:** https://rutestrip.web.id | 💬 **Grup:** @rutestrip_group"""
+Cek rute & gpx gunung lainnya dengan ketik `rekomendasi <kriteria>` atau `gpx <nama_gunung>`!
+Website: https://rutestrip.web.id | Grup: @rutestrip_group"""
 
 print(output)
