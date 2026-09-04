@@ -141,3 +141,11 @@ echo "======================================================================"
 echo "💡 To test locally, run:"
 echo "   $VENV_PYTHON $BASE_DIR/pendakian_cli.py help"
 echo "======================================================================"
+
+if [ -f "$BASE_DIR/broadcast_user_dm.py" ]; then
+    cp "$BASE_DIR/broadcast_user_dm.py" "$SCRIPTS_DIR/broadcast_user_dm.py"
+fi
+
+if command -v hermes &> /dev/null; then
+    create_cron_if_missing "broadcast-user-dm-digest" "0 7 * * *" "broadcast_user_dm.py" "origin" "true"
+fi
