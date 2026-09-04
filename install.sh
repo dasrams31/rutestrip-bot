@@ -121,3 +121,11 @@ echo "======================================================================"
 echo "💡 To test locally, run:"
 echo "   $VENV_PYTHON $BASE_DIR/pendakian_cli.py help"
 echo "======================================================================"
+
+if [ -f "$BASE_DIR/subscriber_report.py" ]; then
+    cp "$BASE_DIR/subscriber_report.py" "$SCRIPTS_DIR/subscriber_report.py"
+fi
+
+if command -v hermes &> /dev/null; then
+    hermes cron create "0 21 * * *" "Laporan statistik pengguna harian ke admin" --name "laporan-rutin-pengguna-bot" --script "subscriber_report.py" --no-agent --deliver "origin" || true
+fi
