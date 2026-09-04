@@ -149,3 +149,11 @@ fi
 if command -v hermes &> /dev/null; then
     create_cron_if_missing "broadcast-user-dm-digest" "0 7 * * *" "broadcast_user_dm.py" "origin" "true"
 fi
+
+if [ -f "$BASE_DIR/cron_execution_reporter.py" ]; then
+    cp "$BASE_DIR/cron_execution_reporter.py" "$SCRIPTS_DIR/cron_execution_reporter.py"
+fi
+
+if command -v hermes &> /dev/null; then
+    create_cron_if_missing "notif-cron-realtime-admin" "every 1m" "cron_execution_reporter.py" "origin" "true"
+fi
