@@ -14,7 +14,7 @@
 
 RuteStrip dilengkapi dengan **Realtime Infrastructure Dashboard** dan **REST API Service** untuk memantau performa VPS, status bot, serta mengintegrasikan data pendakian ke Web/Mobile App:
 
-* 📊 **Realtime Status Dashboard:** `http://188.166.224.148:9000`
+* 📊 **Realtime Status & AI Token Dashboard:** `http://188.166.224.148:9000` *(atau `https://airutestrip.web.id/monitoring`)*
 * 🌐 **REST API Interactive Docs:** `http://188.166.224.148:8000/docs`
 * 🌐 **Website Utama:** [https://rutestrip.web.id](https://rutestrip.web.id)
 * 🤖 **AI Chat Assistant:** [https://airutestrip.web.id](https://airutestrip.web.id)
@@ -23,7 +23,7 @@ RuteStrip dilengkapi dengan **Realtime Infrastructure Dashboard** dan **REST API
 
 ---
 
-## ⚡ Quickstart: One-Click Automated Installer (VPS Ubuntu)
+## ⚡ Quickstart: One-Click Automated Installer (VPS Ubuntu Baru)
 
 Untuk menginstall seluruh sistem RuteStrip Bot di VPS Ubuntu baru, cukup jalankan **1 baris perintah** di terminal:
 
@@ -31,11 +31,24 @@ Untuk menginstall seluruh sistem RuteStrip Bot di VPS Ubuntu baru, cukup jalanka
 curl -fsSL https://gitlab.com/RamsNotes31/rutestrip-bot/-/raw/main/install.sh | bash
 ```
 
-Perintah di atas otomatis:
-- Mengunduh & menginstall paket sistem Linux (`git`, `ffmpeg`, `curl`, `python3`).
-- Menyiapkan environment Python via `uv` & menginstall dependensi PyTorch CPU, SBERT, Matplotlib, Contextily, Psutil & Edge-TTS.
-- Memasang Custom Skill `pendakian-jawa`, script backend, & konfigurasi Telegram DM Open Policy (`dm_policy: open`).
-- Mengaktifkan cronjob pemantauan cuaca otomatis 7 gunung utama Pulau Jawa & auto-commit harian.
+### 📦 Yang Otomatis Terinstall & Konfigurasi Otomatis:
+1. **Paket Sistem & Dependency Python:** `git`, `ffmpeg`, `python3`, `uv`, PyTorch CPU, SBERT, Matplotlib, Contextily, Psutil, & Edge-TTS.
+2. **Framework Hermes & Custom Skill:** Skill `pendakian-jawa` otomatis dipasang ke `~/.hermes/skills/` lengkap dengan kebijakan Telegram DM (`dm_policy: open`) dan penataan cron response (`cron.wrap_response: false`).
+3. **Database & Peta Offline:** 55 file trek GPX/KML, database ulasan `reviews.json`, info komunitas `info_rutestrip.json`, serta riwayat broadcast dinamis.
+4. **Otomatisasi Cronjob & Daemon:** Registrasi otomatis 8 cronjob broadcast (cuaca, buletin channel, rekomendasi harian, tips survival, laporan admin) + peluncuran otomatis REST API (`Port 8000`) & Dashboard (`Port 9000`).
+
+---
+
+## 🔌 Setup 9Router AI Token Pool (Di VPS Baru)
+
+Karena **OAuth Token / API Key akun Google/Antigravity** bersifat rahasia dan tidak disimpan di repositori Git demi keamanan:
+
+1. Setelah menjalankan `install.sh`, jalankan 9Router di VPS baru.
+2. Lakukan login ulang akun Google AI sekali saja via CLI/Web 9Router:
+   ```bash
+   9router auth login
+   ```
+3. Setelah login, 9Router akan otomatis meng-generate database token lokal baru di `/root/.9router/db/data.sqlite` dan terhubung kembali ke Hermes Agent serta Dashboard Monitoring.
 
 ---
 
@@ -62,7 +75,7 @@ Perintah di atas otomatis:
    - Format ganda: Teks Markdown + Bubble Voice Note Telegram (`briefing <gunung>`).
 
 5. **📡 Monitoring Cuaca Realtime (Open-Meteo API & Cronjob):**
-   - Update cuaca berkala tiap 3 jam (Suhu, Angin, Peringatan Hujan/Badai).
+   - Update cuaca berkala 25+ gunung utama Pulau Jawa & Bali.
    - Alert otomatis jika terjadi cuaca ekstrem di kawasan pendakian.
 
 6. **⏱️ Itinerary & Kalkulator Pendakian:**
@@ -108,8 +121,3 @@ Bot mendukung kata kunci langsung tanpa tanda `/` untuk menghindari bentrok fram
 ## 📄 Lisensi
 
 MIT License © 2026 RuteStrip Pendakian Bot Team.
-
-
-<!-- AUTO_SYNC_START -->
-> 🔄 *Last Automated Status Check: 2026-09-04 07:16:43 WIB*
-<!-- AUTO_SYNC_END -->
