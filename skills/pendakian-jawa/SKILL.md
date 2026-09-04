@@ -19,7 +19,10 @@ Database jalur, estimasi waktu, tingkat kesulitan, dan fitur pintar pendakian gu
     1. Pengguna memanggil bot secara eksplisit (`bot`, `@Rutestripbot`, `asisten`, `min`, `rutestrip`).
     2. Pesan mengandung kata kunci resmi (*keyword*) yang cocok di database bot (`cuaca`, `rekomendasi`, `gpx`, `kml`, `satelit`, `topografi`, `heatmap`, `itinerary`, `logistik`, `biaya`, `survival`, `porter`, `briefing`, `info`, `komunitas`, `website`).
   - **DILARANG MERESPONS** obrolan acak antar pengguna manusia di grup jika tidak memanggil bot atau tidak mengandung kata kunci pendakian terdaftar.
-  - **DILARANG KERAS** membalas pesan bot itu sendiri atau pesan terusan (*forward*) dari channel.
+  - **DILARANG KERAS MEMBALAS CHAT/POSTINGAN DARI CHANNEL (@rutestrip):**
+    - Bot DILARANG MEMBALAS atau merespons komentar/postingan terusan otomatis (*forwarded channel post*) dari channel di grup diskusi.
+  - **DILARANG KERAS MENAMPILKAN PESAN SYSTEM RE-STEER / INTERNAL RUN:**
+    - Jangan pernah membagikan atau mengirimkan pesan log internal agent seperti *"Redirected current run (iteration X/150)"*, *"I'll adjust using your correction"*, atau pesan debug internal Hermes ke grup/channel publik.
 
 ## Aturan Keamanan & Privasi Komunikasi (User-Facing)
 - **SANGAT DILARANG KERAS** menampilkan informasi teknis internal/sensitif kepada PENGGUNA UMUM (selain Mas Rama / Admin ID `606533609`), seperti:
