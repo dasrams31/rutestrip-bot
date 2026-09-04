@@ -6,9 +6,10 @@ import math
 import json
 import subprocess
 from typing import Optional
-from fastapi import FastAPI, Query, HTTPException
+from fastapi import FastAPI, Query, HTTPException, Header, Body
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, EmailStr
 
 sys.path.append('/root/rutestrip-bot')
 from rekomendasi_pendakian import RecommendationSystem
@@ -24,11 +25,12 @@ import broadcast_channel_bulletin
 import broadcast_weekend_getaway
 import broadcast_survival_tips
 import broadcast_bot_usage
+import auth_handler
 
 app = FastAPI(
     title='RuteStrip Pendakian API',
-    description='REST API Asisten Pendakian Gunung (Rekomendasi, Cuaca, GPX, Satelit, Logistik, Bulletin, Stats & Community Info)',
-    version='1.2.0'
+    description='REST API Asisten Pendakian Gunung & Auth Service untuk Web Chat AI (Register, Login, Token Verify, Rekomendasi, Cuaca, GPX, Satelit, Logistik, Bulletin, Stats)',
+    version='1.3.0'
 )
 
 app.add_middleware(
@@ -42,14 +44,62 @@ app.add_middleware(
 rec_system = RecommendationSystem()
 rec_system.index_directory('/root/rutestrip-bot/gpx_db', use_cache=True)
 
+# Schema Models untuk Authentication Webchat AI
+class UserRegisterModel(BaseModel):
+    username: str
+    email: str
+    password: str
+    full_name: Optional[str] = None
+
+class UserLoginModel(BaseModel):
+    username_or_email: str
+    password: str
+
 @app.get('/')
 def root():
     return {
         'status': 'online',
-        'service': 'RuteStrip Pendakian Bot REST API',
-        'version': '1.2.0',
+        'service': 'RuteStrip Pendakian Bot REST API & WebChat Auth',
+        'version': '1.3.0',
         'docs_url': '/docs'
     }
+
+# --- AUTHENTICATION ENDPOINTS (WEBCHAT AI ASSISTANT) ---
+
+@app.post('/api/auth/register', summary='Registrasi Akun Baru WebChat AI')
+def register_account(body: UserRegisterModel):
+    res = auth_handler.register_user(
+        username=body.username,
+        email=body.email,
+        password=body.password,
+        full_name=body.full_name or body.username
+    )
+    if res.get('status') == 'error':
+        raise HTTPException(status_code=400, detail=res.get('message'))
+    return res
+
+@app.post('/api/auth/login', summary='Login Pengguna WebChat AI')
+def login_account(body: UserLoginModel):
+    res = auth_handler.login_user(
+        username_or_email=body.username_or_email,
+        password=body.password
+    )
+    if res.get('status') == 'error':
+        raise HTTPException(status_code=401, detail=res.get('message'))
+    return res
+
+@app.get('/api/auth/me', summary='Verifikasi Sesi Token & Profil Pengguna')
+def get_user_profile(authorization: Optional[str] = Header(None, description='Bearer <token>')):
+    if not authorization:
+        raise HTTPException(status_code=401, detail='Authorization header wajib disertakan.')
+    
+    token = authorization.replace('Bearer ', '').strip()
+    res = auth_handler.verify_token(token)
+    if not res.get('valid'):
+        raise HTTPException(status_code=401, detail=res.get('message'))
+    return res
+
+# --- ENDPOINTS INFORMASI & BOT ---
 
 @app.get('/api/info', summary='Informasi Resmi Komunitas & Platform RuteStrip')
 def get_info():
