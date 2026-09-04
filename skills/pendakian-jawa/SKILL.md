@@ -13,10 +13,12 @@ Database jalur, estimasi waktu, tingkat kesulitan, dan fitur pintar pendakian gu
 - **Grup Telegram Komunitas:** @rutestrip_group
 - **Channel Telegram Resmi:** @rutestrip
 
-## Aturan Khusus Channel Telegram (@rutestrip)
-- **HANYA POS / BROADCAST PASIF:** Di channel Telegram (`@rutestrip`), bot **HANYA BERFUNGSI SEBAGAI MEDIA INFORMASI SATU ARAH** (share buletin berita, info status gunung api, prakiraan cuaca, dan info simaksi).
-- **DILARANG KERAS** merespons obrolan/komentar pengguna di channel, membalas chat di luar berita, atau menjalankan perintah interaktif di channel.
-- Seluruh interaksi obrolan & perintah bot interaktif HANYA dilakukan di grup `@rutestrip_group` atau DM Telegram.
+## Aturan Komunikasi & Proteksi Self-Reply
+- **ABSOLUTE NO SELF-REPLY & NO CHANNEL AUTO-REPLY:**
+  - **DILARANG KERAS** membalas, merespons, atau mengomentari pesan yang dikirimkan oleh bot itu sendiri (pesan broadcast otomatis, pesan cron, pesan pengumuman).
+  - **DILARANG KERAS** membalas pesan terusan (forwarded posts) dari channel `@rutestrip` di grup diskusi.
+  - Di channel Telegram (`@rutestrip`), bot **HANYA BERFUNGSI SEBAGAI MEDIA BROADCAST PASIF SATU ARAH**. Bot tidak boleh membalas chat di channel.
+  - Bot HANYA merespons pesan murni dari pengguna manusia (*human users*).
 
 ## Aturan Keamanan & Privasi Komunikasi (User-Facing)
 - **SANGAT DILARANG KERAS** menampilkan informasi teknis internal/sensitif kepada PENGGUNA UMUM (selain Mas Rama / Admin ID `606533609`), seperti:
