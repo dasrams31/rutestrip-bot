@@ -4,7 +4,7 @@ import os
 import sqlite3
 
 STATE_FILE = "/root/rutestrip-bot/last_cron_seen.json"
-IGNORED_CRONS = ["notif-cron-realtime-admin", "monitoring-cuaca-gunung", "random-auto-readme-commit"]
+IGNORED_CRONS = ["notif-cron-realtime-admin"]
 
 def check_and_report_cron():
     db_path = "/root/.hermes/cron/executions.db"
@@ -59,7 +59,7 @@ def check_and_report_cron():
         except Exception:
             pass
 
-        # IGNORE tugas pengecek diri sendiri dan tugas internal berkala
+        # IGNORE HANYA tugas pengecek diri sendiri (notif-cron-realtime-admin)
         if job_name in IGNORED_CRONS or job_id in IGNORED_CRONS:
             return
 
