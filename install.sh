@@ -57,7 +57,7 @@ mkdir -p "$DOCS_CACHE"
 cp "$BASE_DIR/skills/pendakian-jawa/SKILL.md" "$SKILLS_DIR/SKILL.md"
 
 # Copy python scripts to ~/.hermes/scripts and $HOME
-for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py broadcast_cuaca_group_part1.py broadcast_cuaca_group_part2.py broadcast_weekend_getaway.py broadcast_survival_tips.py broadcast_bot_usage.py broadcast_channel_bulletin.py broadcast_user_dm.py welcome_handler.py auto_delete_broadcast.py info_rutestrip.py subscriber_report.py monitor_dashboard.py cek_cuaca_gunung.py mountain_newsletter.py cron_execution_reporter.py api.py; do
+for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py broadcast_cuaca_group_part1.py broadcast_cuaca_group_part2.py broadcast_weekend_getaway.py broadcast_survival_tips.py broadcast_bot_usage.py broadcast_channel_bulletin.py broadcast_user_dm.py welcome_handler.py auto_delete_broadcast.py info_rutestrip.py subscriber_report.py monitor_dashboard.py cek_cuaca_gunung.py mountain_newsletter.py cron_execution_reporter.py auth_handler.py guardrail.py chat_history_handler.py daily_community_announcer.py notify_new_user.py notify_new_web_user.py broadcast_community_to_users.py portal_news_scraper.py broadcast_portal_news_to_users.py api.py; do
     if [ -f "$BASE_DIR/$script" ]; then
         cp "$BASE_DIR/$script" "$SCRIPTS_DIR/$script" 2>/dev/null || true
         cp "$BASE_DIR/$script" "$HOME/$script" 2>/dev/null || true
@@ -65,7 +65,7 @@ for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py
 done
 
 # Copy JSON data files if present
-for jsonfile in reviews.json subscribers.json info_rutestrip.json recommendation_history.json tips_history.json broadcast_messages.json; do
+for jsonfile in reviews.json subscribers.json info_rutestrip.json recommendation_history.json tips_history.json broadcast_messages.json users_auth.json users_chat_sessions.json seen_subscribers.json seen_web_users.json; do
     if [ -f "$BASE_DIR/$jsonfile" ]; then
         cp "$BASE_DIR/$jsonfile" "$HOME/$jsonfile" 2>/dev/null || true
     fi
@@ -116,9 +116,15 @@ if command -v hermes &> /dev/null; then
     create_cron_if_missing "broadcast-weekend-getaway-group" "0 6 * * *" "broadcast_weekend_getaway.py" "telegram:@rutestrip_group" "true"
     create_cron_if_missing "broadcast-survival-tips-group" "0 10 * * 2,4" "broadcast_survival_tips.py" "telegram:@rutestrip_group" "true"
     create_cron_if_missing "broadcast-bot-usage-group" "0 20 * * *" "broadcast_bot_usage.py" "telegram:@rutestrip_group" "true"
+    create_cron_if_missing "daily-community-announcer" "0 15 * * *" "daily_community_announcer.py" "telegram:@rutestrip_group" "true"
+    create_cron_if_missing "channel-portal-news-bulletin" "0 16 * * *" "portal_news_scraper.py" "telegram:@rutestrip" "true"
     create_cron_if_missing "broadcast-user-dm-digest" "0 7 * * *" "broadcast_user_dm.py" "origin" "true"
+    create_cron_if_missing "broadcast-community-user-dm" "0 14 * * 3,6" "broadcast_community_to_users.py" "origin" "true"
+    create_cron_if_missing "user-dm-portal-news-bulletin" "0 16 * * *" "broadcast_portal_news_to_users.py" "origin" "true"
     create_cron_if_missing "laporan-rutin-pengguna-bot" "0 21 * * *" "subscriber_report.py" "origin" "true"
     create_cron_if_missing "notif-cron-realtime-admin" "every 1m" "cron_execution_reporter.py" "origin" "true"
+    create_cron_if_missing "notif-pengguna-baru-admin" "every 1m" "notify_new_user.py" "origin" "true"
+    create_cron_if_missing "notif-pengguna-baru-webchat" "every 1m" "notify_new_web_user.py" "origin" "true"
 fi
 
 # Launch API & Monitoring Daemons in Background if not running
@@ -144,47 +150,3 @@ echo "======================================================================"
 echo "💡 To test locally, run:"
 echo "   $VENV_PYTHON $BASE_DIR/pendakian_cli.py help"
 echo "======================================================================"
-
-if [ -f "$BASE_DIR/daily_community_announcer.py" ]; then
-    cp "$BASE_DIR/daily_community_announcer.py" "$SCRIPTS_DIR/daily_community_announcer.py"
-fi
-
-if command -v hermes &> /dev/null; then
-    create_cron_if_missing "daily-community-announcer" "0 15 * * *" "daily_community_announcer.py" "telegram:@rutestrip_group" "true"
-fi
-
-if [ -f "$BASE_DIR/notify_new_user.py" ]; then
-    cp "$BASE_DIR/notify_new_user.py" "$SCRIPTS_DIR/notify_new_user.py"
-fi
-
-if command -v hermes &> /dev/null; then
-    create_cron_if_missing "notif-pengguna-baru-admin" "every 1m" "notify_new_user.py" "origin" "true"
-fi
-
-if [ -f "$BASE_DIR/broadcast_community_to_users.py" ]; then
-    cp "$BASE_DIR/broadcast_community_to_users.py" "$SCRIPTS_DIR/broadcast_community_to_users.py"
-fi
-
-if command -v hermes &> /dev/null; then
-    create_cron_if_missing "broadcast-community-user-dm" "0 14 * * 3,6" "broadcast_community_to_users.py" "origin" "true"
-fi
-
-if [ -f "$BASE_DIR/notify_new_web_user.py" ]; then
-    cp "$BASE_DIR/notify_new_web_user.py" "$SCRIPTS_DIR/notify_new_web_user.py"
-fi
-
-if command -v hermes &> /dev/null; then
-    create_cron_if_missing "notif-pengguna-baru-webchat" "every 1m" "notify_new_web_user.py" "origin" "true"
-fi
-
-if [ -f "$BASE_DIR/portal_news_scraper.py" ]; then
-    cp "$BASE_DIR/portal_news_scraper.py" "$SCRIPTS_DIR/portal_news_scraper.py"
-fi
-if [ -f "$BASE_DIR/broadcast_portal_news_to_users.py" ]; then
-    cp "$BASE_DIR/broadcast_portal_news_to_users.py" "$SCRIPTS_DIR/broadcast_portal_news_to_users.py"
-fi
-
-if command -v hermes &> /dev/null; then
-    create_cron_if_missing "channel-portal-news-bulletin" "0 16 * * *" "portal_news_scraper.py" "telegram:@rutestrip" "true"
-    create_cron_if_missing "user-dm-portal-news-bulletin" "0 16 * * *" "broadcast_portal_news_to_users.py" "origin" "true"
-fi
