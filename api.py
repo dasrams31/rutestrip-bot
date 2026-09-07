@@ -270,6 +270,12 @@ def get_bulletin():
     bulletin_text = broadcast_channel_bulletin.generate_bulletin()
     return {'status': 'success', 'bulletin': bulletin_text}
 
+@app.get('/api/news/portal', summary='Kabar & Berita Media Nasional Seputar Pendakian')
+def get_portal_news():
+    import portal_news_scraper
+    news_text = portal_news_scraper.fetch_portal_news()
+    return {'status': 'success', 'news': news_text}
+
 @app.get('/api/getaway', summary='Rekomendasi Rute Harian & Weekend Getaway')
 def get_daily_getaway():
     item = broadcast_weekend_getaway.get_next_recommendation()
