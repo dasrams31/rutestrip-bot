@@ -16,6 +16,8 @@ RuteStrip dilengkapi dengan **Realtime Infrastructure Dashboard** dan **REST API
 
 * 📊 **Realtime Status & AI Token Dashboard:** `http://188.166.224.148:9000` *(atau `https://airutestrip.web.id/monitoring`)*
 * 🌐 **REST API Interactive Docs:** `http://188.166.224.148:8000/docs`
+* 📖 **REST API Specification & Schema:** [API_DOCUMENTATION.md](API_DOCUMENTATION.md)
+* 🗄️ **Database Storage:** PostgreSQL (`rutestrip`) dengan Dual-Write High-Availability JSON Fallback
 * 🌐 **Website Utama:** [https://rutestrip.web.id](https://rutestrip.web.id)
 * 🤖 **AI Chat Assistant:** [https://airutestrip.web.id](https://airutestrip.web.id)
 * 💬 **Grup Telegram Komunitas:** [@rutestrip_group](https://t.me/rutestrip_group)
@@ -48,7 +50,7 @@ Karena **OAuth Token / API Key akun Google/Antigravity** bersifat rahasia dan ti
    ```bash
    9router auth login
    ```
-3. Setelah login, 9Router akan otomatis meng-generate database token lokal baru di `/root/.9router/db/data.sqlite` dan terhubung kembali ke Hermes Agent serta Dashboard Monitoring.
+3. Setelah login, 9Router akan otomatis meng-generate database token lokal baru di `/home/ubuntu/.9router/db/data.sqlite` dan terhubung kembali ke Hermes Agent serta Dashboard Monitoring.
 
 ---
 
