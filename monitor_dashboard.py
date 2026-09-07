@@ -181,7 +181,7 @@ def get_dashboard_html():
                         </li>
                     </ul>
                     <div class="d-flex align-items-center gap-2">
-                        <span class="badge bg-primary px-3 py-2">IP: 188.166.224.148</span>
+                        <span class="badge bg-primary px-3 py-2">IP: 43.156.63.114</span>
                         <span class="text-muted small" id="last-update">Updating...</span>
                     </div>
                 </div>
