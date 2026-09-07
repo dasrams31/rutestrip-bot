@@ -337,7 +337,7 @@ def get_dashboard_html():
                             </div>
                             <div class="d-flex justify-content-between py-2">
                                 <span>Active Cronjobs</span>
-                                <span class="fw-bold">6 Active Jobs</span>
+                                <span class="fw-bold">17 Active Jobs</span>
                             </div>
                         </div>
                     </div>
@@ -362,7 +362,7 @@ def get_dashboard_html():
                                     </tr>
                                     <tr>
                                         <td>REST API Service & Docs</td>
-                                        <td><code>http://188.166.224.148:8000/docs</code></td>
+                                        <td><code>http://43.156.63.114:8000/docs</code></td>
                                         <td>8000</td>
                                         <td><span class="badge bg-success">ACTIVE</span></td>
                                     </tr>
