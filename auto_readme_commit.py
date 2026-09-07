@@ -38,7 +38,16 @@ def update_readme_and_push(force=False):
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
 
-    token = "glpat-vKNF_tuL6mEnAmDQZe-b_WM6MQpvOjEKdTpubmV1NA8.01.171pct6yb"
+    token = os.environ.get("GITLAB_TOKEN", "")
+    token_file = "/home/ubuntu/.gitlab_token"
+    if not token and os.path.exists(token_file):
+        with open(token_file, "r") as f:
+            token = f.read().strip()
+
+    if not token:
+        print("❌ Error: GitLab token tidak ditemukan.")
+        return
+
     repo_url = f"https://RamsNotes31:{token}@gitlab.com/RamsNotes31/rutestrip-bot.git"
     
     msg = random.choice(COMMIT_MESSAGES) + f" ({now_str})"
