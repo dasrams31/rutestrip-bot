@@ -7,9 +7,9 @@ Selamat datang di dokumentasi resmi **RuteStrip Pendakian REST API (v1.7.0)**. A
 ## 📌 Informasi Dasar & Base URL
 
 * **Base URL Production:** `https://airutestrip.web.id`
-* **Direct VPS Endpoint:** `http://188.166.224.148:8000`
-* **Interactive Swagger UI:** `http://188.166.224.148:8000/docs`
-* **OpenAPI Specification:** `http://188.166.224.148:8000/openapi.json`
+* **Direct VPS Endpoint:** `http://43.156.63.114:8000`
+* **Interactive Swagger UI:** `http://43.156.63.114:8000/docs`
+* **OpenAPI Specification:** `http://43.156.63.114:8000/openapi.json`
 * **Content-Type:** `application/json` (kecuali endpoint file/peta: `image/png`, `application/gpx+xml`, `application/vnd.google-earth.kml+xml`)
 
 ---
