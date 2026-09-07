@@ -356,7 +356,8 @@ Token ini diperoleh dari endpoint `/api/auth/login` atau `/api/auth/register`.
 ### 5. Informasi Komunitas & Statistik
 
 * **`GET /api/info`**: Link resmi website, WebChat, channel, dan grup komunitas.
-* **`GET /api/news/bulletin`**: Buletin ringkasan berita gunung harian.
+* **`GET /api/news/bulletin`**: Buletin ringkasan berita gunung harian (PVMBG, Magma, BMKG).
+* **`GET /api/news/portal`**: Rangkuman kurasi berita pendakian dari portal media nasional (DetikTravel, Kompas, Antara).
 * **`GET /api/getaway`**: Ide liburan dan pendakian santai akhir pekan.
 * **`GET /api/survival/tips`**: Tips edukasi outdoor dan etika pendakian.
 * **`GET /api/stats/subscribers`**: Data metrik jumlah pelanggan Telegram Bot & WebChat terdaftar.
