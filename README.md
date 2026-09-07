@@ -14,8 +14,8 @@
 
 RuteStrip dilengkapi dengan **Realtime Infrastructure Dashboard** dan **REST API Service** untuk memantau performa VPS, status bot, serta mengintegrasikan data pendakian ke Web/Mobile App:
 
-* 📊 **Realtime Status & AI Token Dashboard:** `http://188.166.224.148:9000` *(atau `https://airutestrip.web.id/monitoring`)*
-* 🌐 **REST API Interactive Docs:** `http://188.166.224.148:8000/docs`
+* 📊 **Realtime Status & AI Token Dashboard:** `http://43.156.63.114:9000` *(atau `https://airutestrip.web.id/monitoring`)*
+* 🌐 **REST API Interactive Docs:** `http://43.156.63.114:8000/docs`
 * 📖 **REST API Specification & Schema:** [API_DOCUMENTATION.md](API_DOCUMENTATION.md)
 * 🗄️ **Database Storage:** PostgreSQL (`rutestrip`) dengan Dual-Write High-Availability JSON Fallback
 * 🌐 **Website Utama:** [https://rutestrip.web.id](https://rutestrip.web.id)
