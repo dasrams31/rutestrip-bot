@@ -17,16 +17,11 @@ DEBOUNCE_SECONDS = 5  # Jeda batching sebelum commit agar tidak spam
 POLL_INTERVAL = 15     # Interval cek berkala (detik)
 
 def get_repo_url():
-    token = None
-    if os.path.exists(ENV_FILE):
-        with open(ENV_FILE, "r") as f:
-            for line in f:
-                if "token =" in line:
-                    token = line.split("=")[1].strip().strip('"').strip("'")
-                    break
-    if not token:
-        # Fallback ke env var jika ada
-        token = os.environ.get("GITLAB_TOKEN", "")
+    token = os.environ.get("GITLAB_TOKEN", "")
+    token_file = "/home/ubuntu/.gitlab_token"
+    if not token and os.path.exists(token_file):
+        with open(token_file, "r") as f:
+            token = f.read().strip()
     
     if not token:
         return None
