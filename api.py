@@ -12,7 +12,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
 
-sys.path.append('/root/rutestrip-bot')
+sys.path.append('/home/ubuntu/rutestrip-bot')
 from rekomendasi_pendakian import RecommendationSystem
 import satellite_map
 import gpx_exporter
@@ -45,7 +45,7 @@ app.add_middleware(
 )
 
 rec_system = RecommendationSystem()
-rec_system.index_directory('/root/rutestrip-bot/gpx_db', use_cache=True)
+rec_system.index_directory('/home/ubuntu/rutestrip-bot/gpx_db', use_cache=True)
 
 # Schema Models
 class UserRegisterModel(BaseModel):
@@ -253,7 +253,7 @@ def delete_all_chat_history(authorization: Optional[str] = Header(None)):
 
 @app.get('/api/info', summary='Informasi Resmi Komunitas & Platform RuteStrip')
 def get_info():
-    info_path = '/root/rutestrip-bot/info_rutestrip.json'
+    info_path = '/home/ubuntu/rutestrip-bot/info_rutestrip.json'
     if os.path.exists(info_path):
         with open(info_path, 'r') as f:
             data = json.load(f)
@@ -283,7 +283,7 @@ def get_survival_tips():
 @app.get('/api/stats/subscribers', summary='Statistik & Laporan Pengguna Bot')
 def get_subscriber_stats():
     report_text = subscriber_report.generate_report()
-    subscribers_path = '/root/rutestrip-bot/subscribers.json'
+    subscribers_path = '/home/ubuntu/rutestrip-bot/subscribers.json'
     sub_data = {}
     if os.path.exists(subscribers_path):
         with open(subscribers_path, 'r') as f:
@@ -363,27 +363,27 @@ def get_gpx_file(mountain: str = Query('merbabu', description='Nama gunung'), fo
 @app.get('/api/itinerary', summary='Naismith Itinerary Generator')
 def get_itinerary(mountain: str = Query('merbabu'), mode: str = Query('2d1n')):
     safe_mtn = get_safe_mountain_name(mountain)
-    res = subprocess.run(['python3', '/root/rutestrip-bot/itinerary_logistics.py', 'itinerary', safe_mtn, mode], capture_output=True, text=True)
+    res = subprocess.run(['python3', '/home/ubuntu/rutestrip-bot/itinerary_logistics.py', 'itinerary', safe_mtn, mode], capture_output=True, text=True)
     return {'mountain': safe_mtn, 'mode': mode, 'itinerary': res.stdout.strip()}
 
 @app.get('/api/logistik', summary='Kalkulator Perbekalan Air & Makanan')
 def get_logistics(people: int = Query(3), days: int = Query(2)):
-    res = subprocess.run(['python3', '/root/rutestrip-bot/itinerary_logistics.py', 'logistics', str(people), str(days)], capture_output=True, text=True)
+    res = subprocess.run(['python3', '/home/ubuntu/rutestrip-bot/itinerary_logistics.py', 'logistics', str(people), str(days)], capture_output=True, text=True)
     return {'people': people, 'days': days, 'logistics': res.stdout.strip()}
 
 @app.get('/api/biaya', summary='Kalkulator Biaya Pendakian')
 def get_budget(mountain: str = Query('sumbing'), people: int = Query(3), days: int = Query(2)):
     safe_mtn = get_safe_mountain_name(mountain)
-    res = subprocess.run(['python3', '/root/rutestrip-bot/survival_budget.py', 'budget', safe_mtn, str(people), str(days)], capture_output=True, text=True)
+    res = subprocess.run(['python3', '/home/ubuntu/rutestrip-bot/survival_budget.py', 'budget', safe_mtn, str(people), str(days)], capture_output=True, text=True)
     return {'mountain': safe_mtn, 'people': people, 'days': days, 'budget_info': res.stdout.strip()}
 
 @app.get('/api/survival', summary='Panduan Survival First Aid')
 def get_survival(topic: str = Query('hipotermia')):
-    res = subprocess.run(['python3', '/root/rutestrip-bot/survival_budget.py', 'survival', topic], capture_output=True, text=True)
+    res = subprocess.run(['python3', '/home/ubuntu/rutestrip-bot/survival_budget.py', 'survival', topic], capture_output=True, text=True)
     return {'topic': topic, 'guide': res.stdout.strip()}
 
 @app.get('/api/porter', summary='Kontak Porter & Basecamp')
 def get_porter(mountain: str = Query('sumbing')):
     safe_mtn = get_safe_mountain_name(mountain)
-    res = subprocess.run(['python3', '/root/rutestrip-bot/porter_transport.py', safe_mtn], capture_output=True, text=True)
+    res = subprocess.run(['python3', '/home/ubuntu/rutestrip-bot/porter_transport.py', safe_mtn], capture_output=True, text=True)
     return {'mountain': safe_mtn, 'porter_info': res.stdout.strip()}

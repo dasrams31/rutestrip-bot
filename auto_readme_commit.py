@@ -3,7 +3,7 @@ import random
 import subprocess
 import datetime
 
-BOT_DIR = "/root/rutestrip-bot"
+BOT_DIR = "/home/ubuntu/rutestrip-bot"
 README_PATH = os.path.join(BOT_DIR, "README.md")
 
 COMMIT_MESSAGES = [

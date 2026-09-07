@@ -9,3 +9,8 @@ edge-tts
 contextily
 folium
 Pillow
+fastapi
+uvicorn
+pydantic
+requests
+psutil

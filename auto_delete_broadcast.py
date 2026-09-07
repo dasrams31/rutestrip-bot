@@ -4,7 +4,7 @@ import os
 import json
 import time
 
-LOG_FILE = "/root/rutestrip-bot/broadcast_messages.json"
+LOG_FILE = "/home/ubuntu/rutestrip-bot/broadcast_messages.json"
 
 def clean_old_broadcasts():
     if not os.path.exists(LOG_FILE):

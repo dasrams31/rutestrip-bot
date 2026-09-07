@@ -10,6 +10,7 @@ echo "🚀 Starting Automated Installation for RuteStrip Pendakian Bot..."
 echo "======================================================================"
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export PATH="$HOME/.hermes/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 HERMES_DIR="$HOME/.hermes"
 SKILLS_DIR="$HERMES_DIR/skills/pendakian-jawa"
 SCRIPTS_DIR="$HERMES_DIR/scripts"
@@ -56,24 +57,18 @@ mkdir -p "$DOCS_CACHE"
 
 cp "$BASE_DIR/skills/pendakian-jawa/SKILL.md" "$SKILLS_DIR/SKILL.md"
 
-# Copy python scripts to ~/.hermes/scripts and $HOME
-for script in rekomendasi_pendakian.py fitur_pendakian.py itinerary_logistics.py survival_budget.py porter_transport.py gpx_exporter.py gpx_heatmap.py satellite_map.py briefing_audio.py pendakian_cli.py gpx_generator.py broadcast_cuaca_group_part1.py broadcast_cuaca_group_part2.py broadcast_weekend_getaway.py broadcast_survival_tips.py broadcast_bot_usage.py broadcast_channel_bulletin.py broadcast_user_dm.py welcome_handler.py auto_delete_broadcast.py info_rutestrip.py subscriber_report.py monitor_dashboard.py cek_cuaca_gunung.py mountain_newsletter.py cron_execution_reporter.py auth_handler.py guardrail.py chat_history_handler.py daily_community_announcer.py notify_new_user.py notify_new_web_user.py broadcast_community_to_users.py portal_news_scraper.py broadcast_portal_news_to_users.py api.py; do
-    if [ -f "$BASE_DIR/$script" ]; then
-        cp "$BASE_DIR/$script" "$SCRIPTS_DIR/$script" 2>/dev/null || true
-        cp "$BASE_DIR/$script" "$HOME/$script" 2>/dev/null || true
-    fi
-done
+# Copy all python scripts to ~/.hermes/scripts and $HOME
+cp "$BASE_DIR"/*.py "$SCRIPTS_DIR/" 2>/dev/null || true
+cp "$BASE_DIR"/*.py "$HOME/" 2>/dev/null || true
 
 # Copy JSON data files if present
-for jsonfile in reviews.json subscribers.json info_rutestrip.json recommendation_history.json tips_history.json broadcast_messages.json users_auth.json users_chat_sessions.json seen_subscribers.json seen_web_users.json; do
-    if [ -f "$BASE_DIR/$jsonfile" ]; then
-        cp "$BASE_DIR/$jsonfile" "$HOME/$jsonfile" 2>/dev/null || true
-    fi
-done
+cp "$BASE_DIR"/*.json "$HOME/" 2>/dev/null || true
+cp "$BASE_DIR"/*.json "$SCRIPTS_DIR/" 2>/dev/null || true
 
 # Copy GPX files & GPX Database if present
 mkdir -p "$BASE_DIR/gpx_db"
 cp "$BASE_DIR"/*.gpx "$DOCS_CACHE/" 2>/dev/null || true
+cp "$BASE_DIR/gpx_db"/*.gpx "$DOCS_CACHE/" 2>/dev/null || true
 cp "$BASE_DIR/gpx_db"/*.gpx "$BASE_DIR/gpx_db/" 2>/dev/null || true
 
 # ------------------------------------------------------------------------------

@@ -7,8 +7,8 @@ import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
 import contextily as cx
 
-DOCS_DIR = "/root/.hermes/cache/documents"
-GPX_DB_DIR = "/root/rutestrip-bot/gpx_db"
+DOCS_DIR = "/home/ubuntu/.hermes/cache/documents"
+GPX_DB_DIR = "/home/ubuntu/rutestrip-bot/gpx_db"
 
 def latlon_to_mercator(lat, lon):
     r_major = 6378137.0

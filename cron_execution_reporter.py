@@ -3,11 +3,11 @@ import json
 import os
 import sqlite3
 
-STATE_FILE = "/root/rutestrip-bot/last_cron_seen.json"
+STATE_FILE = "/home/ubuntu/rutestrip-bot/last_cron_seen.json"
 IGNORED_CRONS = ["notif-cron-realtime-admin", "notif-pengguna-baru-admin", "notif-pengguna-baru-webchat"]
 
 def check_and_report_cron():
-    db_path = "/root/.hermes/cron/executions.db"
+    db_path = "/home/ubuntu/.hermes/cron/executions.db"
     if not os.path.exists(db_path):
         return
 
@@ -38,7 +38,7 @@ def check_and_report_cron():
     # Cek apakah eksekusi cron baru
     if last_seen_id != exec_id:
         job_name = job_id
-        jobs_file = "/root/.hermes/cron/jobs.json"
+        jobs_file = "/home/ubuntu/.hermes/cron/jobs.json"
         if os.path.exists(jobs_file):
             try:
                 data = json.load(open(jobs_file))

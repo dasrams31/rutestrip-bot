@@ -3,10 +3,10 @@ import json
 import os
 import subprocess
 
-SUB_FILE = "/root/rutestrip-bot/subscribers.json"
+SUB_FILE = "/home/ubuntu/rutestrip-bot/subscribers.json"
 
 def send_portal_news_to_users():
-    res = subprocess.run(["python3", "/root/rutestrip-bot/portal_news_scraper.py"], capture_output=True, text=True)
+    res = subprocess.run(["python3", "/home/ubuntu/rutestrip-bot/portal_news_scraper.py"], capture_output=True, text=True)
     news_text = res.stdout.strip()
 
     if not os.path.exists(SUB_FILE):

@@ -2,8 +2,8 @@
 import json
 import os
 
-WEB_USERS_DB = "/root/rutestrip-bot/users_auth.json"
-SEEN_WEB_USERS_FILE = "/root/rutestrip-bot/seen_web_users.json"
+WEB_USERS_DB = "/home/ubuntu/rutestrip-bot/users_auth.json"
+SEEN_WEB_USERS_FILE = "/home/ubuntu/rutestrip-bot/seen_web_users.json"
 
 def check_new_web_users():
     if not os.path.exists(WEB_USERS_DB):

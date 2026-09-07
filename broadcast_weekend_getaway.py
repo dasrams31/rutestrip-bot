@@ -3,7 +3,7 @@ import os
 import json
 import random
 
-STATE_FILE = "/root/rutestrip-bot/recommendation_history.json"
+STATE_FILE = "/home/ubuntu/rutestrip-bot/recommendation_history.json"
 
 RECOMMENDATIONS = [
     {

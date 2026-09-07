@@ -2,8 +2,8 @@
 import json
 import os
 
-SUBSCRIBERS_PATH = "/root/rutestrip-bot/subscribers.json"
-WEB_USERS_PATH = "/root/rutestrip-bot/users_auth.json"
+SUBSCRIBERS_PATH = "/home/ubuntu/rutestrip-bot/subscribers.json"
+WEB_USERS_PATH = "/home/ubuntu/rutestrip-bot/users_auth.json"
 
 def generate_report():
     if not os.path.exists(SUBSCRIBERS_PATH):

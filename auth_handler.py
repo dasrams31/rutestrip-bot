@@ -4,7 +4,7 @@ import time
 import hashlib
 import uuid
 
-USERS_DB_PATH = "/root/rutestrip-bot/users_auth.json"
+USERS_DB_PATH = "/home/ubuntu/rutestrip-bot/users_auth.json"
 
 def _load_users():
     if not os.path.exists(USERS_DB_PATH):

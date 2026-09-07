@@ -2,8 +2,8 @@
 import json
 import os
 
-SUB_FILE = "/root/rutestrip-bot/subscribers.json"
-SEEN_FILE = "/root/rutestrip-bot/seen_subscribers.json"
+SUB_FILE = "/home/ubuntu/rutestrip-bot/subscribers.json"
+SEEN_FILE = "/home/ubuntu/rutestrip-bot/seen_subscribers.json"
 
 def check_new_subscribers():
     if not os.path.exists(SUB_FILE):

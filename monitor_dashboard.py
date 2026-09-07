@@ -30,7 +30,7 @@ def check_process(name_pattern):
     return False
 
 def get_9router_data():
-    db_path = "/root/.9router/db/data.sqlite"
+    db_path = "/home/ubuntu/.9router/db/data.sqlite"
     providers_list = []
     total_requests = 0
     if os.path.exists(db_path):
@@ -88,7 +88,7 @@ def get_system_status():
     
     # Subscribers Count
     subscribers_count = 0
-    sub_file = "/root/rutestrip-bot/subscribers.json"
+    sub_file = "/home/ubuntu/rutestrip-bot/subscribers.json"
     if os.path.exists(sub_file):
         try:
             with open(sub_file, 'r') as f:

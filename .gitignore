@@ -1,0 +1,20 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+pendakian_env/
+.venv/
+venv/
+env/
+
+# System and editor files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Temporary cache files
+/tmp/
+*.tmp

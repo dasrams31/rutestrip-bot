@@ -3,7 +3,7 @@ import os
 import time
 import uuid
 
-CHAT_HISTORY_DB = "/root/rutestrip-bot/users_chat_sessions.json"
+CHAT_HISTORY_DB = "/home/ubuntu/rutestrip-bot/users_chat_sessions.json"
 
 def _load_db():
     if not os.path.exists(CHAT_HISTORY_DB):

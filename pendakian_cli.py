@@ -6,7 +6,7 @@ import os
 # Owner User ID Check
 OWNER_USER_ID = "606533609"
 
-VENV_PYTHON = "/root/rutestrip-bot/pendakian_env/bin/python"
+VENV_PYTHON = "/home/ubuntu/rutestrip-bot/pendakian_env/bin/python"
 PYTHON3 = "python3"
 ALLOWED_COMMANDS = {
     "start", "help", "menu", "halo", "hi", "p", "info", "komunitas", "website",
@@ -95,30 +95,30 @@ def handle_command(cmd_str: str):
     if cmd in ["start", "help", "menu", "halo", "hi", "p"]:
         return WELCOME_GUIDE
     elif cmd in ["info", "komunitas", "website"]:
-        res = subprocess.run([PYTHON3, "/root/rutestrip-bot/info_rutestrip.py"], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/home/ubuntu/rutestrip-bot/info_rutestrip.py"], capture_output=True, text=True)
         return res.stdout.strip()
     elif cmd in ["briefing", "voice"]:
         m = args[0] if args else "merbabu"
-        res = subprocess.run([VENV_PYTHON, "/root/rutestrip-bot/briefing_audio.py", m], capture_output=True, text=True)
+        res = subprocess.run([VENV_PYTHON, "/home/ubuntu/rutestrip-bot/briefing_audio.py", m], capture_output=True, text=True)
         txt = res.stdout.strip()
         return f"🎙️ **AUDIO & TEKS BRIEFING PENDAKIAN ({m.upper()})**\n\n📝 **Teks Briefing Ranger:**\n\"{txt}\"\n\n[[audio_as_voice]]\nMEDIA:/tmp/briefing_indonesia.ogg"
     elif cmd in ["satelit", "satellite", "topografi", "topo"]:
         q = args[0] if args else "sumbing"
         if cmd in ["topografi", "topo"]:
             q += " topo"
-        res = subprocess.run([VENV_PYTHON, "/root/rutestrip-bot/satellite_map.py", q], capture_output=True, text=True)
+        res = subprocess.run([VENV_PYTHON, "/home/ubuntu/rutestrip-bot/satellite_map.py", q], capture_output=True, text=True)
         out = res.stdout.strip()
         if "TRACK_NOT_FOUND" in out:
             return f"⚠️ File GPX trek peta untuk **Gunung {q.title()}** belum tersedia di database bot."
         return "MEDIA:/tmp/satellite_map.png"
     elif cmd == "heatmap":
         q = args[0] if args else ""
-        subprocess.run([VENV_PYTHON, "/root/rutestrip-bot/gpx_heatmap.py", q], capture_output=True, text=True)
+        subprocess.run([VENV_PYTHON, "/home/ubuntu/rutestrip-bot/gpx_heatmap.py", q], capture_output=True, text=True)
         return "MEDIA:/tmp/gpx_heatmap.png"
     elif cmd in ["gpx", "kml"]:
         q = " ".join(args) if args else "sumbing kaliangkrik"
         fmt = "kml" if cmd == "kml" else "gpx"
-        res = subprocess.run([PYTHON3, "/root/rutestrip-bot/gpx_exporter.py", q, fmt], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/home/ubuntu/rutestrip-bot/gpx_exporter.py", q, fmt], capture_output=True, text=True)
         out = res.stdout.strip()
         if out.startswith("GPX:") or out.startswith("KML:"):
             fpath = out.split(":", 1)[1]
@@ -126,34 +126,34 @@ def handle_command(cmd_str: str):
         return out
     elif cmd in ["rekomendasi", "rekomendasi_rute"]:
         query = " ".join(args) if args else "jalur landai ramah pemula"
-        res = subprocess.run([VENV_PYTHON, "/root/rutestrip-bot/rekomendasi_pendakian.py", query], capture_output=True, text=True)
+        res = subprocess.run([VENV_PYTHON, "/home/ubuntu/rutestrip-bot/rekomendasi_pendakian.py", query], capture_output=True, text=True)
         return res.stdout
     elif cmd == "cuaca":
-        res = subprocess.run([PYTHON3, "/root/rutestrip-bot/cek_cuaca_gunung.py"], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/home/ubuntu/rutestrip-bot/cek_cuaca_gunung.py"], capture_output=True, text=True)
         return res.stdout
     elif cmd == "itinerary":
         m = args[0] if args else "sumbing"
         mode = args[1] if len(args) > 1 else "2d1n"
-        res = subprocess.run([PYTHON3, "/root/rutestrip-bot/itinerary_logistics.py", "itinerary", m, mode], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/home/ubuntu/rutestrip-bot/itinerary_logistics.py", "itinerary", m, mode], capture_output=True, text=True)
         return res.stdout
     elif cmd == "logistik":
         people = args[0] if args else "3"
         days = args[1] if len(args) > 1 else "2"
-        res = subprocess.run([PYTHON3, "/root/rutestrip-bot/itinerary_logistics.py", "logistics", people, days], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/home/ubuntu/rutestrip-bot/itinerary_logistics.py", "logistics", people, days], capture_output=True, text=True)
         return res.stdout
     elif cmd == "survival":
         top = args[0] if args else "hipotermia"
-        res = subprocess.run([PYTHON3, "/root/rutestrip-bot/survival_budget.py", "survival", top], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/home/ubuntu/rutestrip-bot/survival_budget.py", "survival", top], capture_output=True, text=True)
         return res.stdout
     elif cmd == "biaya":
         m = args[0] if args else "sumbing"
         g = args[1] if len(args) > 1 else "3"
         d = args[2] if len(args) > 2 else "2"
-        res = subprocess.run([PYTHON3, "/root/rutestrip-bot/survival_budget.py", "budget", m, g, d], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/home/ubuntu/rutestrip-bot/survival_budget.py", "budget", m, g, d], capture_output=True, text=True)
         return res.stdout
     elif cmd == "porter":
         m = args[0] if args else "sumbing"
-        res = subprocess.run([PYTHON3, "/root/rutestrip-bot/porter_transport.py", m], capture_output=True, text=True)
+        res = subprocess.run([PYTHON3, "/home/ubuntu/rutestrip-bot/porter_transport.py", m], capture_output=True, text=True)
         return res.stdout
 
 if __name__ == "__main__":

@@ -3,9 +3,9 @@ import glob
 import re
 import xml.etree.ElementTree as ET
 
-DOCS_DIR = "/root/.hermes/cache/documents"
+DOCS_DIR = "/home/ubuntu/.hermes/cache/documents"
 
-GPX_DB_DIR = "/root/rutestrip-bot/gpx_db"
+GPX_DB_DIR = "/home/ubuntu/rutestrip-bot/gpx_db"
 
 def find_gpx(mountain_query: str) -> str:
     query = mountain_query.lower()

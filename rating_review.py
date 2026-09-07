@@ -3,8 +3,8 @@ import os
 import json
 import datetime
 
-REVIEWS_FILE = "/root/reviews.json"
-REPO_REVIEWS_FILE = "/root/rutestrip-bot/reviews.json"
+REVIEWS_FILE = "/home/ubuntu/reviews.json"
+REPO_REVIEWS_FILE = "/home/ubuntu/rutestrip-bot/reviews.json"
 
 DEFAULT_REVIEWS = {
     "merbabu": [
@@ -38,7 +38,7 @@ def load_reviews():
 def save_reviews(data):
     with open(REVIEWS_FILE, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    if os.path.exists("/root/rutestrip-bot"):
+    if os.path.exists("/home/ubuntu/rutestrip-bot"):
         try:
             with open(REPO_REVIEWS_FILE, 'w', encoding='utf-8') as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)

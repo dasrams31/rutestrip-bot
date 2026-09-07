@@ -199,6 +199,6 @@ if __name__ == '__main__':
     import sys
     query = sys.argv[1] if len(sys.argv) > 1 else "jalur landai ramah pemula"
     rec = RecommendationSystem()
-    rec.index_directory('/root/.hermes/cache/documents')
+    rec.index_directory('/home/ubuntu/.hermes/cache/documents')
     res = rec.search(query, top_n=3)
     print(json.dumps(res, indent=2))
