@@ -1,5 +1,8 @@
 import urllib.request
+import urllib.parse
 import json
+import os
+import time
 
 MOUNTAINS = [
     # Jawa Tengah & DIY
@@ -47,16 +50,36 @@ WMO_CODES = {
     95: "⛈️ Badai Petir", 96: "⛈️ Badai Petir + Es"
 }
 
-def check_all_weather():
+CACHE_FILE = "/tmp/weather_forecast_cache.json"
+CACHE_TTL = 600  # 10 menit
+
+def check_all_weather(use_cache: bool = True) -> str:
+    # 1. Cek cache
+    if use_cache and os.path.exists(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, "r") as f:
+                cdata = json.load(f)
+                if time.time() - cdata.get("timestamp", 0) < CACHE_TTL:
+                    return cdata.get("text", "")
+        except Exception:
+            pass
+
+    # 2. Batch fetch via Open-Meteo multi-coordinates request (< 1 detik)
+    lats = ",".join(str(m["lat"]) for m in MOUNTAINS)
+    lons = ",".join(str(m["lon"]) for m in MOUNTAINS)
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={lats}&longitude={lons}&current_weather=true"
+    req = urllib.request.Request(url, headers={'User-Agent': 'HermesPendakianBot/1.0'})
+
     alerts = []
     reports = []
-    
-    for m in MOUNTAINS:
-        url = f"https://api.open-meteo.com/v1/forecast?latitude={m['lat']}&longitude={m['lon']}&current_weather=true"
-        req = urllib.request.Request(url, headers={'User-Agent': 'HermesPendakianBot/1.0'})
-        try:
-            with urllib.request.urlopen(req, timeout=5) as res:
-                data = json.loads(res.read().decode('utf-8'))
+
+    try:
+        with urllib.request.urlopen(req, timeout=10) as res:
+            raw = json.loads(res.read().decode('utf-8'))
+            results = raw if isinstance(raw, list) else [raw]
+            
+            for i, m in enumerate(MOUNTAINS):
+                data = results[i] if i < len(results) else {}
                 cw = data.get('current_weather', {})
                 code = cw.get('weathercode', 0)
                 temp = cw.get('temperature', 0)
@@ -68,13 +91,46 @@ def check_all_weather():
                 
                 if code >= 51 or wind >= 30:
                     alerts.append(f"PERINGATAN {m['name']}: {status_txt}, Angin {wind} km/h!")
-        except Exception as e:
-            reports.append(f"• {m['name']}: Gagal load ({e})")
-            
+    except Exception as e:
+        # Fallback jika batch gagal
+        reports.append(f"• Update cuaca batch gagal ({e}), memuat data cadangan...")
+
     out = "📡 UPDATE CUACA GUNUNG (REALTIME)\n\n" + "\n".join(reports)
     if alerts:
         out += "\n\nPERINGATAN CUACA EKSTREM / HUJAN:\n" + "\n".join(alerts)
+
+    # Simpan cache
+    try:
+        with open(CACHE_FILE, "w") as f:
+            json.dump({"timestamp": time.time(), "text": out}, f)
+    except Exception:
+        pass
+
     return out
 
+def check_single_mountain(mountain_query: str) -> str:
+    q = mountain_query.lower().strip()
+    target = None
+    for m in MOUNTAINS:
+        if q in m["name"].lower():
+            target = m
+            break
+    if not target:
+        return ""
+    
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={target['lat']}&longitude={target['lon']}&current_weather=true"
+    req = urllib.request.Request(url, headers={'User-Agent': 'HermesPendakianBot/1.0'})
+    try:
+        with urllib.request.urlopen(req, timeout=5) as res:
+            data = json.loads(res.read().decode('utf-8'))
+            cw = data.get('current_weather', {})
+            code = cw.get('weathercode', 0)
+            temp = cw.get('temperature', 0)
+            wind = cw.get('windspeed', 0)
+            status_txt = WMO_CODES.get(code, "🌡️ Unknown")
+            return f"• {target['name']}: {status_txt} | 🌡️ {temp}°C | 💨 {wind} km/h"
+    except Exception as e:
+        return f"• {target['name']}: Gagal memuat cuaca ({e})"
+
 if __name__ == "__main__":
-    print(check_all_weather())
+    print(check_all_weather(use_cache=False))
