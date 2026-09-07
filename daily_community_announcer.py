@@ -4,7 +4,7 @@ import json
 import requests
 import time
 
-BOT_TOKEN = "8366083249:AAELG3sL4k7zVvS8uG-6R9cQy-8l0j5k2lM" # Bot API Token fallback
+BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "") # Bot API Token from env
 SUB_FILE = "/home/ubuntu/rutestrip-bot/subscribers.json"
 
 COMMUNITY_MSG = """Komunitas Pendaki RuteStrip Indonesia! 🎒
