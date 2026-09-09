@@ -1,0 +1,284 @@
+{
+  "873e4311-97fc-4bc1-b96b-b4c084805870": {
+    "3d3b0ccd-f8f6-4f1f-813e-c884e04db637": {
+      "session_id": "3d3b0ccd-f8f6-4f1f-813e-c884e04db637",
+      "title": "gimana kabarnya",
+      "created_at": "2026-09-04T11:29:43Z",
+      "messages": [
+        {
+          "id": "8bbfb18f-55fe-448b-b97a-238147690c8b",
+          "sender": "user",
+          "text": "gimana kabarnya",
+          "timestamp": "2026-09-04T11:29:43Z",
+          "meta": {}
+        },
+        {
+          "id": "6ed8b8e8-d741-4952-9120-c915ef1f5003",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-04T11:29:43Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
+    },
+    "cc3a3781-ad57-4d2f-99f2-95de1c17be6b": {
+      "session_id": "cc3a3781-ad57-4d2f-99f2-95de1c17be6b",
+      "title": "Itinerary gunung Sindoro 2D1N",
+      "created_at": "2026-09-04T13:19:37Z",
+      "messages": [
+        {
+          "id": "2a01010b-9a7f-42c2-aef1-e078d40bee67",
+          "sender": "user",
+          "text": "Itinerary gunung Sindoro 2D1N",
+          "timestamp": "2026-09-04T13:19:37Z",
+          "meta": {}
+        },
+        {
+          "id": "d0b20cea-f7b8-4694-90f4-6d01cf746905",
+          "sender": "bot",
+          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'Itinerary gunung Sindoro 2D1N':",
+          "timestamp": "2026-09-04T13:19:45Z",
+          "meta": {
+            "guardrail_passed": true,
+            "recommendations_count": 3
+          }
+        }
+      ]
+    }
+  },
+  "9ba3e085-fdd0-4cfd-ba15-78c4acb5517b": {
+    "7e4ce609-8521-4c60-8959-205b62a1aa5d": {
+      "session_id": "7e4ce609-8521-4c60-8959-205b62a1aa5d",
+      "title": "free -m; df -h; uptime",
+      "created_at": "2026-09-04T11:44:54Z",
+      "messages": [
+        {
+          "id": "2e11822d-fb86-4dcd-bd07-438508cdc06e",
+          "sender": "user",
+          "text": "free -m; df -h; uptime",
+          "timestamp": "2026-09-04T11:44:54Z",
+          "meta": {}
+        },
+        {
+          "id": "c8d2e8cd-9b10-444d-9bf1-b2abe6552ffb",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-04T11:44:54Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
+    },
+    "30b76f30-68ce-458c-81e0-c7747ccace79": {
+      "session_id": "30b76f30-68ce-458c-81e0-c7747ccace79",
+      "title": "free -m; df -h; uptime",
+      "created_at": "2026-09-04T11:45:36Z",
+      "messages": [
+        {
+          "id": "e4d36fd2-300a-4489-adef-6d00b2e01be5",
+          "sender": "user",
+          "text": "free -m; df -h; uptime",
+          "timestamp": "2026-09-04T11:45:36Z",
+          "meta": {}
+        },
+        {
+          "id": "74f54e2c-e1bf-40ce-ba7c-97ef359bd604",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-04T11:45:36Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
+    },
+    "37e536a1-cf15-4c54-acb4-36a34ee2cab7": {
+      "session_id": "37e536a1-cf15-4c54-acb4-36a34ee2cab7",
+      "title": "free -m; df -h; uptime",
+      "created_at": "2026-09-04T11:46:19Z",
+      "messages": [
+        {
+          "id": "b0b766b2-f966-4864-b2e9-00367806ecaf",
+          "sender": "user",
+          "text": "free -m; df -h; uptime",
+          "timestamp": "2026-09-04T11:46:19Z",
+          "meta": {}
+        },
+        {
+          "id": "704b5668-0096-41da-a4ac-9fd559a060a1",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-04T11:46:19Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
+    }
+  },
+  "c2f233f6-d55e-4cf0-8b7d-e1e699588766": {
+    "3a49a042-1abe-4baa-b2e3-436d713cd9f9": {
+      "session_id": "3a49a042-1abe-4baa-b2e3-436d713cd9f9",
+      "title": "kamu siaap",
+      "created_at": "2026-09-04T11:36:23Z",
+      "messages": [
+        {
+          "id": "9fbbf988-aa06-4f1c-a265-3bfcdb7e08a2",
+          "sender": "user",
+          "text": "kamu siaap",
+          "timestamp": "2026-09-04T11:36:23Z",
+          "meta": {}
+        },
+        {
+          "id": "8610679f-8e8e-44a0-8fb2-c24c1daa3fff",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-04T11:36:23Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
+    }
+  },
+  "testuser_pg": {
+    "session_pg_001": {
+      "session_id": "session_pg_001",
+      "title": "Halo tes pendakian Merbabu",
+      "created_at": "2026-09-07T11:25:25Z",
+      "messages": [
+        {
+          "id": "cb3fa28a-983d-4633-8364-f4eef518b9df",
+          "sender": "user",
+          "text": "Halo tes pendakian Merbabu",
+          "timestamp": "2026-09-07T11:25:25Z",
+          "meta": {}
+        }
+      ]
+    }
+  },
+  "anonymous_guest": {
+    "ab4f8532-f5ad-49a2-b1f3-d2a6ba80f249": {
+      "session_id": "ab4f8532-f5ad-49a2-b1f3-d2a6ba80f249",
+      "title": "rekomendasi jalur pemula dieng",
+      "created_at": "2026-09-08T03:53:25Z",
+      "messages": [
+        {
+          "id": "eef65473-635c-4c62-b191-faa1b3d43095",
+          "sender": "user",
+          "text": "rekomendasi jalur pemula dieng",
+          "timestamp": "2026-09-08T03:53:25Z",
+          "meta": {}
+        },
+        {
+          "id": "d3a5a105-51b1-4fa3-b17a-bfc43d18feb7",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-09-08T03:53:25Z",
+          "meta": {
+            "guardrail_passed": false
+          }
+        }
+      ]
+    },
+    "b684503d-fc6c-45ad-8cf8-0a661a15e25a": {
+      "session_id": "b684503d-fc6c-45ad-8cf8-0a661a15e25a",
+      "title": "rekomendasi jalur pemula dieng",
+      "created_at": "2026-09-08T03:56:37Z",
+      "messages": [
+        {
+          "id": "f312e042-0fb7-4498-b586-8ed3a7a6c73d",
+          "sender": "user",
+          "text": "rekomendasi jalur pemula dieng",
+          "timestamp": "2026-09-08T03:56:37Z",
+          "meta": {}
+        },
+        {
+          "id": "ba726c72-7cf9-4874-875d-81dbd4372100",
+          "sender": "bot",
+          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'rekomendasi jalur pemula dieng':",
+          "timestamp": "2026-09-08T03:56:48Z",
+          "meta": {
+            "guardrail_passed": true,
+            "recommendations_count": 3
+          }
+        }
+      ]
+    },
+    "c15db9f3-e43e-449e-a5e5-948e5baec62f": {
+      "session_id": "c15db9f3-e43e-449e-a5e5-948e5baec62f",
+      "title": "rekomendasi jalur pemula dieng",
+      "created_at": "2026-09-08T03:59:54Z",
+      "messages": [
+        {
+          "id": "8b1c4a00-e116-41d9-b06d-04bcddf1a34d",
+          "sender": "user",
+          "text": "rekomendasi jalur pemula dieng",
+          "timestamp": "2026-09-08T03:59:54Z",
+          "meta": {}
+        },
+        {
+          "id": "b1d041fb-0b31-4b8f-8c68-116447a3515a",
+          "sender": "bot",
+          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'rekomendasi jalur pemula dieng':",
+          "timestamp": "2026-09-08T04:00:04Z",
+          "meta": {
+            "guardrail_passed": true,
+            "recommendations_count": 3
+          }
+        }
+      ]
+    },
+    "cdac89de-ff8d-4e4d-a058-6c5e52942c49": {
+      "session_id": "cdac89de-ff8d-4e4d-a058-6c5e52942c49",
+      "title": "rekomendasi jalur pemula dieng",
+      "created_at": "2026-09-08T04:01:15Z",
+      "messages": [
+        {
+          "id": "ddd3fd2b-f273-46ab-bd2b-76dff524ae62",
+          "sender": "user",
+          "text": "rekomendasi jalur pemula dieng",
+          "timestamp": "2026-09-08T04:01:15Z",
+          "meta": {}
+        },
+        {
+          "id": "aa65e2bc-f02a-4241-a4d8-59a63b5f1404",
+          "sender": "bot",
+          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'rekomendasi jalur pemula dieng':",
+          "timestamp": "2026-09-08T04:01:25Z",
+          "meta": {
+            "guardrail_passed": true,
+            "recommendations_count": 3
+          }
+        }
+      ]
+    },
+    "b6c1da80-779e-4307-87f1-b059fc273786": {
+      "session_id": "b6c1da80-779e-4307-87f1-b059fc273786",
+      "title": "rekomendasi jalur pemula dieng",
+      "created_at": "2026-09-08T04:01:41Z",
+      "messages": [
+        {
+          "id": "52a22d3f-0ef9-41e7-a488-0c6a88f389fd",
+          "sender": "user",
+          "text": "rekomendasi jalur pemula dieng",
+          "timestamp": "2026-09-08T04:01:41Z",
+          "meta": {}
+        },
+        {
+          "id": "db267d3b-7240-4af1-9c21-c00fd7666c6e",
+          "sender": "bot",
+          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'rekomendasi jalur pemula dieng':",
+          "timestamp": "2026-09-08T04:01:41Z",
+          "meta": {
+            "guardrail_passed": true,
+            "recommendations_count": 3
+          }
+        }
+      ]
+    }
+  }
+}

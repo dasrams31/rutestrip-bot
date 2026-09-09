@@ -1,0 +1,144 @@
+{
+  "b6dcdb66-44c5-41a6-8405-b8717f28e774": [
+    {
+      "id": "52f48641-4c50-4381-aee0-66d509ffb7a3",
+      "sender": "user",
+      "text": "rekomendasi gunung landai untuk pemula",
+      "timestamp": "2026-09-04T11:01:05Z",
+      "meta": {}
+    },
+    {
+      "id": "2035c43b-933c-46f1-ba1c-7948629d8206",
+      "sender": "bot",
+      "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'rekomendasi gunung landai untuk pemula':",
+      "timestamp": "2026-09-04T11:01:13Z",
+      "meta": {
+        "guardrail_passed": true,
+        "recommendations_count": 3
+      }
+    }
+  ],
+  "56e6cdee-cfad-4645-a89d-7c459c66ad21": [
+    {
+      "id": "b8e71046-c4fa-4a70-b8cd-c88a1b87f120",
+      "sender": "user",
+      "text": "Tanya cuaca Merbabu",
+      "timestamp": "2026-09-04T11:04:44Z",
+      "meta": {}
+    },
+    {
+      "id": "f87678bc-625d-4db3-b932-34db675bca88",
+      "sender": "bot",
+      "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'Tanya cuaca Merbabu':",
+      "timestamp": "2026-09-04T11:04:44Z",
+      "meta": {
+        "guardrail_passed": true,
+        "recommendations_count": 3
+      }
+    }
+  ],
+  "anonymous_guest": [
+    {
+      "id": "7b0ed834-0991-4454-b580-bcb83621f135",
+      "sender": "user",
+      "text": "tes halo",
+      "timestamp": "2026-09-04T11:05:55Z",
+      "meta": {}
+    },
+    {
+      "id": "bd65a727-5975-4594-b0ce-50f91386e8ef",
+      "sender": "bot",
+      "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+      "timestamp": "2026-09-04T11:05:55Z",
+      "meta": {
+        "guardrail_passed": false
+      }
+    }
+  ],
+  "9ba3e085-fdd0-4cfd-ba15-78c4acb5517b": [
+    {
+      "id": "79343a99-3ef8-4300-8c9c-d00aeb19a0ca",
+      "sender": "user",
+      "text": "Rekomendasikan jalur gunung Merbabu",
+      "timestamp": "2026-09-04T11:06:14Z",
+      "meta": {}
+    },
+    {
+      "id": "7037a8a5-c99e-4471-a2eb-d3ff4beefd74",
+      "sender": "bot",
+      "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'Rekomendasikan jalur gunung Merbabu':",
+      "timestamp": "2026-09-04T11:06:14Z",
+      "meta": {
+        "guardrail_passed": true,
+        "recommendations_count": 3
+      }
+    },
+    {
+      "id": "a5e1e91a-595e-4df2-9463-64ac224cb0d9",
+      "sender": "user",
+      "text": "Cuaca gunung Sumbing",
+      "timestamp": "2026-09-04T11:06:21Z",
+      "meta": {}
+    },
+    {
+      "id": "9cc9e5db-17bf-4ac3-b99c-5840eba1a66e",
+      "sender": "bot",
+      "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'Cuaca gunung Sumbing':",
+      "timestamp": "2026-09-04T11:06:21Z",
+      "meta": {
+        "guardrail_passed": true,
+        "recommendations_count": 3
+      }
+    }
+  ],
+  "873e4311-97fc-4bc1-b96b-b4c084805870": [
+    {
+      "id": "155c3c0d-6048-4c08-8e4c-40d2e463a79a",
+      "sender": "user",
+      "text": "gimana kabarnya",
+      "timestamp": "2026-09-04T11:14:44Z",
+      "meta": {}
+    },
+    {
+      "id": "124ff15e-6e32-43a2-97c2-65076374ad69",
+      "sender": "bot",
+      "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+      "timestamp": "2026-09-04T11:14:44Z",
+      "meta": {
+        "guardrail_passed": false
+      }
+    },
+    {
+      "id": "feea3b0e-731d-41ae-8e7e-018da3d6bc6b",
+      "sender": "user",
+      "text": "gimana kabarnya",
+      "timestamp": "2026-09-04T11:15:00Z",
+      "meta": {}
+    },
+    {
+      "id": "a79eb475-e5de-461e-b093-1cf973bc36e0",
+      "sender": "bot",
+      "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+      "timestamp": "2026-09-04T11:15:00Z",
+      "meta": {
+        "guardrail_passed": false
+      }
+    },
+    {
+      "id": "58b270b1-8c63-4e83-b776-ea346bc57ed9",
+      "sender": "user",
+      "text": "gimana kabarnya",
+      "timestamp": "2026-09-04T11:15:24Z",
+      "meta": {}
+    },
+    {
+      "id": "8744df52-3221-437c-8c92-23da58117e15",
+      "sender": "bot",
+      "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+      "timestamp": "2026-09-04T11:15:24Z",
+      "meta": {
+        "guardrail_passed": false
+      }
+    }
+  ]
+}

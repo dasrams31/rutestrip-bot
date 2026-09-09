@@ -1,0 +1,56 @@
+{
+  "b6dcdb66-44c5-41a6-8405-b8717f28e774": {
+    "user_id": "b6dcdb66-44c5-41a6-8405-b8717f28e774",
+    "username": "rama_test",
+    "email": "rama@rutestrip.web.id",
+    "full_name": "Rama Danadipa",
+    "password_hash": "3a6e2557521bbbb633d5b727774004f964d3ca34d72c822250a972596ea383e1",
+    "created_at": "2026-09-04T10:32:56Z",
+    "token": "rutestrip_ecb6fda31b0daff8939e252705558a88"
+  },
+  "56e6cdee-cfad-4645-a89d-7c459c66ad21": {
+    "user_id": "56e6cdee-cfad-4645-a89d-7c459c66ad21",
+    "username": "testuser",
+    "email": "test@rutestrip.com",
+    "full_name": "Test User",
+    "password_hash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "created_at": "2026-09-04T10:36:25Z",
+    "token": "rutestrip_e07a02f22ed37d720aed773cad105ac4"
+  },
+  "873e4311-97fc-4bc1-b96b-b4c084805870": {
+    "user_id": "873e4311-97fc-4bc1-b96b-b4c084805870",
+    "username": "dasrams",
+    "email": "ramadanadipa176@gmail.com",
+    "full_name": "Rama Danadipa",
+    "password_hash": "8ef8b75604273460a17139254062664359b3795183f1d6821a620cf566395fed",
+    "created_at": "2026-09-04T10:42:30Z",
+    "token": "rutestrip_a139a44787765b244d9a22f91298fdca"
+  },
+  "9ba3e085-fdd0-4cfd-ba15-78c4acb5517b": {
+    "user_id": "9ba3e085-fdd0-4cfd-ba15-78c4acb5517b",
+    "username": "slidertest1",
+    "email": "slider1@rutestrip.web.id",
+    "full_name": "Slider Test",
+    "password_hash": "a109e36947ad56de1dca1cc49f0ef8ac9ad9a7b1aa0df41fb3c4cb73c1ff01ea",
+    "created_at": "2026-09-04T11:06:02Z",
+    "token": "rutestrip_78f77531f6e0a2e3fba3dd04dfe263fc"
+  },
+  "c2f233f6-d55e-4cf0-8b7d-e1e699588766": {
+    "user_id": "c2f233f6-d55e-4cf0-8b7d-e1e699588766",
+    "username": "alok",
+    "email": "shndn@gmail.com",
+    "full_name": "hsx",
+    "password_hash": "45e75f633e6e8d596dd40bff128a598576b426bd5731c00cbbb6f2bd4070d7d1",
+    "created_at": "2026-09-04T11:32:08Z",
+    "token": "rutestrip_917e3ae9a859dfff314114b7fba66cb6"
+  },
+  "ae654342-01bd-499c-b774-9d1c5d4449a5": {
+    "user_id": "ae654342-01bd-499c-b774-9d1c5d4449a5",
+    "username": "testuser_pg",
+    "email": "testuser@example.com",
+    "full_name": "testuser_pg",
+    "password_hash": "fcf730b6d95236ecd3c9fc2d92d7b6b2bb061514961aec041d6c7a7192f592e4",
+    "created_at": "2026-09-07T11:25:17Z",
+    "token": "rutestrip_2c58378f0d781126f13b781dabab7144"
+  }
+}

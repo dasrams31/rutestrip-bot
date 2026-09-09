@@ -1,0 +1,2274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx
+  version="1.0"
+  creator="GPSBabel - http://www.gpsbabel.org"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/0"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+<time>2011-11-21T09:37:22Z</time>
+<bounds minlat="-7.168815000" minlon="107.841239000" maxlat="-7.142637000" maxlon="107.895906000"/>
+<wpt lat="-7.153642000" lon="107.852798000">
+  <ele>1896.310000</ele>
+  <name>Batu Besar</name>
+  <cmt>Batu Besar</cmt>
+  <desc>Batu Besar</desc>
+</wpt>
+<wpt lat="-7.157364000" lon="107.866035000">
+  <ele>1184.220000</ele>
+  <name>Curug Citiis</name>
+  <cmt>Curug Citiis</cmt>
+  <desc>Curug Citiis</desc>
+</wpt>
+<wpt lat="-7.144233000" lon="107.844725000">
+  <ele>2145.000000</ele>
+  <name>Kawah</name>
+  <cmt>Kawah</cmt>
+  <desc>Kawah</desc>
+</wpt>
+<wpt lat="-7.146924000" lon="107.844190000">
+  <ele>2170.530000</ele>
+  <name>Pemakaman</name>
+  <cmt>Pemakaman</cmt>
+  <desc>Pemakaman</desc>
+</wpt>
+<wpt lat="-7.149465000" lon="107.845855000">
+  <name>Puncak 2</name>
+  <cmt>Puncak 2</cmt>
+  <desc>Puncak 2</desc>
+</wpt>
+<wpt lat="-7.144650000" lon="107.844013000">
+  <ele>2213.300000</ele>
+  <name>Puncak 3</name>
+  <cmt>Puncak 3</cmt>
+  <desc>Puncak 3</desc>
+</wpt>
+<wpt lat="-7.152309000" lon="107.848699000">
+  <ele>2053.490000</ele>
+  <name>Puncak Guntur</name>
+  <cmt>Puncak Guntur</cmt>
+  <desc>Puncak Guntur</desc>
+</wpt>
+<wpt lat="-7.143000000" lon="107.841387000">
+  <ele>2269.060000</ele>
+  <name>Puncak Masigit</name>
+  <cmt>Puncak Masigit</cmt>
+  <desc>Puncak Masigit</desc>
+</wpt>
+<wpt lat="-7.146882000" lon="107.841351000">
+  <ele>2186.870000</ele>
+  <name>Sensor Gn.Api</name>
+  <cmt>Sensor Gn.Api</cmt>
+  <desc>Sensor Gn.Api</desc>
+</wpt>
+<wpt lat="-7.168444000" lon="107.895906000">
+  <ele>745.620000</ele>
+  <name>Warung Tanjung</name>
+  <cmt>Warung Tanjung</cmt>
+  <desc>Warung Tanjung</desc>
+</wpt>
+<wpt lat="-7.168815000" lon="107.895677000">
+  <ele>750.910000</ele>
+  <name>jangyudi-0</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.895677 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.168815 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2463.614 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 97.5 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.895677 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.168815 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2463.614 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 97.5 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.168536000" lon="107.895892000">
+  <ele>753.310000</ele>
+  <name>jangyudi-1</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.895892 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.168536 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2471.499 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 37.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.895892 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.168536 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2471.499 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 37.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.168043000" lon="107.895269000">
+  <ele>749.470000</ele>
+  <name>jangyudi-2</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.895269 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.168043 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2458.884 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 308.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.895269 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.168043 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2458.884 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 308.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.167056000" lon="107.890806000">
+  <ele>761.000000</ele>
+  <name>jangyudi-3</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.890806 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.167056 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2496.731 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 282.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.890806 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.167056 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2496.731 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 282.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.165854000" lon="107.888961000">
+  <ele>770.140000</ele>
+  <name>jangyudi-4</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.888961 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.165854 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2526.693 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 303.3 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.888961 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.165854 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2526.693 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 303.3 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.165017000" lon="107.888510000">
+  <ele>776.870000</ele>
+  <name>jangyudi-5</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.888510 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.165017 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2548.770 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 331.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.888510 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.165017 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2548.770 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 331.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.164695000" lon="107.888081000">
+  <ele>779.270000</ele>
+  <name>jangyudi-6</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.888081 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164695 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2556.655 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 307.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.888081 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164695 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2556.655 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 307.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.164330000" lon="107.886794000">
+  <ele>788.400000</ele>
+  <name>jangyudi-7</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.886794 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164330 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2586.618 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 286.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.886794 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164330 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2586.618 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 286.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.163665000" lon="107.885356000">
+  <ele>802.820000</ele>
+  <name>jangyudi-8</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.885356 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.163665 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2633.926 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 295.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.885356 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.163665 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2633.926 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 295.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.163708000" lon="107.885056000">
+  <ele>805.700000</ele>
+  <name>jangyudi-9</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.885056 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.163708 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2643.388 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 261.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.885056 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.163708 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2643.388 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 261.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.164803000" lon="107.884562000">
+  <ele>812.430000</ele>
+  <name>jangyudi-10</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.884562 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164803 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2665.465 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 204.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.884562 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164803 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2665.465 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 204.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.164502000" lon="107.882159000">
+  <ele>821.090000</ele>
+  <name>jangyudi-11</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.882159 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164502 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2693.851 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 277.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.882159 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164502 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2693.851 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 277.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.164352000" lon="107.881815000">
+  <ele>820.600000</ele>
+  <name>jangyudi-12</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.881815 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164352 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2692.274 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 293.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.881815 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164352 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2692.274 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 293.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.164438000" lon="107.881408000">
+  <ele>820.600000</ele>
+  <name>jangyudi-13</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.881408 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164438 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2692.274 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 258.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.881408 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164438 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2692.274 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 258.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.164738000" lon="107.880957000">
+  <ele>825.410000</ele>
+  <name>jangyudi-14</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.880957 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164738 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2708.043 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 236.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.880957 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164738 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2708.043 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 236.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.164395000" lon="107.878575000">
+  <ele>860.020000</ele>
+  <name>jangyudi-15</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.878575 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164395 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2821.583 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 278.3 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.878575 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.164395 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2821.583 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 278.3 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.163408000" lon="107.877932000">
+  <ele>877.800000</ele>
+  <name>jangyudi-16</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.877932 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.163408 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2879.930 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 327.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.877932 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.163408 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2879.930 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 327.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.163072000" lon="107.877717000">
+  <ele>887.420000</ele>
+  <name>jangyudi-17</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.877717 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.163072 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2911.470 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 327.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.877717 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.163072 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2911.470 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 327.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.162535000" lon="107.876977000">
+  <ele>895.110000</ele>
+  <name>jangyudi-18</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.876977 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162535 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2936.701 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 306.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.876977 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162535 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2936.701 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 306.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.162351000" lon="107.876456000">
+  <ele>900.390000</ele>
+  <name>jangyudi-19</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.876456 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162351 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2954.048 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 289.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.876456 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162351 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2954.048 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 289.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.162788000" lon="107.875802000">
+  <ele>904.240000</ele>
+  <name>jangyudi-20</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.875802 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162788 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2966.663 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 236.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.875802 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162788 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2966.663 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 236.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.162734000" lon="107.875298000">
+  <ele>913.370000</ele>
+  <name>jangyudi-21</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.875298 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162734 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2996.625 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 276.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.875298 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162734 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 2996.625 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 276.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.162473000" lon="107.874461000">
+  <ele>934.040000</ele>
+  <name>jangyudi-22</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.874461 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162473 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3064.434 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 287.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.874461 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162473 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3064.434 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 287.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.162149000" lon="107.874252000">
+  <ele>941.730000</ele>
+  <name>jangyudi-23</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.874252 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162149 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3089.665 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 327.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.874252 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.162149 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3089.665 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 327.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.161489000" lon="107.874166000">
+  <ele>943.170000</ele>
+  <name>jangyudi-24</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.874166 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.161489 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3094.396 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 352.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.874166 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.161489 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3094.396 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 352.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.161255000" lon="107.873447000">
+  <ele>945.580000</ele>
+  <name>jangyudi-25</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.873447 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.161255 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3102.281 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 288.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.873447 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.161255 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3102.281 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 288.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.160871000" lon="107.873136000">
+  <ele>949.900000</ele>
+  <name>jangyudi-26</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.873136 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160871 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3116.474 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 321.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.873136 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160871 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3116.474 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 321.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.160744000" lon="107.872771000">
+  <ele>950.860000</ele>
+  <name>jangyudi-27</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.872771 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160744 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3119.628 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 289.3 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.872771 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160744 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3119.628 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 289.3 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.160595000" lon="107.872632000">
+  <ele>959.030000</ele>
+  <name>jangyudi-28</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.872632 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160595 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3146.436 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 317.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.872632 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160595 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3146.436 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 317.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.160201000" lon="107.872556000">
+  <ele>969.610000</ele>
+  <name>jangyudi-29</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.872556 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160201 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3181.129 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 349.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.872556 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160201 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3181.129 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 349.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.160116000" lon="107.872117000">
+  <ele>972.490000</ele>
+  <name>jangyudi-30</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.872117 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160116 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3190.590 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 281.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.872117 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160116 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3190.590 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 281.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.159807000" lon="107.871644000">
+  <ele>974.410000</ele>
+  <name>jangyudi-31</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.871644 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.159807 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3196.898 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 303.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.871644 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.159807 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3196.898 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 303.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.159998000" lon="107.871473000">
+  <ele>1008.060000</ele>
+  <name>jangyudi-32</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.871473 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.159998 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3307.285 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 221.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.871473 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.159998 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3307.285 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 221.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.160017000" lon="107.871323000">
+  <ele>1008.540000</ele>
+  <name>jangyudi-33</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.871323 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160017 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3308.862 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 262.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.871323 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.160017 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3308.862 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 262.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.159545000" lon="107.870593000">
+  <ele>1013.830000</ele>
+  <name>jangyudi-34</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.870593 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.159545 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3326.209 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 303.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.870593 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.159545 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3326.209 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 303.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.159159000" lon="107.870357000">
+  <ele>1022.960000</ele>
+  <name>jangyudi-35</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.870357 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.159159 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3356.171 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 328.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.870357 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.159159 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3356.171 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 328.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.158666000" lon="107.869520000">
+  <ele>1050.360000</ele>
+  <name>jangyudi-36</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.869520 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.158666 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3446.058 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 300.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.869520 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.158666 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3446.058 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 300.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.158387000" lon="107.869306000">
+  <ele>1055.160000</ele>
+  <name>jangyudi-37</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.869306 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.158387 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3461.827 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 322.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.869306 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.158387 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3461.827 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 322.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.158279000" lon="107.867761000">
+  <ele>1065.260000</ele>
+  <name>jangyudi-38</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.867761 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.158279 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3494.943 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 274.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.867761 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.158279 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3494.943 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 274.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.157979000" lon="107.867653000">
+  <ele>1077.280000</ele>
+  <name>jangyudi-39</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.867653 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157979 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3534.367 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 340.3 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.867653 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157979 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3534.367 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 340.3 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.157679000" lon="107.867246000">
+  <ele>1115.730000</ele>
+  <name>jangyudi-40</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.867246 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157679 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3660.523 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 306.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.867246 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157679 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3660.523 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 306.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.157507000" lon="107.866795000">
+  <ele>1146.490000</ele>
+  <name>jangyudi-41</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.866795 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157507 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3761.449 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 291.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.866795 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157507 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3761.449 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 291.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.157507000" lon="107.866259000">
+  <ele>1163.310000</ele>
+  <name>jangyudi-42</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.866259 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157507 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3816.641 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 270.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.866259 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157507 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3816.641 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 270.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.157850000" lon="107.866452000">
+  <ele>1158.030000</ele>
+  <name>jangyudi-43</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.866452 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157850 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3799.295 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 150.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.866452 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157850 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3799.295 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 150.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.157807000" lon="107.866173000">
+  <ele>1171.000000</ele>
+  <name>jangyudi-44</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.866173 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157807 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3841.872 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 278.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.866173 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157807 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3841.872 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 278.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.158065000" lon="107.865744000">
+  <ele>1185.900000</ele>
+  <name>jangyudi-45</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.865744 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.158065 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3890.758 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 238.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.865744 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.158065 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 3890.758 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 238.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.157679000" lon="107.864456000">
+  <ele>1227.240000</ele>
+  <name>jangyudi-46</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.864456 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157679 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4026.376 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 286.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.864456 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157679 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4026.376 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 286.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.157722000" lon="107.864156000">
+  <ele>1235.410000</ele>
+  <name>jangyudi-47</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.864156 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157722 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4053.184 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 261.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.864156 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157722 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4053.184 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 261.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.157271000" lon="107.863169000">
+  <ele>1276.750000</ele>
+  <name>jangyudi-48</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.863169 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157271 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4188.803 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 294.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.863169 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157271 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4188.803 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 294.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.157099000" lon="107.863083000">
+  <ele>1288.280000</ele>
+  <name>jangyudi-49</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.863083 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157099 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4226.649 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 333.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.863083 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.157099 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4226.649 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 333.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.156885000" lon="107.862675000">
+  <ele>1307.990000</ele>
+  <name>jangyudi-50</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.862675 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.156885 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4291.305 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 297.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.862675 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.156885 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4291.305 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 297.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.156069000" lon="107.860744000">
+  <ele>1399.790000</ele>
+  <name>jangyudi-51</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.860744 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.156069 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4592.503 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 293.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.860744 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.156069 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4592.503 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 293.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.155683000" lon="107.859457000">
+  <ele>1466.130000</ele>
+  <name>jangyudi-52</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.859457 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.155683 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4810.122 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 286.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.859457 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.155683 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 4810.122 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 286.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.155275000" lon="107.858341000">
+  <ele>1540.630000</ele>
+  <name>jangyudi-53</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.858341 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.155275 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 5054.550 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 290.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.858341 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.155275 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 5054.550 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 290.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.154996000" lon="107.857955000">
+  <ele>1563.700000</ele>
+  <name>jangyudi-54</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.857955 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.154996 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 5130.244 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 306.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.857955 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.154996 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 5130.244 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 306.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.154610000" lon="107.857182000">
+  <ele>1601.190000</ele>
+  <name>jangyudi-55</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.857182 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.154610 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 5253.246 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 296.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.857182 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.154610 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 5253.246 ft &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 296.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.154524000" lon="107.856517000">
+  <ele>1636.760000</ele>
+  <name>jangyudi-56</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.856517 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.154524 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.017 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 277.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.856517 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.154524 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.017 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 277.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.154160000" lon="107.856174000">
+  <ele>1663.670000</ele>
+  <name>jangyudi-57</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.856174 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.154160 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.034 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 316.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.856174 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.154160 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.034 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 316.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.153859000" lon="107.855015000">
+  <ele>1746.350000</ele>
+  <name>jangyudi-58</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.855015 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153859 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.085 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 284.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.855015 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153859 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.085 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 284.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.153666000" lon="107.854779000">
+  <ele>1763.170000</ele>
+  <name>jangyudi-59</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.854779 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153666 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.096 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 309.5 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.854779 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153666 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.096 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 309.5 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.153537000" lon="107.853899000">
+  <ele>1819.410000</ele>
+  <name>jangyudi-60</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.853899 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153537 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.131 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 278.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.853899 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153537 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.131 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 278.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.153730000" lon="107.852268000">
+  <ele>1923.230000</ele>
+  <name>jangyudi-61</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.852268 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153730 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.195 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 263.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.852268 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153730 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.195 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 263.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.153559000" lon="107.851517000">
+  <ele>1933.320000</ele>
+  <name>jangyudi-62</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.851517 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153559 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.201 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 282.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.851517 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153559 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.201 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 282.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.153323000" lon="107.851152000">
+  <ele>1934.280000</ele>
+  <name>jangyudi-63</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.851152 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153323 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.202 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 303.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.851152 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153323 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.202 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 303.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.153323000" lon="107.850766000">
+  <ele>1945.340000</ele>
+  <name>jangyudi-64</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.850766 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153323 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.209 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 270.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.850766 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.153323 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.209 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 270.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.152529000" lon="107.849929000">
+  <ele>1993.890000</ele>
+  <name>jangyudi-65</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.849929 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.152529 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.239 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 313.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.849929 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.152529 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.239 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 313.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.152078000" lon="107.849264000">
+  <ele>2041.470000</ele>
+  <name>jangyudi-66</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.849264 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.152078 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.269 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 304.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.849264 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.152078 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.269 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 304.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.152078000" lon="107.849050000">
+  <ele>2045.800000</ele>
+  <name>jangyudi-67</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.849050 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.152078 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.271 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 270.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.849050 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.152078 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.271 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 270.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.152336000" lon="107.848685000">
+  <ele>2050.600000</ele>
+  <name>jangyudi-68</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.848685 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.152336 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.274 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 234.5 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.848685 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.152336 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.274 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 234.5 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.152035000" lon="107.848320000">
+  <ele>2047.240000</ele>
+  <name>jangyudi-69</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.848320 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.152035 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.272 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 309.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.848320 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.152035 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.272 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 309.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.151949000" lon="107.848277000">
+  <ele>2047.240000</ele>
+  <name>jangyudi-70</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.848277 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.151949 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.272 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 333.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.848277 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.151949 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.272 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 333.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.150469000" lon="107.847290000">
+  <ele>2085.210000</ele>
+  <name>jangyudi-71</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.847290 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.150469 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.296 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 326.5 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.847290 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.150469 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.296 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 326.5 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.150018000" lon="107.846711000">
+  <ele>2105.400000</ele>
+  <name>jangyudi-72</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.846711 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.150018 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.308 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 308.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.846711 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.150018 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.308 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 308.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.149739000" lon="107.846518000">
+  <ele>2116.930000</ele>
+  <name>jangyudi-73</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.846518 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.149739 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.315 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 325.5 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.846518 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.149739 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.315 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 325.5 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.149460000" lon="107.845852000">
+  <ele>2146.250000</ele>
+  <name>jangyudi-74</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.845852 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.149460 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.334 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 292.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.845852 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.149460 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.334 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 292.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.149181000" lon="107.845852000">
+  <ele>2145.290000</ele>
+  <name>jangyudi-75</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.845852 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.149181 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.333 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 0.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.845852 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.149181 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.333 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 0.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.148173000" lon="107.845316000">
+  <ele>2083.290000</ele>
+  <name>jangyudi-76</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.845316 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.148173 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.294 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 332.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.845316 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.148173 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.294 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 332.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.147615000" lon="107.844994000">
+  <ele>2112.610000</ele>
+  <name>jangyudi-77</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844994 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.147615 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.313 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 330.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844994 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.147615 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.313 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 330.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.147336000" lon="107.844694000">
+  <ele>2140.970000</ele>
+  <name>jangyudi-78</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844694 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.147336 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.330 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 313.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844694 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.147336 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.330 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 313.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.147315000" lon="107.844393000">
+  <ele>2153.940000</ele>
+  <name>jangyudi-79</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844393 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.147315 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.338 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 274.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844393 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.147315 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.338 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 274.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.146993000" lon="107.844329000">
+  <ele>2167.400000</ele>
+  <name>jangyudi-80</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844329 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.146993 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.347 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 348.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844329 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.146993 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.347 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 348.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.146971000" lon="107.844200000">
+  <ele>2172.210000</ele>
+  <name>jangyudi-81</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844200 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.146971 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.350 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 279.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844200 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.146971 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.350 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 279.8 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.146864000" lon="107.844200000">
+  <ele>2173.170000</ele>
+  <name>jangyudi-82</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844200 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.146864 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.350 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 0.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844200 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.146864 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.350 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 0.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.146928000" lon="107.844329000">
+  <ele>2171.730000</ele>
+  <name>jangyudi-83</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844329 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.146928 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.349 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 116.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844329 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.146928 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.349 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 116.6 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.146242000" lon="107.844093000">
+  <ele>2176.530000</ele>
+  <name>jangyudi-84</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844093 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.146242 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.352 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 341.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844093 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.146242 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.352 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 341.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.145641000" lon="107.844200000">
+  <ele>2179.900000</ele>
+  <name>jangyudi-85</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844200 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145641 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.355 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 10.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844200 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145641 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.355 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 10.0 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.145340000" lon="107.844694000">
+  <ele>2188.070000</ele>
+  <name>jangyudi-86</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844694 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145340 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.360 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 58.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844694 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145340 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.360 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 58.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.144804000" lon="107.844243000">
+  <ele>2203.450000</ele>
+  <name>jangyudi-87</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844243 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144804 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.369 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 320.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844243 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144804 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.369 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 320.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.144675000" lon="107.844028000">
+  <ele>2213.540000</ele>
+  <name>jangyudi-88</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844028 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144675 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.375 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 301.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.844028 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144675 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.375 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 301.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.144761000" lon="107.843513000">
+  <ele>2204.410000</ele>
+  <name>jangyudi-89</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.843513 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144761 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.370 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 260.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.843513 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144761 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.370 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 260.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.145576000" lon="107.843385000">
+  <ele>2184.220000</ele>
+  <name>jangyudi-90</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.843385 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145576 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.357 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 188.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.843385 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145576 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.357 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 188.9 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.145963000" lon="107.842398000">
+  <ele>2158.270000</ele>
+  <name>jangyudi-91</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.842398 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145963 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.341 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 248.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.842398 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145963 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.341 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 248.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.145512000" lon="107.842526000">
+  <ele>2164.040000</ele>
+  <name>jangyudi-92</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.842526 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145512 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.345 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 15.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.842526 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145512 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.345 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 15.7 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.145061000" lon="107.842762000">
+  <ele>2165.960000</ele>
+  <name>jangyudi-93</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.842762 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145061 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.346 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 27.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.842762 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.145061 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.346 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 27.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.144375000" lon="107.842441000">
+  <ele>2175.090000</ele>
+  <name>jangyudi-94</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.842441 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144375 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.352 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 335.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.842441 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144375 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.352 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 335.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.144182000" lon="107.841883000">
+  <ele>2221.230000</ele>
+  <name>jangyudi-95</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.841883 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144182 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.380 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 289.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.841883 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144182 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.380 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 289.2 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.144096000" lon="107.841561000">
+  <ele>2236.140000</ele>
+  <name>jangyudi-96</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.841561 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144096 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.389 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 285.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.841561 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.144096 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.389 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 285.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.143517000" lon="107.841647000">
+  <ele>2238.060000</ele>
+  <name>jangyudi-97</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.841647 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.143517 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.391 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 8.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.841647 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.143517 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.391 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 8.4 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.143195000" lon="107.841368000">
+  <ele>2265.940000</ele>
+  <name>jangyudi-98</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.841368 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.143195 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.408 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 319.3 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.841368 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.143195 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.408 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 319.3 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<wpt lat="-7.142637000" lon="107.841239000">
+  <ele>2266.420000</ele>
+  <name>jangyudi-99</name>
+  <cmt>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.841239 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.142637 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.408 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 347.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</cmt>
+  <desc>&lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Longitude: 107.841239 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Latitude: -7.142637 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Altitude: 1.408 mi &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Heading: 347.1 &lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;</desc>
+</wpt>
+<trk>
+  <name>Path</name>
+<trkseg>
+<trkpt lat="-7.168815000" lon="107.895677000">
+  <ele>750.910000</ele>
+</trkpt>
+<trkpt lat="-7.168815000" lon="107.895677000">
+  <ele>750.909668</ele>
+</trkpt>
+<trkpt lat="-7.168536000" lon="107.895892000">
+  <ele>753.310000</ele>
+</trkpt>
+<trkpt lat="-7.168536000" lon="107.895892000">
+  <ele>753.312988</ele>
+</trkpt>
+<trkpt lat="-7.168043000" lon="107.895269000">
+  <ele>749.470000</ele>
+</trkpt>
+<trkpt lat="-7.168043000" lon="107.895269000">
+  <ele>749.467773</ele>
+</trkpt>
+<trkpt lat="-7.167056000" lon="107.890806000">
+  <ele>761.000000</ele>
+</trkpt>
+<trkpt lat="-7.167056000" lon="107.890806000">
+  <ele>761.003662</ele>
+</trkpt>
+<trkpt lat="-7.165854000" lon="107.888961000">
+  <ele>770.140000</ele>
+</trkpt>
+<trkpt lat="-7.165854000" lon="107.888961000">
+  <ele>770.135986</ele>
+</trkpt>
+<trkpt lat="-7.165017000" lon="107.888510000">
+  <ele>776.870000</ele>
+</trkpt>
+<trkpt lat="-7.165017000" lon="107.888510000">
+  <ele>776.865234</ele>
+</trkpt>
+<trkpt lat="-7.164695000" lon="107.888081000">
+  <ele>779.270000</ele>
+</trkpt>
+<trkpt lat="-7.164695000" lon="107.888081000">
+  <ele>779.268311</ele>
+</trkpt>
+<trkpt lat="-7.164330000" lon="107.886794000">
+  <ele>788.400000</ele>
+</trkpt>
+<trkpt lat="-7.164330000" lon="107.886794000">
+  <ele>788.401123</ele>
+</trkpt>
+<trkpt lat="-7.163665000" lon="107.885356000">
+  <ele>802.820000</ele>
+</trkpt>
+<trkpt lat="-7.163665000" lon="107.885356000">
+  <ele>802.820557</ele>
+</trkpt>
+<trkpt lat="-7.163708000" lon="107.885056000">
+  <ele>805.700000</ele>
+</trkpt>
+<trkpt lat="-7.163708000" lon="107.885056000">
+  <ele>805.704590</ele>
+</trkpt>
+<trkpt lat="-7.164803000" lon="107.884562000">
+  <ele>812.430000</ele>
+</trkpt>
+<trkpt lat="-7.164803000" lon="107.884562000">
+  <ele>812.433594</ele>
+</trkpt>
+<trkpt lat="-7.164502000" lon="107.882159000">
+  <ele>821.090000</ele>
+</trkpt>
+<trkpt lat="-7.164502000" lon="107.882159000">
+  <ele>821.085693</ele>
+</trkpt>
+<trkpt lat="-7.164352000" lon="107.881815000">
+  <ele>820.600000</ele>
+</trkpt>
+<trkpt lat="-7.164352000" lon="107.881815000">
+  <ele>820.604980</ele>
+</trkpt>
+<trkpt lat="-7.164438000" lon="107.881408000">
+  <ele>820.600000</ele>
+</trkpt>
+<trkpt lat="-7.164438000" lon="107.881408000">
+  <ele>820.604980</ele>
+</trkpt>
+<trkpt lat="-7.164738000" lon="107.880957000">
+  <ele>825.410000</ele>
+</trkpt>
+<trkpt lat="-7.164738000" lon="107.880957000">
+  <ele>825.411377</ele>
+</trkpt>
+<trkpt lat="-7.164395000" lon="107.878575000">
+  <ele>860.020000</ele>
+</trkpt>
+<trkpt lat="-7.164395000" lon="107.878575000">
+  <ele>860.018555</ele>
+</trkpt>
+<trkpt lat="-7.163408000" lon="107.877932000">
+  <ele>877.800000</ele>
+</trkpt>
+<trkpt lat="-7.163408000" lon="107.877932000">
+  <ele>877.802734</ele>
+</trkpt>
+<trkpt lat="-7.163072000" lon="107.877717000">
+  <ele>887.420000</ele>
+</trkpt>
+<trkpt lat="-7.163072000" lon="107.877717000">
+  <ele>887.416016</ele>
+</trkpt>
+<trkpt lat="-7.162535000" lon="107.876977000">
+  <ele>895.110000</ele>
+</trkpt>
+<trkpt lat="-7.162535000" lon="107.876977000">
+  <ele>895.106445</ele>
+</trkpt>
+<trkpt lat="-7.162351000" lon="107.876456000">
+  <ele>900.390000</ele>
+</trkpt>
+<trkpt lat="-7.162351000" lon="107.876456000">
+  <ele>900.393799</ele>
+</trkpt>
+<trkpt lat="-7.162788000" lon="107.875802000">
+  <ele>904.240000</ele>
+</trkpt>
+<trkpt lat="-7.162788000" lon="107.875802000">
+  <ele>904.239014</ele>
+</trkpt>
+<trkpt lat="-7.162734000" lon="107.875298000">
+  <ele>913.370000</ele>
+</trkpt>
+<trkpt lat="-7.162734000" lon="107.875298000">
+  <ele>913.371338</ele>
+</trkpt>
+<trkpt lat="-7.162473000" lon="107.874461000">
+  <ele>934.040000</ele>
+</trkpt>
+<trkpt lat="-7.162473000" lon="107.874461000">
+  <ele>934.039551</ele>
+</trkpt>
+<trkpt lat="-7.162149000" lon="107.874252000">
+  <ele>941.730000</ele>
+</trkpt>
+<trkpt lat="-7.162149000" lon="107.874252000">
+  <ele>941.729980</ele>
+</trkpt>
+<trkpt lat="-7.161489000" lon="107.874166000">
+  <ele>943.170000</ele>
+</trkpt>
+<trkpt lat="-7.161489000" lon="107.874166000">
+  <ele>943.171875</ele>
+</trkpt>
+<trkpt lat="-7.161255000" lon="107.873447000">
+  <ele>945.580000</ele>
+</trkpt>
+<trkpt lat="-7.161255000" lon="107.873447000">
+  <ele>945.575195</ele>
+</trkpt>
+<trkpt lat="-7.160871000" lon="107.873136000">
+  <ele>949.900000</ele>
+</trkpt>
+<trkpt lat="-7.160871000" lon="107.873136000">
+  <ele>949.901367</ele>
+</trkpt>
+<trkpt lat="-7.160744000" lon="107.872771000">
+  <ele>950.860000</ele>
+</trkpt>
+<trkpt lat="-7.160744000" lon="107.872771000">
+  <ele>950.862549</ele>
+</trkpt>
+<trkpt lat="-7.160595000" lon="107.872632000">
+  <ele>959.030000</ele>
+</trkpt>
+<trkpt lat="-7.160595000" lon="107.872632000">
+  <ele>959.033691</ele>
+</trkpt>
+<trkpt lat="-7.160201000" lon="107.872556000">
+  <ele>969.610000</ele>
+</trkpt>
+<trkpt lat="-7.160201000" lon="107.872556000">
+  <ele>969.608154</ele>
+</trkpt>
+<trkpt lat="-7.160116000" lon="107.872117000">
+  <ele>972.490000</ele>
+</trkpt>
+<trkpt lat="-7.160116000" lon="107.872117000">
+  <ele>972.491943</ele>
+</trkpt>
+<trkpt lat="-7.159807000" lon="107.871644000">
+  <ele>974.410000</ele>
+</trkpt>
+<trkpt lat="-7.159807000" lon="107.871644000">
+  <ele>974.414551</ele>
+</trkpt>
+<trkpt lat="-7.159998000" lon="107.871473000">
+  <ele>1008.060000</ele>
+</trkpt>
+<trkpt lat="-7.159998000" lon="107.871473000">
+  <ele>1008.060547</ele>
+</trkpt>
+<trkpt lat="-7.160017000" lon="107.871323000">
+  <ele>1008.540000</ele>
+</trkpt>
+<trkpt lat="-7.160017000" lon="107.871323000">
+  <ele>1008.541016</ele>
+</trkpt>
+<trkpt lat="-7.159545000" lon="107.870593000">
+  <ele>1013.830000</ele>
+</trkpt>
+<trkpt lat="-7.159545000" lon="107.870593000">
+  <ele>1013.828369</ele>
+</trkpt>
+<trkpt lat="-7.159159000" lon="107.870357000">
+  <ele>1022.960000</ele>
+</trkpt>
+<trkpt lat="-7.159159000" lon="107.870357000">
+  <ele>1022.960938</ele>
+</trkpt>
+<trkpt lat="-7.158666000" lon="107.869520000">
+  <ele>1050.360000</ele>
+</trkpt>
+<trkpt lat="-7.158666000" lon="107.869520000">
+  <ele>1050.358398</ele>
+</trkpt>
+<trkpt lat="-7.158387000" lon="107.869306000">
+  <ele>1055.160000</ele>
+</trkpt>
+<trkpt lat="-7.158387000" lon="107.869306000">
+  <ele>1055.164795</ele>
+</trkpt>
+<trkpt lat="-7.158279000" lon="107.867761000">
+  <ele>1065.260000</ele>
+</trkpt>
+<trkpt lat="-7.158279000" lon="107.867761000">
+  <ele>1065.258545</ele>
+</trkpt>
+<trkpt lat="-7.157979000" lon="107.867653000">
+  <ele>1077.280000</ele>
+</trkpt>
+<trkpt lat="-7.157979000" lon="107.867653000">
+  <ele>1077.275146</ele>
+</trkpt>
+<trkpt lat="-7.157679000" lon="107.867246000">
+  <ele>1115.730000</ele>
+</trkpt>
+<trkpt lat="-7.157679000" lon="107.867246000">
+  <ele>1115.727539</ele>
+</trkpt>
+<trkpt lat="-7.157507000" lon="107.866795000">
+  <ele>1146.490000</ele>
+</trkpt>
+<trkpt lat="-7.157507000" lon="107.866795000">
+  <ele>1146.489502</ele>
+</trkpt>
+<trkpt lat="-7.157507000" lon="107.866259000">
+  <ele>1163.310000</ele>
+</trkpt>
+<trkpt lat="-7.157507000" lon="107.866259000">
+  <ele>1163.312256</ele>
+</trkpt>
+<trkpt lat="-7.157850000" lon="107.866452000">
+  <ele>1158.030000</ele>
+</trkpt>
+<trkpt lat="-7.157850000" lon="107.866452000">
+  <ele>1158.025146</ele>
+</trkpt>
+<trkpt lat="-7.157807000" lon="107.866173000">
+  <ele>1171.000000</ele>
+</trkpt>
+<trkpt lat="-7.157807000" lon="107.866173000">
+  <ele>1171.002686</ele>
+</trkpt>
+<trkpt lat="-7.158065000" lon="107.865744000">
+  <ele>1185.900000</ele>
+</trkpt>
+<trkpt lat="-7.158065000" lon="107.865744000">
+  <ele>1185.903076</ele>
+</trkpt>
+<trkpt lat="-7.157679000" lon="107.864456000">
+  <ele>1227.240000</ele>
+</trkpt>
+<trkpt lat="-7.157679000" lon="107.864456000">
+  <ele>1227.239502</ele>
+</trkpt>
+<trkpt lat="-7.157722000" lon="107.864156000">
+  <ele>1235.410000</ele>
+</trkpt>
+<trkpt lat="-7.157722000" lon="107.864156000">
+  <ele>1235.410400</ele>
+</trkpt>
+<trkpt lat="-7.157271000" lon="107.863169000">
+  <ele>1276.750000</ele>
+</trkpt>
+<trkpt lat="-7.157271000" lon="107.863169000">
+  <ele>1276.747070</ele>
+</trkpt>
+<trkpt lat="-7.157099000" lon="107.863083000">
+  <ele>1288.280000</ele>
+</trkpt>
+<trkpt lat="-7.157099000" lon="107.863083000">
+  <ele>1288.282715</ele>
+</trkpt>
+<trkpt lat="-7.156885000" lon="107.862675000">
+  <ele>1307.990000</ele>
+</trkpt>
+<trkpt lat="-7.156885000" lon="107.862675000">
+  <ele>1307.989746</ele>
+</trkpt>
+<trkpt lat="-7.156069000" lon="107.860744000">
+  <ele>1399.790000</ele>
+</trkpt>
+<trkpt lat="-7.156069000" lon="107.860744000">
+  <ele>1399.794922</ele>
+</trkpt>
+<trkpt lat="-7.155683000" lon="107.859457000">
+  <ele>1466.130000</ele>
+</trkpt>
+<trkpt lat="-7.155683000" lon="107.859457000">
+  <ele>1466.125244</ele>
+</trkpt>
+<trkpt lat="-7.155275000" lon="107.858341000">
+  <ele>1540.630000</ele>
+</trkpt>
+<trkpt lat="-7.155275000" lon="107.858341000">
+  <ele>1540.626709</ele>
+</trkpt>
+<trkpt lat="-7.154996000" lon="107.857955000">
+  <ele>1563.700000</ele>
+</trkpt>
+<trkpt lat="-7.154996000" lon="107.857955000">
+  <ele>1563.698242</ele>
+</trkpt>
+<trkpt lat="-7.154610000" lon="107.857182000">
+  <ele>1601.190000</ele>
+</trkpt>
+<trkpt lat="-7.154610000" lon="107.857182000">
+  <ele>1601.189453</ele>
+</trkpt>
+<trkpt lat="-7.154524000" lon="107.856517000">
+  <ele>1636.760000</ele>
+</trkpt>
+<trkpt lat="-7.154524000" lon="107.856517000">
+  <ele>1636.757812</ele>
+</trkpt>
+<trkpt lat="-7.154160000" lon="107.856174000">
+  <ele>1663.670000</ele>
+</trkpt>
+<trkpt lat="-7.154160000" lon="107.856174000">
+  <ele>1663.674561</ele>
+</trkpt>
+<trkpt lat="-7.153859000" lon="107.855015000">
+  <ele>1746.350000</ele>
+</trkpt>
+<trkpt lat="-7.153859000" lon="107.855015000">
+  <ele>1746.347412</ele>
+</trkpt>
+<trkpt lat="-7.153666000" lon="107.854779000">
+  <ele>1763.170000</ele>
+</trkpt>
+<trkpt lat="-7.153666000" lon="107.854779000">
+  <ele>1763.170410</ele>
+</trkpt>
+<trkpt lat="-7.153537000" lon="107.853899000">
+  <ele>1819.410000</ele>
+</trkpt>
+<trkpt lat="-7.153537000" lon="107.853899000">
+  <ele>1819.407227</ele>
+</trkpt>
+<trkpt lat="-7.153730000" lon="107.852268000">
+  <ele>1923.230000</ele>
+</trkpt>
+<trkpt lat="-7.153730000" lon="107.852268000">
+  <ele>1923.228760</ele>
+</trkpt>
+<trkpt lat="-7.153559000" lon="107.851517000">
+  <ele>1933.320000</ele>
+</trkpt>
+<trkpt lat="-7.153559000" lon="107.851517000">
+  <ele>1933.322266</ele>
+</trkpt>
+<trkpt lat="-7.153323000" lon="107.851152000">
+  <ele>1934.280000</ele>
+</trkpt>
+<trkpt lat="-7.153323000" lon="107.851152000">
+  <ele>1934.283691</ele>
+</trkpt>
+<trkpt lat="-7.153323000" lon="107.850766000">
+  <ele>1945.340000</ele>
+</trkpt>
+<trkpt lat="-7.153323000" lon="107.850766000">
+  <ele>1945.338867</ele>
+</trkpt>
+<trkpt lat="-7.152529000" lon="107.849929000">
+  <ele>1993.890000</ele>
+</trkpt>
+<trkpt lat="-7.152529000" lon="107.849929000">
+  <ele>1993.885010</ele>
+</trkpt>
+<trkpt lat="-7.152078000" lon="107.849264000">
+  <ele>2041.470000</ele>
+</trkpt>
+<trkpt lat="-7.152078000" lon="107.849264000">
+  <ele>2041.469971</ele>
+</trkpt>
+<trkpt lat="-7.152078000" lon="107.849050000">
+  <ele>2045.800000</ele>
+</trkpt>
+<trkpt lat="-7.152078000" lon="107.849050000">
+  <ele>2045.795898</ele>
+</trkpt>
+<trkpt lat="-7.152336000" lon="107.848685000">
+  <ele>2050.600000</ele>
+</trkpt>
+<trkpt lat="-7.152336000" lon="107.848685000">
+  <ele>2050.602295</ele>
+</trkpt>
+<trkpt lat="-7.152035000" lon="107.848320000">
+  <ele>2047.240000</ele>
+</trkpt>
+<trkpt lat="-7.152035000" lon="107.848320000">
+  <ele>2047.237793</ele>
+</trkpt>
+<trkpt lat="-7.151949000" lon="107.848277000">
+  <ele>2047.240000</ele>
+</trkpt>
+<trkpt lat="-7.151949000" lon="107.848277000">
+  <ele>2047.237793</ele>
+</trkpt>
+<trkpt lat="-7.150469000" lon="107.847290000">
+  <ele>2085.210000</ele>
+</trkpt>
+<trkpt lat="-7.150469000" lon="107.847290000">
+  <ele>2085.209473</ele>
+</trkpt>
+<trkpt lat="-7.150018000" lon="107.846711000">
+  <ele>2105.400000</ele>
+</trkpt>
+<trkpt lat="-7.150018000" lon="107.846711000">
+  <ele>2105.397217</ele>
+</trkpt>
+<trkpt lat="-7.149739000" lon="107.846518000">
+  <ele>2116.930000</ele>
+</trkpt>
+<trkpt lat="-7.149739000" lon="107.846518000">
+  <ele>2116.932861</ele>
+</trkpt>
+<trkpt lat="-7.149460000" lon="107.845852000">
+  <ele>2146.250000</ele>
+</trkpt>
+<trkpt lat="-7.149460000" lon="107.845852000">
+  <ele>2146.252930</ele>
+</trkpt>
+<trkpt lat="-7.149181000" lon="107.845852000">
+  <ele>2145.290000</ele>
+</trkpt>
+<trkpt lat="-7.149181000" lon="107.845852000">
+  <ele>2145.291504</ele>
+</trkpt>
+<trkpt lat="-7.148173000" lon="107.845316000">
+  <ele>2083.290000</ele>
+</trkpt>
+<trkpt lat="-7.148173000" lon="107.845316000">
+  <ele>2083.286865</ele>
+</trkpt>
+<trkpt lat="-7.147615000" lon="107.844994000">
+  <ele>2112.610000</ele>
+</trkpt>
+<trkpt lat="-7.147615000" lon="107.844994000">
+  <ele>2112.606934</ele>
+</trkpt>
+<trkpt lat="-7.147336000" lon="107.844694000">
+  <ele>2140.970000</ele>
+</trkpt>
+<trkpt lat="-7.147336000" lon="107.844694000">
+  <ele>2140.965576</ele>
+</trkpt>
+<trkpt lat="-7.147315000" lon="107.844393000">
+  <ele>2153.940000</ele>
+</trkpt>
+<trkpt lat="-7.147315000" lon="107.844393000">
+  <ele>2153.943359</ele>
+</trkpt>
+<trkpt lat="-7.146993000" lon="107.844329000">
+  <ele>2167.400000</ele>
+</trkpt>
+<trkpt lat="-7.146993000" lon="107.844329000">
+  <ele>2167.401611</ele>
+</trkpt>
+<trkpt lat="-7.146971000" lon="107.844200000">
+  <ele>2172.210000</ele>
+</trkpt>
+<trkpt lat="-7.146971000" lon="107.844200000">
+  <ele>2172.208252</ele>
+</trkpt>
+<trkpt lat="-7.146864000" lon="107.844200000">
+  <ele>2173.170000</ele>
+</trkpt>
+<trkpt lat="-7.146864000" lon="107.844200000">
+  <ele>2173.169678</ele>
+</trkpt>
+<trkpt lat="-7.146928000" lon="107.844329000">
+  <ele>2171.730000</ele>
+</trkpt>
+<trkpt lat="-7.146928000" lon="107.844329000">
+  <ele>2171.727539</ele>
+</trkpt>
+<trkpt lat="-7.146242000" lon="107.844093000">
+  <ele>2176.530000</ele>
+</trkpt>
+<trkpt lat="-7.146242000" lon="107.844093000">
+  <ele>2176.534180</ele>
+</trkpt>
+<trkpt lat="-7.145641000" lon="107.844200000">
+  <ele>2179.900000</ele>
+</trkpt>
+<trkpt lat="-7.145641000" lon="107.844200000">
+  <ele>2179.898682</ele>
+</trkpt>
+<trkpt lat="-7.145340000" lon="107.844694000">
+  <ele>2188.070000</ele>
+</trkpt>
+<trkpt lat="-7.145340000" lon="107.844694000">
+  <ele>2188.069824</ele>
+</trkpt>
+<trkpt lat="-7.144804000" lon="107.844243000">
+  <ele>2203.450000</ele>
+</trkpt>
+<trkpt lat="-7.144804000" lon="107.844243000">
+  <ele>2203.450928</ele>
+</trkpt>
+<trkpt lat="-7.144675000" lon="107.844028000">
+  <ele>2213.540000</ele>
+</trkpt>
+<trkpt lat="-7.144675000" lon="107.844028000">
+  <ele>2213.544434</ele>
+</trkpt>
+<trkpt lat="-7.144761000" lon="107.843513000">
+  <ele>2204.410000</ele>
+</trkpt>
+<trkpt lat="-7.144761000" lon="107.843513000">
+  <ele>2204.412109</ele>
+</trkpt>
+<trkpt lat="-7.145576000" lon="107.843385000">
+  <ele>2184.220000</ele>
+</trkpt>
+<trkpt lat="-7.145576000" lon="107.843385000">
+  <ele>2184.224609</ele>
+</trkpt>
+<trkpt lat="-7.145963000" lon="107.842398000">
+  <ele>2158.270000</ele>
+</trkpt>
+<trkpt lat="-7.145963000" lon="107.842398000">
+  <ele>2158.269043</ele>
+</trkpt>
+<trkpt lat="-7.145512000" lon="107.842526000">
+  <ele>2164.040000</ele>
+</trkpt>
+<trkpt lat="-7.145512000" lon="107.842526000">
+  <ele>2164.037109</ele>
+</trkpt>
+<trkpt lat="-7.145061000" lon="107.842762000">
+  <ele>2165.960000</ele>
+</trkpt>
+<trkpt lat="-7.145061000" lon="107.842762000">
+  <ele>2165.959717</ele>
+</trkpt>
+<trkpt lat="-7.144375000" lon="107.842441000">
+  <ele>2175.090000</ele>
+</trkpt>
+<trkpt lat="-7.144375000" lon="107.842441000">
+  <ele>2175.092041</ele>
+</trkpt>
+<trkpt lat="-7.144182000" lon="107.841883000">
+  <ele>2221.230000</ele>
+</trkpt>
+<trkpt lat="-7.144182000" lon="107.841883000">
+  <ele>2221.234863</ele>
+</trkpt>
+<trkpt lat="-7.144096000" lon="107.841561000">
+  <ele>2236.140000</ele>
+</trkpt>
+<trkpt lat="-7.144096000" lon="107.841561000">
+  <ele>2236.135498</ele>
+</trkpt>
+<trkpt lat="-7.143517000" lon="107.841647000">
+  <ele>2238.060000</ele>
+</trkpt>
+<trkpt lat="-7.143517000" lon="107.841647000">
+  <ele>2238.058105</ele>
+</trkpt>
+<trkpt lat="-7.143195000" lon="107.841368000">
+  <ele>2265.940000</ele>
+</trkpt>
+<trkpt lat="-7.143195000" lon="107.841368000">
+  <ele>2265.936035</ele>
+</trkpt>
+<trkpt lat="-7.142637000" lon="107.841239000">
+  <ele>2266.420000</ele>
+</trkpt>
+<trkpt lat="-7.142637000" lon="107.841239000">
+  <ele>2266.416748</ele>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

@@ -38,7 +38,7 @@ def update_readme_and_push(force=False):
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
 
-    token = "glpat-vKNF_tuL6mEnAmDQZe-b_WM6MQpvOjEKdTpubmV1NA8.01.171pct6yb"
+    token = "glpat-rkekHDtXeexQbWPqoiBsmGM6MQpvOjEKdTpubmV1NA8.01.170u0m8r2"
     repo_url = f"https://RamsNotes31:{token}@gitlab.com/RamsNotes31/rutestrip-bot.git"
     
     msg = random.choice(COMMIT_MESSAGES) + f" ({now_str})"
