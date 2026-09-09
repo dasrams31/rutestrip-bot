@@ -131,7 +131,7 @@ Sistem dilengkapi 17 tugas latar belakang yang berjalan otomatis:
 
 ## 📄 Lisensi & Kontributor
 
-Dikembangkan oleh **Ramadhana Tiba-Bulhtera Wijaya** ([@RamsNotes31](https://gitlab.com/RamsNotes31)) untuk ekosistem **RuteStrip Indonesia**.  
+Dikembangkan oleh **Rama Danadipa** ([@RamsNotes31](https://gitlab.com/RamsNotes31)) untuk ekosistem **RuteStrip Indonesia**.  
 Didistribusikan di bawah lisensi **MIT License**.
 
 *Salam Lestari & Salam Pendaki Indonesia! 🏕️🥾*
