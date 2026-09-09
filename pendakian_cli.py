@@ -2,13 +2,15 @@ import sys
 import re
 import os
 import subprocess
+import os
 
 # Owner User ID Check
 OWNER_USER_ID = "606533609"
 BOT_DIR = "/home/ubuntu/rutestrip-bot"
 PYTHON_VENV = "/home/ubuntu/pendakian_env/bin/python"
 
-# Strict Whitelist Commands for Public Users
+VENV_PYTHON = "/home/ubuntu/rutestrip-bot/pendakian_env/bin/python"
+PYTHON3 = "python3"
 ALLOWED_COMMANDS = {
     "start", "help", "menu", "halo", "hi", "p",
     "info", "komunitas", "rekomendasi", "rekomendasi_rute", "gpx", "kml",
@@ -18,7 +20,7 @@ ALLOWED_COMMANDS = {
     "infografis", "story", "card", "guidebook", "pdf"
 }
 
-# Forbidden System & Feature Manipulation Patterns for Public Users
+# Blocked Sensitive / System Access Keywords & Commands for Public Users
 BLOCKED_PATTERNS = [
     r'\.\./', r'/etc/', r'/var/', r'/proc/', r'/sys/', r'/root',
     r'sudo', r'rm\s', r'cat\s', r'chmod', r'chown', r'exec', r'eval',
@@ -71,7 +73,7 @@ def sanitize_input(text: str) -> bool:
 def handle_command(cmd_str: str):
     raw = cmd_str.strip()
     
-    # 1. System Access & Feature Tampering Block
+    # 1. System Access & Sensitive Keyword Block
     if not sanitize_input(raw):
         return "⚠️ Akses Terbatas: Bot ini khusus melayani konsultasi informasi pendakian gunung di Pulau Jawa. Ketik `help` untuk daftar menu pendakian."
         
@@ -103,7 +105,7 @@ def handle_command(cmd_str: str):
         res = subprocess.run([PYTHON_VENV, os.path.join(BOT_DIR, "briefing_audio.py"), m], capture_output=True, text=True)
         txt = res.stdout.strip()
         return f"🎙️ **AUDIO & TEKS BRIEFING PENDAKIAN ({m.upper()})**\n\n📝 **Teks Briefing Ranger:**\n\"{txt}\"\n\n[[audio_as_voice]]\nMEDIA:/tmp/briefing_indonesia.ogg"
-    elif cmd in ["satelit", "satellite"]:
+    elif cmd in ["satelit", "satellite", "topografi", "topo"]:
         q = args[0] if args else "sumbing"
         subprocess.run([PYTHON_VENV, os.path.join(BOT_DIR, "satellite_map.py"), q], capture_output=True, text=True)
         return "MEDIA:/tmp/satellite_map.png"

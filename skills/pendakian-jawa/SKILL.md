@@ -1,6 +1,6 @@
 ---
 name: pendakian-jawa
-description: Use when asked for Java mountain routes. RuteStrip DB.
+description: Use for all hiking, mountain routes, weather, GPX, outdoor logistics, survival, and user inquiries on RuteStrip Bot.
 ---
 
 # RuteStrip Pendakian Bot Engine & Database

@@ -10,6 +10,7 @@ echo "🚀 Starting Automated Installation for RuteStrip Pendakian Bot..."
 echo "======================================================================"
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export PATH="$HOME/.hermes/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 HERMES_DIR="$HOME/.hermes"
 SKILLS_DIR="$HERMES_DIR/skills/pendakian-jawa"
 SCRIPTS_DIR="$HERMES_DIR/scripts"
@@ -44,6 +45,7 @@ export VENV_PYTHON="$BASE_DIR/pendakian_env/bin/python"
 echo "📥 Installing PyTorch CPU & Python Packages..."
 uv pip install --python "$VENV_PYTHON" torch torchaudio --index-url https://download.pytorch.org/whl/cpu
 uv pip install --python "$VENV_PYTHON" -r "$BASE_DIR/requirements.txt"
+uv pip install --python "$VENV_PYTHON" psutil
 
 # ------------------------------------------------------------------------------
 # 4. Hermes Framework & Skill Placement

@@ -182,5 +182,29 @@ def main():
             
     print(format_all_weather_summary())
 
+def check_single_mountain(mountain_query: str) -> str:
+    q = mountain_query.lower().strip()
+    target = None
+    for m in MOUNTAINS:
+        if q in m["name"].lower():
+            target = m
+            break
+    if not target:
+        return ""
+    
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={target['lat']}&longitude={target['lon']}&current_weather=true"
+    req = urllib.request.Request(url, headers={'User-Agent': 'HermesPendakianBot/1.0'})
+    try:
+        with urllib.request.urlopen(req, timeout=5) as res:
+            data = json.loads(res.read().decode('utf-8'))
+            cw = data.get('current_weather', {})
+            code = cw.get('weathercode', 0)
+            temp = cw.get('temperature', 0)
+            wind = cw.get('windspeed', 0)
+            status_txt = WMO_CODES.get(code, "🌡️ Unknown")
+            return f"• {target['name']}: {status_txt} | 🌡️ {temp}°C | 💨 {wind} km/h"
+    except Exception as e:
+        return f"• {target['name']}: Gagal memuat cuaca ({e})"
+
 if __name__ == "__main__":
     main()

@@ -9,6 +9,8 @@ GPX_DB_DIR = os.path.join(BASE_DIR, "gpx_db")
 if not os.path.exists(GPX_DB_DIR):
     GPX_DB_DIR = "/home/ubuntu/rutestrip-bot/gpx_db"
 
+GPX_DB_DIR = "/home/ubuntu/rutestrip-bot/gpx_db"
+
 def find_gpx(mountain_query: str) -> str:
     query = mountain_query.lower()
     files = glob.glob(os.path.join(GPX_DB_DIR, "*.gpx")) + glob.glob(os.path.join(DOCS_DIR, "*.gpx"))
