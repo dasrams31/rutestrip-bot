@@ -108,5 +108,15 @@
     "chat_id": 777000,
     "user_name": "RuteStrip AI x Komunitas Pendaki Gunung Indonesia",
     "subscribed_at": "2026-09-13T15:20:40.709314Z"
+  },
+  "@rutestrip": {
+    "chat_id": "@rutestrip",
+    "user_name": "RuteStrip Official Channel",
+    "subscribed_at": "2026-09-03T00:00:00Z"
+  },
+  "@rutestrip_group": {
+    "chat_id": "@rutestrip_group",
+    "user_name": "RuteStrip Komunitas Pendaki Group",
+    "subscribed_at": "2026-09-03T00:00:00Z"
   }
 }

@@ -65,10 +65,11 @@ def broadcast_to_subscribers(message, targets="all"):
     success_count = 0
     fail_count = 0
     for chat_id_str in subs.keys():
-        is_group = str(chat_id_str).startswith("-")
-        if targets == "groups" and not is_group:
+        is_group_or_channel = str(chat_id_str).startswith("-") or str(chat_id_str).startswith("@")
+        
+        if targets == "groups" and not is_group_or_channel:
             continue
-        if targets == "users" and is_group:
+        if targets == "users" and is_group_or_channel:
             continue
             
         ok = send_telegram_message(bot_token, chat_id_str, message)
@@ -77,4 +78,5 @@ def broadcast_to_subscribers(message, targets="all"):
         else:
             fail_count += 1
         time.sleep(0.04)
+        
     return success_count, fail_count
