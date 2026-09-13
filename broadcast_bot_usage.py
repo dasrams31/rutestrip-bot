@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+import sys
+import os
+
+sys.path.append("/home/ubuntu/rutestrip-bot")
+from telegram_broadcast_helper import broadcast_to_subscribers
 
 output = """PANDUAN LENGKAP PENGGUNAAN RUTESTRIP BOT 🏔️✨
 (Kelola Rencana Pendakianmu Langsung dari Chat)
@@ -33,4 +38,6 @@ Halo Sobat Pendaki! Gunakan kata kunci langsung (tanpa tanda `/`) untuk navigasi
 🌐 Website: https://rutestrip.web.id | 💬 Grup: @rutestrip_group | 📢 Channel: @rutestrip"""
 
 if __name__ == "__main__":
+    if "--no-send" not in sys.argv:
+        broadcast_to_subscribers(output, targets="all")
     print(output)

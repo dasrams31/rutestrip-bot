@@ -110,4 +110,10 @@ output += """
 Ketik `survival <topik>` (contoh: `survival hipotermia`) untuk panduan darurat offline lengkap.
 Website: https://rutestrip.web.id | Grup: @rutestrip_group"""
 
-print(output)
+if __name__ == "__main__":
+    import sys
+    if "--no-send" not in sys.argv:
+        sys.path.append("/home/ubuntu/rutestrip-bot")
+        from telegram_broadcast_helper import broadcast_to_subscribers
+        broadcast_to_subscribers(output, targets="all")
+    print(output)

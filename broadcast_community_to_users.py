@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 import json
 import os
+import sys
+
+sys.path.append("/home/ubuntu/rutestrip-bot")
+from telegram_broadcast_helper import broadcast_to_subscribers
 
 COMMUNITY_MSG = """Komunitas Pendaki RuteStrip Indonesia! 🎒
 
@@ -15,7 +19,7 @@ Dapatkan info kuota simaksi, update kondisi gunung, dan tips keselamatan outdoor
 Salam Lestari & Salam Pendaki! 🏕️🥾"""
 
 def broadcast_to_users():
-    # Cukup cetak isi pesan murni (tanpa header/target debug)
+    broadcast_to_subscribers(COMMUNITY_MSG, targets="all")
     print(COMMUNITY_MSG)
 
 if __name__ == "__main__":

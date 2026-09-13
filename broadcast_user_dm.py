@@ -2,14 +2,16 @@
 import json
 import os
 import subprocess
+import sys
+
+sys.path.append("/home/ubuntu/rutestrip-bot")
+from telegram_broadcast_helper import broadcast_to_subscribers
 
 SUBSCRIBERS_PATH = "/home/ubuntu/rutestrip-bot/subscribers.json"
 
 def send_to_all_users():
     if not os.path.exists(SUBSCRIBERS_PATH):
         return
-    with open(SUBSCRIBERS_PATH, "r") as f:
-        subscribers = json.load(f)
 
     # 1. Panggil laporan cuaca ringkas
     res_cuaca = subprocess.run(["python3", "/home/ubuntu/rutestrip-bot/broadcast_cuaca_group_part1.py"], capture_output=True, text=True)
@@ -39,11 +41,8 @@ def send_to_all_users():
 💡 Ketik `cuaca <nama_gunung>`, `rekomendasi <kriteria>`, atau `survival <topik>` kapan saja di DM!"""
 
     # Kirim ke seluruh pengguna DM (selain grup)
-    for chat_id_str, user_info in subscribers.items():
-        if not chat_id_str.startswith("-"):
-            print(f"Sending to User DM: {chat_id_str}")
-            print(message)
-            print("\n--- END OF MESSAGE ---\n")
+    broadcast_to_subscribers(message, targets="users")
+    print(message)
 
 if __name__ == "__main__":
     send_to_all_users()

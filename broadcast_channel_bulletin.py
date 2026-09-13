@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
+import sys
+import os
 import urllib.request
 import json
+
+sys.path.append("/home/ubuntu/rutestrip-bot")
+from telegram_broadcast_helper import broadcast_to_subscribers
 
 def generate_bulletin():
     magma_link = "https://magma.esdm.go.id"
@@ -32,4 +37,7 @@ Website: https://rutestrip.web.id"""
     return output
 
 if __name__ == "__main__":
-    print(generate_bulletin())
+    out = generate_bulletin()
+    if "--no-send" not in sys.argv:
+        broadcast_to_subscribers(out, targets="all")
+    print(out)

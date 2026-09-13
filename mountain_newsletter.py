@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
+import sys
+import os
 import urllib.request
 import json
 import re
 
+sys.path.append("/home/ubuntu/rutestrip-bot")
+from telegram_broadcast_helper import broadcast_to_subscribers
+
 def get_magma_updates():
     """Mengambil status aktivitas gunung api terbaru dari Magma Indonesia (PVMBG/ESDM)."""
-    url = "https://magma.esdm.go.id/api/v1/press-release" # Fallback simulation / public RSS
-    # Menggunakan endpoint/data yang menyertakan sumber link resmi Magma ESDM
     magma_link = "https://magma.esdm.go.id"
     bmkg_link = "https://www.bmkg.go.id/cuaca/prakiraan-cuaca-indonesia.bmkg"
     
@@ -36,4 +39,7 @@ def get_magma_updates():
     return output
 
 if __name__ == "__main__":
-    print(get_magma_updates())
+    out = get_magma_updates()
+    if "--no-send" not in sys.argv:
+        broadcast_to_subscribers(out, targets="all")
+    print(out)
