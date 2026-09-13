@@ -5,6 +5,8 @@ import urllib.request
 import urllib.parse
 import time
 
+OFFICIAL_CHANNEL = "@rutestrip"
+
 def send_telegram_message(bot_token, chat_id, text, parse_mode="Markdown"):
     api_url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
     payload = {
@@ -21,7 +23,6 @@ def send_telegram_message(bot_token, chat_id, text, parse_mode="Markdown"):
         with urllib.request.urlopen(req, timeout=10) as resp:
             return resp.status == 200
     except Exception:
-        # Fallback without parse_mode if markdown parsing fails
         if parse_mode:
             payload.pop("parse_mode", None)
             try:
@@ -36,8 +37,15 @@ def send_telegram_message(bot_token, chat_id, text, parse_mode="Markdown"):
                 return False
         return False
 
-def broadcast_to_subscribers(message, targets="all"):
-    # targets: 'all', 'groups', 'users'
+def broadcast_to_subscribers(message, targets="channel_and_users"):
+    """
+    targets options:
+    - 'channel': hanya ke Official Channel (@rutestrip)
+    - 'users': hanya ke DM seluruh pengguna personal
+    - 'channel_and_users' (default): ke Official Channel (@rutestrip) + DM pengguna personal (TIDAK spam grup)
+    - 'all': ke channel, DM pengguna, dan grup
+    - 'groups': hanya ke grup diskusi
+    """
     env_vars = {}
     env_path = "/home/ubuntu/.hermes/.env"
     if os.path.exists(env_path):
@@ -62,21 +70,41 @@ def broadcast_to_subscribers(message, targets="all"):
     except Exception:
         return 0, 0
 
+    # Pastikan official channel selalu ada
+    send_targets = set()
+
+    if targets in ["channel", "channel_and_users", "all"]:
+        send_targets.add(OFFICIAL_CHANNEL)
+
+    for chat_id_str in subs.keys():
+        cid = str(chat_id_str).strip()
+        is_group = cid.startswith("-") or cid == "@rutestrip_group"
+        is_channel = cid == OFFICIAL_CHANNEL
+        is_user = not is_group and not is_channel
+
+        if targets == "channel":
+            if is_channel:
+                send_targets.add(cid)
+        elif targets == "users":
+            if is_user:
+                send_targets.add(cid)
+        elif targets == "channel_and_users":
+            if is_user or is_channel:
+                send_targets.add(cid)
+        elif targets == "groups":
+            if is_group:
+                send_targets.add(cid)
+        elif targets == "all":
+            send_targets.add(cid)
+
     success_count = 0
     fail_count = 0
-    for chat_id_str in subs.keys():
-        is_group_or_channel = str(chat_id_str).startswith("-") or str(chat_id_str).startswith("@")
-        
-        if targets == "groups" and not is_group_or_channel:
-            continue
-        if targets == "users" and is_group_or_channel:
-            continue
-            
-        ok = send_telegram_message(bot_token, chat_id_str, message)
+    for target in send_targets:
+        ok = send_telegram_message(bot_token, target, message)
         if ok:
             success_count += 1
         else:
             fail_count += 1
         time.sleep(0.04)
-        
+
     return success_count, fail_count
