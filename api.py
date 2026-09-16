@@ -47,6 +47,15 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
+@app.middleware("http")
+async def security_headers_middleware(request, call_next):
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains; preload"
+    return response
+
 rec_system = RecommendationSystem()
 gpx_dir = os.path.join(BASE_DIR, 'gpx_db') if os.path.exists(os.path.join(BASE_DIR, 'gpx_db')) else '/home/ubuntu/rutestrip-bot/gpx_db'
 rec_system.index_directory(gpx_dir, use_cache=True)

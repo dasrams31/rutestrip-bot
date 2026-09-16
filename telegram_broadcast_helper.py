@@ -42,9 +42,7 @@ def broadcast_to_subscribers(message, targets="channel_and_users"):
     targets options:
     - 'channel': hanya ke Official Channel (@rutestrip)
     - 'users': hanya ke DM seluruh pengguna personal
-    - 'channel_and_users' (default): ke Official Channel (@rutestrip) + DM pengguna personal (TIDAK spam grup)
-    - 'all': ke channel, DM pengguna, dan grup
-    - 'groups': hanya ke grup diskusi
+    - 'channel_and_users' (default): ke Official Channel (@rutestrip) + DM pengguna personal (TIDAK kirim ke grup agar tidak dobel karena Telegram otomatis meneruskan post channel ke grup)
     """
     env_vars = {}
     env_path = "/home/ubuntu/.hermes/.env"
@@ -70,41 +68,43 @@ def broadcast_to_subscribers(message, targets="channel_and_users"):
     except Exception:
         return 0, 0
 
-    # Pastikan official channel selalu ada
     send_targets = set()
 
+    # Selalu sertakan Official Channel jika target memuat channel
     if targets in ["channel", "channel_and_users", "all"]:
         send_targets.add(OFFICIAL_CHANNEL)
 
     for chat_id_str in subs.keys():
         cid = str(chat_id_str).strip()
-        is_group = cid.startswith("-") or cid == "@rutestrip_group"
-        is_channel = cid == OFFICIAL_CHANNEL
-        is_user = not is_group and not is_channel
+        
+        # Filter ketat: ABAIKAN grup, service telegram 777000, dan bot
+        if cid.startswith("-") or cid in ["@rutestrip_group", "777000", "Telegram"]:
+            continue
 
-        if targets == "channel":
-            if is_channel:
+        if cid == OFFICIAL_CHANNEL:
+            if targets in ["channel", "channel_and_users", "all"]:
                 send_targets.add(cid)
-        elif targets == "users":
-            if is_user:
-                send_targets.add(cid)
-        elif targets == "channel_and_users":
-            if is_user or is_channel:
-                send_targets.add(cid)
-        elif targets == "groups":
-            if is_group:
-                send_targets.add(cid)
-        elif targets == "all":
+            continue
+
+        # User personal DM
+        if targets in ["users", "channel_and_users", "all"]:
             send_targets.add(cid)
 
     success_count = 0
     fail_count = 0
-    for target in send_targets:
-        ok = send_telegram_message(bot_token, target, message)
+
+    for target_id in send_targets:
+        ok = send_telegram_message(bot_token, target_id, message)
         if ok:
             success_count += 1
         else:
             fail_count += 1
-        time.sleep(0.04)
+        time.sleep(0.05)  # Rate limit safety
 
     return success_count, fail_count
+
+if __name__ == "__main__":
+    import sys
+    msg = "Test broadcast system." if len(sys.argv) < 2 else sys.argv[1]
+    s, f = broadcast_to_subscribers(msg, targets="channel_and_users")
+    print(f"Broadcast selesai: {s} sukses, {f} gagal.")
