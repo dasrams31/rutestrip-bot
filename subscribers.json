@@ -9,16 +9,6 @@
     "user_name": "Misaka",
     "subscribed_at": "2026-09-03T00:00:00Z"
   },
-  "-1001281395180": {
-    "chat_id": -1001281395180,
-    "user_name": "",
-    "subscribed_at": "2026-09-03T21:08:55Z"
-  },
-  "-1001493234227": {
-    "chat_id": -1001493234227,
-    "user_name": "Telegram",
-    "subscribed_at": "2026-09-03T21:08:55Z"
-  },
   "1285434559": {
     "chat_id": 1285434559,
     "user_name": "yanggampang",
@@ -104,19 +94,9 @@
     "user_name": "than4u_",
     "subscribed_at": "2026-09-13T15:20:40.709303Z"
   },
-  "777000": {
-    "chat_id": 777000,
-    "user_name": "RuteStrip AI x Komunitas Pendaki Gunung Indonesia",
-    "subscribed_at": "2026-09-13T15:20:40.709314Z"
-  },
   "@rutestrip": {
     "chat_id": "@rutestrip",
     "user_name": "RuteStrip Official Channel",
-    "subscribed_at": "2026-09-03T00:00:00Z"
-  },
-  "@rutestrip_group": {
-    "chat_id": "@rutestrip_group",
-    "user_name": "RuteStrip Komunitas Pendaki Group",
     "subscribed_at": "2026-09-03T00:00:00Z"
   }
 }

@@ -69,8 +69,12 @@ def check_and_report_cron():
         if job_name in IGNORED_CRONS or job_id in IGNORED_CRONS:
             return
 
-        # Jika berhasil / status OK tanpa error, diamkan (tidak kirim notifikasi spam)
-        is_failed = status not in ["succeeded", "completed", "ok"] or bool(error)
+        # Abaikan jika tugas masih dalam proses berjalan (running)
+        if status in ["running", "in_progress"] or finished_at is None:
+            return
+
+        # HANYA LAPORKAN JIKA BENAR-BENAR GAGAL / ERROR
+        is_failed = status in ["failed", "error", "timeout"] or (bool(error) and status not in ["succeeded", "completed", "ok"])
         if not is_failed:
             return
 
