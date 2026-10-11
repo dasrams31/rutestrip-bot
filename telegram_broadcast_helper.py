@@ -1,110 +1,131 @@
 #!/usr/bin/env python3
+"""
+RuteStrip Telegram Broadcast Helper
+Dispatches broadcasts to Channel (@rutestrip), Groups, and/or Users based on target configuration.
+"""
+
 import os
 import json
 import urllib.request
 import urllib.parse
 import time
 
+BOT_TOKEN = "8904397226:AAHSb48P3i4d1F1UqLg6yUf6YF8VvL_tXfU"
 OFFICIAL_CHANNEL = "@rutestrip"
+SUBSCRIBERS_PATH = "/home/ubuntu/rutestrip-bot/subscribers.json"
 
-def send_telegram_message(bot_token, chat_id, text, parse_mode="Markdown"):
-    api_url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+def get_bot_token() -> str:
+    env_token = os.getenv("RUTESTRIP_BOT_TOKEN")
+    if env_token:
+        return env_token
+    daemon_path = "/home/ubuntu/rutestrip-bot/bot_daemon.py"
+    if os.path.exists(daemon_path):
+        try:
+            with open(daemon_path) as f:
+                for line in f:
+                    if line.strip().startswith("BOT_TOKEN ="):
+                        return line.split("=", 1)[1].strip().strip('"\'')
+        except Exception:
+            pass
+    return BOT_TOKEN
+
+def send_telegram_msg(chat_id: str | int, text: str, parse_mode: str = "HTML") -> bool:
+    token = get_bot_token()
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
     payload = {
         "chat_id": chat_id,
         "text": text,
-        "parse_mode": parse_mode
+        "parse_mode": parse_mode,
+        "disable_web_page_preview": True
     }
-    req = urllib.request.Request(
-        api_url,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={"Content-Type": "application/json"}
-    )
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            return resp.status == 200
+        with urllib.request.urlopen(req, timeout=12) as resp:
+            res = json.loads(resp.read().decode())
+            return res.get("ok", False)
     except Exception:
-        if parse_mode:
-            payload.pop("parse_mode", None)
+        # Fallback to Markdown or plain text
+        for fallback_mode in ["Markdown", ""]:
             try:
-                req2 = urllib.request.Request(
-                    api_url,
-                    data=json.dumps(payload).encode("utf-8"),
-                    headers={"Content-Type": "application/json"}
-                )
-                with urllib.request.urlopen(req2, timeout=10) as resp2:
-                    return resp2.status == 200
+                payload["parse_mode"] = fallback_mode
+                data = json.dumps(payload).encode("utf-8")
+                req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+                with urllib.request.urlopen(req, timeout=12) as resp:
+                    res = json.loads(resp.read().decode())
+                    if res.get("ok", False):
+                        return True
             except Exception:
-                return False
+                pass
         return False
 
-def broadcast_to_subscribers(message, targets="channel_and_users"):
+def send_telegram_message(bot_token, chat_id, text, parse_mode="HTML"):
+    return send_telegram_msg(chat_id, text, parse_mode)
+
+def broadcast_to_subscribers(message: str, targets: str = "all"):
     """
     targets options:
-    - 'channel': hanya ke Official Channel (@rutestrip)
-    - 'users': hanya ke DM seluruh pengguna personal
-    - 'channel_and_users' (default): ke Official Channel (@rutestrip) + DM pengguna personal (TIDAK kirim ke grup agar tidak dobel karena Telegram otomatis meneruskan post channel ke grup)
+    - 'channel': only Official Channel (@rutestrip)
+    - 'groups' / 'group': all group chats (-100...)
+    - 'users' / 'user' / 'dm': all personal user chats
+    - 'channel_and_users': Official Channel + personal user chats
+    - 'channel_and_groups': Official Channel + group chats
+    - 'all': Official Channel + group chats + personal user chats
     """
-    env_vars = {}
-    env_path = "/home/ubuntu/.hermes/.env"
-    if os.path.exists(env_path):
-        with open(env_path) as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith('#') and '=' in line:
-                    k, v = line.split('=', 1)
-                    env_vars[k.strip()] = v.strip().strip('"\'')
-
-    bot_token = env_vars.get("TELEGRAM_BOT_TOKEN")
-    if not bot_token:
-        return 0, 0
-
-    sub_file = "/home/ubuntu/rutestrip-bot/subscribers.json"
-    if not os.path.exists(sub_file):
-        return 0, 0
-
-    try:
-        with open(sub_file, "r") as f:
-            subs = json.load(f)
-    except Exception:
-        return 0, 0
-
+    targets_lower = str(targets).lower().strip()
+    
     send_targets = set()
-
-    # Selalu sertakan Official Channel jika target memuat channel
-    if targets in ["channel", "channel_and_users", "all"]:
+    
+    # Check if channel is included
+    if targets_lower in ["channel", "all", "channel_and_users", "channel_and_groups"]:
         send_targets.add(OFFICIAL_CHANNEL)
-
-    for chat_id_str in subs.keys():
-        cid = str(chat_id_str).strip()
         
-        # Filter ketat: ABAIKAN grup, service telegram 777000, dan bot
-        if cid.startswith("-") or cid in ["@rutestrip_group", "777000", "Telegram"]:
-            continue
+    subs = {}
+    if os.path.exists(SUBSCRIBERS_PATH):
+        try:
+            with open(SUBSCRIBERS_PATH, "r", encoding="utf-8") as f:
+                subs = json.load(f)
+        except Exception as e:
+            print(f"[-] Gagal membaca subscribers: {e}")
 
+    for cid_raw in subs.keys():
+        cid = str(cid_raw).strip()
+        if not cid or cid in ["777000", "Telegram"]:
+            continue
+            
         if cid == OFFICIAL_CHANNEL:
-            if targets in ["channel", "channel_and_users", "all"]:
+            if targets_lower in ["channel", "all", "channel_and_users", "channel_and_groups"]:
                 send_targets.add(cid)
             continue
+            
+        # Group chat detection
+        if cid.startswith("-"):
+            if targets_lower in ["group", "groups", "all", "channel_and_groups", "channel_and_users"]:
+                send_targets.add(cid)
+        else:
+            # Personal user DM
+            if targets_lower in ["users", "user", "dm", "all", "channel_and_users", "channel_and_groups"]:
+                send_targets.add(cid)
 
-        # User personal DM
-        if targets in ["users", "channel_and_users", "all"]:
-            send_targets.add(cid)
-
+    print(f"[*] Mengirim siaran ke {len(send_targets)} target (mode: {targets})...")
     success_count = 0
     fail_count = 0
 
-    for target_id in send_targets:
-        ok = send_telegram_message(bot_token, target_id, message)
+    for target_id in sorted(send_targets, key=str):
+        ok = send_telegram_msg(target_id, message)
         if ok:
             success_count += 1
+            print(f"[✓] Terkirim ke {target_id}")
         else:
             fail_count += 1
-        time.sleep(0.05)  # Rate limit safety
+            print(f"[✗] Gagal kirim ke {target_id}")
+        time.sleep(0.35)
 
+    print(f"[=] Selesai broadcast: {success_count} sukses, {fail_count} gagal.")
     return success_count, fail_count
 
 if __name__ == "__main__":
     import sys
-    msg = "Test broadcast system." if len(sys.argv) < 2 else sys.argv[1]
-    s, f = broadcast_to_subscribers(msg, targets="channel_and_users")
-    print(f"Broadcast selesai: {s} sukses, {f} gagal.")
+    msg = sys.argv[1] if len(sys.argv) > 1 else "⚡ Tes broadcast helper multi-target"
+    tgt = sys.argv[2] if len(sys.argv) > 2 else "channel"
+    broadcast_to_subscribers(msg, targets=tgt)

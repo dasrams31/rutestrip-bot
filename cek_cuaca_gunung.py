@@ -1,6 +1,13 @@
 import sys
 import json
 import urllib.request
+import os
+
+sys.path.append("/home/ubuntu/rutestrip-bot")
+try:
+    from telegram_broadcast_helper import broadcast_to_subscribers
+except ImportError:
+    broadcast_to_subscribers = None
 
 MOUNTAINS = [
     {"id": "sumbing", "name": "Sumbing (Kaliangkrik)", "peak_elev": 3371, "lat": -7.384, "lon": 110.037},
@@ -165,8 +172,8 @@ def check_all_weather(mountain: str = None) -> str:
     return format_all_weather_summary()
 
 def main():
-    if len(sys.argv) > 1:
-        query = " ".join(sys.argv[1:]).lower()
+    if len(sys.argv) > 1 and sys.argv[1] != "--no-send":
+        query = " ".join([arg for arg in sys.argv[1:] if arg != "--no-send"]).lower()
         matched = None
         for m in MOUNTAINS:
             if query in m["id"] or query in m["name"].lower():
@@ -174,13 +181,14 @@ def main():
                 break
         if matched:
             res = fetch_weather(matched)
-            print(format_detailed_weather(res))
+            out = format_detailed_weather(res)
+            print(out)
             return
-        else:
-            # Fallback to general summary if query not directly matched
-            pass
             
-    print(format_all_weather_summary())
+    summary = format_all_weather_summary()
+    if "--no-send" not in sys.argv and broadcast_to_subscribers:
+        broadcast_to_subscribers(summary, targets="channel")
+    print(summary)
 
 def check_single_mountain(mountain_query: str) -> str:
     q = mountain_query.lower().strip()

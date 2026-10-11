@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import urllib.request
 import json
+import time
 
 MOUNTAINS_PART1 = [
     {"name": "Sumbing (Kaliangkrik)", "lat": -7.384, "lon": 110.037},
@@ -52,23 +53,29 @@ def fetch_weather_group(m_list, part_title):
     
     for m in m_list:
         url = f"https://api.open-meteo.com/v1/forecast?latitude={m['lat']}&longitude={m['lon']}&current_weather=true"
-        req = urllib.request.Request(url, headers={'User-Agent': 'HermesPendakianBot/1.0'})
-        try:
-            with urllib.request.urlopen(req, timeout=5) as res:
-                data = json.loads(res.read().decode('utf-8'))
-                cw = data.get('current_weather', {})
-                code = cw.get('weathercode', 0)
-                temp = cw.get('temperature', 0)
-                wind = cw.get('windspeed', 0)
-                status_txt = WMO_CODES.get(code, "🌡️ Unknown")
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) RuteStrip/2.0'})
+        loaded = False
+        for _ in range(2):
+            try:
+                with urllib.request.urlopen(req, timeout=12) as res:
+                    data = json.loads(res.read().decode('utf-8'))
+                    cw = data.get('current_weather', {})
+                    code = cw.get('weathercode', 0)
+                    temp = cw.get('temperature', 0)
+                    wind = cw.get('windspeed', 0)
+                    status_txt = WMO_CODES.get(code, "🌡️ Unknown")
 
-                line = f"• {m['name']}: {status_txt} | 🌡️ {temp}°C | 💨 {wind} km/h"
-                reports.append(line)
-                
-                if code >= 51 or wind >= 30:
-                    alerts.append(f"PERINGATAN {m['name']}: {status_txt}, Angin {wind} km/h!")
-        except Exception as e:
-            reports.append(f"• {m['name']}: Gagal load ({e})")
+                    line = f"• {m['name']}: {status_txt} | 🌡️ {temp}°C | 💨 {wind} km/h"
+                    reports.append(line)
+                    
+                    if code >= 51 or wind >= 30:
+                        alerts.append(f"PERINGATAN {m['name']}: {status_txt}, Angin {wind} km/h!")
+                    loaded = True
+                    break
+            except Exception:
+                time.sleep(1)
+        if not loaded:
+            reports.append(f"• {m['name']}: ⚠️ Data pending update")
             
     out = f"LAPORAN LIVE CUACA GUNUNG PULAU JAWA & BALI ({part_title}) 🏔️\n\n" + "\n".join(reports)
     if alerts:

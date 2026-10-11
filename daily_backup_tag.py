@@ -2,7 +2,7 @@
 """
 RuteStrip Daily Backup Checkpoint & Tagging Script
 Menyinkronkan data konfigurasi, status database, dan memberikan tag backup harian
-lalu mendorongnya ke repositori GitLab (https://gitlab.com/RamsNotes31/rutestrip-bot).
+lalu mendorongnya ke repositori GitLab dan GitHub secara otomatis.
 """
 import os
 import subprocess
@@ -22,6 +22,8 @@ def run_daily_backup():
         shutil.copy(f"{HERMES_DIR}/SOUL.md", f"{REPO_DIR}/SOUL.md")
     
     # 2. Cek apakah ada perubahan file
+    subprocess.run(["git", "config", "user.name", "Rama Danadipa"], cwd=REPO_DIR)
+    subprocess.run(["git", "config", "user.email", "ramadanadipa.mk2@gmail.com"], cwd=REPO_DIR)
     subprocess.run(["git", "add", "-A"], cwd=REPO_DIR)
     
     status_res = subprocess.run(["git", "status", "--porcelain"], cwd=REPO_DIR, capture_output=True, text=True)
@@ -35,11 +37,11 @@ def run_daily_backup():
         subprocess.run(["git", "tag", "-a", tag_name, "-m", f"Daily Backup Checkpoint {date_str}"], cwd=REPO_DIR)
         push_tag = subprocess.run(["git", "push", "origin", tag_name], cwd=REPO_DIR, capture_output=True, text=True)
         if push_tag.returncode == 0:
-            msg = f"✅ Daily Backup Checkpoint berhasil dibuat & di-push ke GitLab!\n🏷️ Tag: {tag_name}\n⏰ Waktu: {date_str}"
+            msg = f"✅ Daily Backup Checkpoint berhasil dibuat & di-push ke GitLab & GitHub!\n🏷️ Tag: {tag_name}\n⏰ Waktu: {date_str}"
         else:
-            msg = f"⚠️ Tag lokal {tag_name} dibuat, push tag gagal: {push_tag.stderr.strip()}"
+            msg = f"⚠️ Tag lokal {tag_name} dibuat, push tag output:\n{push_tag.stderr.strip()}"
     else:
-        msg = f"ℹ️ Tag {tag_name} sudah ada untuk hari ini. Kode & database sudah tersinkronisasi di branch main."
+        msg = f"ℹ️ Tag {tag_name} sudah ada untuk hari ini. Kode & database sudah tersinkronisasi di branch main (GitLab & GitHub)."
 
     print(msg)
     return msg

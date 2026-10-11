@@ -3,7 +3,7 @@
 RuteStrip Automatic Git Watcher & Push Daemon
 Memantau perubahan file di direktori rutestrip-bot secara realtime.
 Setiap kali ada perubahan file (edit/create/delete), script akan melakukan
-auto-commit dan auto-push ke GitLab secara otomatis.
+auto-commit dan auto-push ke GitLab dan GitHub secara otomatis.
 """
 import os
 import sys
@@ -12,27 +12,10 @@ import subprocess
 import datetime
 
 REPO_DIR = "/home/ubuntu/rutestrip-bot"
-ENV_FILE = "/home/ubuntu/auto_readme_commit.py"
 DEBOUNCE_SECONDS = 5  # Jeda batching sebelum commit agar tidak spam
 POLL_INTERVAL = 15     # Interval cek berkala (detik)
 
-def get_repo_url():
-    token = os.environ.get("GITLAB_TOKEN", "")
-    token_file = "/home/ubuntu/.gitlab_token"
-    if not token and os.path.exists(token_file):
-        with open(token_file, "r") as f:
-            token = f.read().strip()
-    
-    if not token:
-        return None
-    return f"https://RamsNotes31:{token}@gitlab.com/RamsNotes31/rutestrip-bot.git"
-
 def check_and_push():
-    repo_url = get_repo_url()
-    if not repo_url:
-        print("[AutoPush ERROR] Token GitLab tidak ditemukan.")
-        return False
-
     # 1. Cek apakah ada perubahan (staged, unstaged, untracked)
     res = subprocess.run(
         ["git", "status", "--porcelain"],
@@ -60,9 +43,11 @@ def check_and_push():
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S WIB")
     commit_msg = f"auto-sync: update {summary_files} ({now_str})"
 
-    print(f"[{now_str}] Terdeteksi perubahan: {summary_files}. Menjalankan auto-push...")
+    print(f"[{now_str}] Terdeteksi perubahan: {summary_files}. Menjalankan auto-push ke GitLab & GitHub...")
 
-    # 2. Stage all
+    # 2. Setup author & stage all
+    subprocess.run(["git", "config", "user.name", "Rama Danadipa"], cwd=REPO_DIR)
+    subprocess.run(["git", "config", "user.email", "ramadanadipa.mk2@gmail.com"], cwd=REPO_DIR)
     subprocess.run(["git", "add", "-A"], cwd=REPO_DIR, check=True)
 
     # 3. Commit
@@ -76,18 +61,18 @@ def check_and_push():
         print(f"[AutoPush] Commit ditunda / tidak ada perubahan baru: {commit_res.stderr.strip()}")
         return False
 
-    # 4. Push ke GitLab
+    # 4. Push ke origin (GitLab & GitHub)
     push_res = subprocess.run(
-        ["git", "push", repo_url, "main"],
+        ["git", "push", "origin", "main"],
         cwd=REPO_DIR,
         capture_output=True,
         text=True
     )
     if push_res.returncode == 0:
-        print(f"[{now_str}] ✅ Sukses push ke GitLab: {commit_msg}")
+        print(f"[{now_str}] ✅ Sukses push ke GitLab & GitHub: {commit_msg}")
         return True
     else:
-        print(f"[{now_str}] ❌ Gagal push ke GitLab: {push_res.stderr.strip()}")
+        print(f"[{now_str}] ⚠️ Push output:\n{push_res.stderr.strip()}")
         return False
 
 def run_inotify_watcher():
@@ -112,9 +97,8 @@ def run_inotify_watcher():
             if not line:
                 break
             
-            # Debounce: tunggu beberapa detik bila ada file lain yang ditulis berurutan
+            # Debounce
             time.sleep(DEBOUNCE_SECONDS)
-            # Flush stdout pipe agar tidak double trigger
             check_and_push()
             
     except Exception as e:
@@ -132,9 +116,8 @@ def run_polling_loop():
         time.sleep(POLL_INTERVAL)
 
 def main():
-    # Setup git identity
-    subprocess.run(["git", "config", "user.name", "RamsNotes31"], cwd=REPO_DIR)
-    subprocess.run(["git", "config", "user.email", "ramsnotes31@gmail.com"], cwd=REPO_DIR)
+    subprocess.run(["git", "config", "user.name", "Rama Danadipa"], cwd=REPO_DIR)
+    subprocess.run(["git", "config", "user.email", "ramadanadipa.mk2@gmail.com"], cwd=REPO_DIR)
 
     # Initial check saat startup
     check_and_push()

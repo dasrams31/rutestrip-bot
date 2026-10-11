@@ -38,15 +38,19 @@ def update_readme_and_push(force=False):
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
 
-    token = "glpat-rkekHDtXeexQbWPqoiBsmGM6MQpvOjEKdTpubmV1NA8.01.170u0m8r2"
-    repo_url = f"https://RamsNotes31:{token}@gitlab.com/RamsNotes31/rutestrip-bot.git"
-    
     msg = random.choice(COMMIT_MESSAGES) + f" ({now_str})"
     
+    subprocess.run(["git", "config", "user.name", "Rama Danadipa"], cwd=BOT_DIR)
+    subprocess.run(["git", "config", "user.email", "ramadanadipa.mk2@gmail.com"], cwd=BOT_DIR)
     subprocess.run(["git", "add", "README.md"], cwd=BOT_DIR)
     subprocess.run(["git", "commit", "-m", msg], cwd=BOT_DIR)
-    subprocess.run(["git", "push", repo_url, "main"], cwd=BOT_DIR)
-    print(f"✅ Random commit executed & pushed: '{msg}'")
+    
+    # Push to origin (which pushes to BOTH GitLab and GitHub)
+    push_res = subprocess.run(["git", "push", "origin", "main"], cwd=BOT_DIR, capture_output=True, text=True)
+    if push_res.returncode == 0:
+        print(f"✅ Random commit executed & pushed to GitLab & GitHub: '{msg}'")
+    else:
+        print(f"⚠️ Push output:\n{push_res.stderr.strip()}")
 
 if __name__ == "__main__":
     import sys
