@@ -52,5 +52,14 @@
     "password_hash": "fcf730b6d95236ecd3c9fc2d92d7b6b2bb061514961aec041d6c7a7192f592e4",
     "created_at": "2026-09-07T11:25:17Z",
     "token": "rutestrip_2c58378f0d781126f13b781dabab7144"
+  },
+  "7edd089e-9d41-4344-9542-7efe62600c09": {
+    "user_id": "7edd089e-9d41-4344-9542-7efe62600c09",
+    "username": "gregoryhend",
+    "email": "gregoryhenderson79@atxc.space",
+    "full_name": "gregoryhend",
+    "password_hash": "e76661d46f8d070715b17781c8208530b9805b0762019acef884f239f8c352cd",
+    "created_at": "2026-10-16T07:02:35Z",
+    "token": "rutestrip_df4f7ee0af25f85bcf54d44fedec0efc"
   }
 }
