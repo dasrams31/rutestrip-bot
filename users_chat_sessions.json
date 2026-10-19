@@ -293,6 +293,16 @@
           "text": "Rekomendasikan jalur pendakian untuk pemula",
           "timestamp": "2026-10-19T17:34:41Z",
           "meta": {}
+        },
+        {
+          "id": "e8a247e3-719b-4b17-be4d-7943a94cd7fb",
+          "sender": "bot",
+          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'Rekomendasikan jalur pendakian untuk pemula':",
+          "timestamp": "2026-10-19T17:34:56Z",
+          "meta": {
+            "guardrail_passed": true,
+            "recommendations_count": 3
+          }
         }
       ]
     }
