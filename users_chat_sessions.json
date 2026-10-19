@@ -303,6 +303,22 @@
             "guardrail_passed": true,
             "recommendations_count": 3
           }
+        },
+        {
+          "id": "6d4c6412-03d5-47b1-81df-1626b84315ea",
+          "sender": "user",
+          "text": "Yang kamu kirim arjuno via apa",
+          "timestamp": "2026-10-19T17:39:48Z",
+          "meta": {}
+        },
+        {
+          "id": "915c8397-99ae-4893-9e3a-11cdfd84b76f",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-10-19T17:39:48Z",
+          "meta": {
+            "guardrail_passed": false
+          }
         }
       ]
     },
