@@ -327,6 +327,23 @@
             "guardrail_passed": true,
             "recommendations_count": 3
           }
+        },
+        {
+          "id": "f877c188-1206-4d29-957b-59874a9c8228",
+          "sender": "user",
+          "text": "File gpxnya",
+          "timestamp": "2026-10-19T17:37:25Z",
+          "meta": {}
+        },
+        {
+          "id": "facd3487-ea9a-4e7d-badc-a51c94d17152",
+          "sender": "bot",
+          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'File gpxnya':",
+          "timestamp": "2026-10-19T17:37:25Z",
+          "meta": {
+            "guardrail_passed": true,
+            "recommendations_count": 3
+          }
         }
       ]
     }
