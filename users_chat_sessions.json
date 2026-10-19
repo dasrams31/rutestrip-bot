@@ -305,6 +305,30 @@
           }
         }
       ]
+    },
+    "093f038c-dfed-45df-b96f-f282d6c580ab": {
+      "session_id": "093f038c-dfed-45df-b96f-f282d6c580ab",
+      "title": "File gpxnya",
+      "created_at": "2026-10-19T17:36:57Z",
+      "messages": [
+        {
+          "id": "66e9473c-6eb4-43f9-9b9a-bdaafbfac439",
+          "sender": "user",
+          "text": "File gpxnya",
+          "timestamp": "2026-10-19T17:36:57Z",
+          "meta": {}
+        },
+        {
+          "id": "ff87c334-e091-4eae-9eff-fc7a284df242",
+          "sender": "bot",
+          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'File gpxnya':",
+          "timestamp": "2026-10-19T17:36:58Z",
+          "meta": {
+            "guardrail_passed": true,
+            "recommendations_count": 3
+          }
+        }
+      ]
     }
   }
 }
