@@ -280,5 +280,21 @@
         }
       ]
     }
+  },
+  "230a36b1-7a68-478f-ad48-538a6b2b0c87": {
+    "7bf4f919-c3a1-403f-86ef-2936867986f3": {
+      "session_id": "7bf4f919-c3a1-403f-86ef-2936867986f3",
+      "title": "Rekomendasikan jalur pendakian untu...",
+      "created_at": "2026-10-19T17:34:41Z",
+      "messages": [
+        {
+          "id": "46e52758-e559-4032-92a9-5fa118bac9b1",
+          "sender": "user",
+          "text": "Rekomendasikan jalur pendakian untuk pemula",
+          "timestamp": "2026-10-19T17:34:41Z",
+          "meta": {}
+        }
+      ]
+    }
   }
 }
