@@ -318,6 +318,23 @@
           "meta": {
             "guardrail_passed": false
           }
+        },
+        {
+          "id": "cd66d817-310b-4a67-ab4c-856da116b8c7",
+          "sender": "user",
+          "text": "Gunung buthak panderman file gpxnya mana",
+          "timestamp": "2026-10-23T06:11:38Z",
+          "meta": {}
+        },
+        {
+          "id": "64ff4100-84dd-4c85-9771-3dc431faac43",
+          "sender": "bot",
+          "text": "Berikut adalah informasi pendakian terbaik berdasarkan kriteria 'Gunung buthak panderman file gpxnya mana':",
+          "timestamp": "2026-10-23T06:11:39Z",
+          "meta": {
+            "guardrail_passed": true,
+            "recommendations_count": 3
+          }
         }
       ]
     }
