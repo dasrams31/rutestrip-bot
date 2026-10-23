@@ -302,6 +302,22 @@
           "meta": {
             "guardrail_passed": false
           }
+        },
+        {
+          "id": "94bdae9f-cb2f-4563-b461-72580b18ecd3",
+          "sender": "user",
+          "text": "Penanggungan via kedungdi",
+          "timestamp": "2026-10-23T06:10:43Z",
+          "meta": {}
+        },
+        {
+          "id": "143fcff5-dd8f-4eda-b6f5-a700369ab2da",
+          "sender": "bot",
+          "text": "Maaf, saya adalah RuteStrip AI Assistant yang khusus diprogram untuk membantu informasi pendakian gunung, cuaca live, rute trek, logistik, dan survival outdoor. Ada informasi pendakian gunung yang bisa saya bantu? \ud83c\udfd4\ufe0f",
+          "timestamp": "2026-10-23T06:10:43Z",
+          "meta": {
+            "guardrail_passed": false
+          }
         }
       ]
     }
