@@ -61,5 +61,14 @@
     "password_hash": "efb908caf4ae77b9165ec2fbdde1058ca9d2dde197bc8ccfbf8be027b46a0257",
     "created_at": "2026-10-23T06:06:06Z",
     "token": "rutestrip_e3c66b9b3e2323a0e76f4db355c3063d"
+  },
+  "83d6bec1-c5b6-47a1-8e0f-66c27a072eed": {
+    "user_id": "83d6bec1-c5b6-47a1-8e0f-66c27a072eed",
+    "username": "marcusjreed986",
+    "email": "marcusjreed986@mailinator.com",
+    "full_name": "Marcus Reed",
+    "password_hash": "dff6e95a97f367399ce0fc6172f9e53b1aac5c21c813b5d0a0125297d6335c02",
+    "created_at": "2026-11-03T07:01:16Z",
+    "token": "rutestrip_db09bac7c9c276fd092bd18637cc54aa"
   }
 }
